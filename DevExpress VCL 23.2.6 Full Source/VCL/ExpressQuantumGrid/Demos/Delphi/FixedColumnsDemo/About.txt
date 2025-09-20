@@ -1,0 +1,6 @@
+This demo illustrates how to anchor columns to the left or right border of the Table View. Scroll the View horizontally to see how highlighted columns stick to the left border, one by one. Use the following UI elements on the pane to the right of the Table View to customize column anchor settings:
+
+- The "Column" combo box allows you to switch between all visible columns, and preview and change their settings.
+- The "Fix Style" combo box can switch between available anchor settings for the currently selected column. Alternatively, you can right-click a column header and click any anchor option in a pop-up menu.
+- The "Fixed Separator Width" spin editor and the "Highlight Fixed Columns" checkbox allow you to visually emphasize fixed columns in the Table View.
+- The "Highlight Color" box allows you to change the highlight color for fixed columns. Double-click the box to invoke the "Color Editor" dialog to choose a color.

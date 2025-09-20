@@ -1,0 +1,5 @@
+This demo illustrates how to manage file attachments in a PDF document. The pane to the right of the PDF Viewer control allows you to:
+	 
+- View the list of attached files and select files you want to delete
+- "Delete Selected" files
+- "Attach File..." in the Open dialog

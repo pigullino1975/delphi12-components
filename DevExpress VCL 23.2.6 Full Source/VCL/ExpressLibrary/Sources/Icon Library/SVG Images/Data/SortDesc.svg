@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<style type="text/css">
+	.Red{fill:#D11C1C;}
+	.Blue{fill:#1177D7;}
+	.Black{fill:#727272;}
+	.st0{opacity:0.35;fill:#727272;}
+	.st1{opacity:0.5;}
+	.st2{fill:#727272;}
+</style>
+<g id="Background">
+	<polygon class="Black" points="18,22 24,30 30,22 26,22 26,2 22,2 22,22 	"/>
+	<path class="Blue" d="M10.3,27.6H5.7L5,30H2l4.4-12h3.2L14,30h-3L10.3,27.6z M6.5,25.2h3L8,20.3L6.5,25.2z"/>
+	<path class="Red" d="M2,2h12v2.4l-7.2,7.2H14V14H2v-2.4l7.2-7.2H2V2z"/>
+</g>
+<g id="Layer_2">
+</g>
+</svg>

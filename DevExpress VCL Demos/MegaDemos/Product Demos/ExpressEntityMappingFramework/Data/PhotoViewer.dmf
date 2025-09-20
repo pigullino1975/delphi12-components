@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataModel Name="DataModel1" ContextName="DataModel1Context" CodeGeneratorEntityRegistrationType="DeclarativeAttributes">
+	<Entities>
+		<Entity Name="Album" TableName="Album" DiscriminatorValue="2" MapInheritanceType="OwnTable" BaseEntity="PhotoViewerEntity">
+			<Property Name="Comment" ColumnDataType="nvarchar(100)" ColumnName="Comment" MaxLength="100" Nullable="1"/>
+		</Entity>
+		<Entity Name="Photo" TableName="Photo" DiscriminatorValue="3" MapInheritanceType="OwnTable" BaseEntity="PhotoViewerEntity">
+			<Property Name="Image" ColumnDataType="image" ColumnName="Image" DataType="TdxSmartImage" Nullable="1"/>
+			<Property Name="Rating" ColumnDataType="int" ColumnName="Rating" DataType="Integer" Nullable="1"/>
+		</Entity>
+		<Entity Name="CustomFilter" TableName="CustomFilter" DiscriminatorValue="1" DiscriminatorType="Integer" MapInheritanceType="OwnTable" BaseEntity="PhotoViewerEntity">
+			<Property Name="Image" ColumnDataType="image" ColumnName="Image" DataType="TdxSmartImage" Nullable="1"/>
+		</Entity>
+		<Entity Name="Filter" TableName="Filter" DiscriminatorValue="4" MapInheritanceType="OwnTable" BaseEntity="CustomFilter">
+			<Indexes>
+				<Index>ID</Index>
+			</Indexes>
+			<Property Name="Brightness" ColumnDataType="tinyint" ColumnName="Brightness" DataType="Byte" Nullable="1"/>
+			<Property Name="Color" ColumnDataType="int" ColumnName="Color" DataType="Integer" Nullable="1"/>
+			<Property Name="Contrast" ColumnDataType="tinyint" ColumnName="Contrast" DataType="Byte" Nullable="1"/>
+		</Entity>
+		<Entity Name="Effect" TableName="Effects" DiscriminatorValue="5" MapInheritanceType="OwnTable" BaseEntity="CustomFilter">
+			<Indexes>
+				<Index>ID</Index>
+			</Indexes>
+			<Property Name="M00" ColumnDataType="float" ColumnName="M00" DataType="Single" Nullable="1"/>
+			<Property Name="M01" ColumnDataType="float" ColumnName="M01" DataType="Single" Nullable="1"/>
+			<Property Name="M02" ColumnDataType="float" ColumnName="M02" DataType="Single" Nullable="1"/>
+			<Property Name="M03" ColumnDataType="float" ColumnName="M03" DataType="Single" Nullable="1"/>
+			<Property Name="M04" ColumnDataType="float" ColumnName="M04" DataType="Single" Nullable="1"/>
+			<Property Name="M10" ColumnDataType="float" ColumnName="M10" DataType="Single" Nullable="1"/>
+			<Property Name="M11" ColumnDataType="float" ColumnName="M11" DataType="Single" Nullable="1"/>
+			<Property Name="M12" ColumnDataType="float" ColumnName="M12" DataType="Single" Nullable="1"/>
+			<Property Name="M13" ColumnDataType="float" ColumnName="M13" DataType="Single" Nullable="1"/>
+			<Property Name="M14" ColumnDataType="float" ColumnName="M14" DataType="Single" Nullable="1"/>
+			<Property Name="M20" ColumnDataType="float" ColumnName="M20" DataType="Single" Nullable="1"/>
+			<Property Name="M21" ColumnDataType="float" ColumnName="M21" DataType="Single" Nullable="1"/>
+			<Property Name="M22" ColumnDataType="float" ColumnName="M22" DataType="Single" Nullable="1"/>
+			<Property Name="M23" ColumnDataType="float" ColumnName="M23" DataType="Single" Nullable="1"/>
+			<Property Name="M24" ColumnDataType="float" ColumnName="M24" DataType="Single" Nullable="1"/>
+			<Property Name="M30" ColumnDataType="float" ColumnName="M30" DataType="Single" Nullable="1"/>
+			<Property Name="M31" ColumnDataType="float" ColumnName="M31" DataType="Single" Nullable="1"/>
+			<Property Name="M32" ColumnDataType="float" ColumnName="M32" DataType="Single" Nullable="1"/>
+			<Property Name="M33" ColumnDataType="float" ColumnName="M33" DataType="Single" Nullable="1"/>
+			<Property Name="M34" ColumnDataType="float" ColumnName="M34" DataType="Single" Nullable="1"/>
+			<Property Name="M40" ColumnDataType="float" ColumnName="M40" DataType="Single" Nullable="1"/>
+			<Property Name="M41" ColumnDataType="float" ColumnName="M41" DataType="Single" Nullable="1"/>
+			<Property Name="M42" ColumnDataType="float" ColumnName="M42" DataType="Single" Nullable="1"/>
+			<Property Name="M43" ColumnDataType="float" ColumnName="M43" DataType="Single" Nullable="1"/>
+			<Property Name="M44" ColumnDataType="float" ColumnName="M44" DataType="Single" Nullable="1"/>
+		</Entity>
+		<Entity Name="AlbumContent" TableName="AlbumContent">
+			<Indexes>
+				<Index>Photo</Index>
+				<Index>Album</Index>
+			</Indexes>
+			<Property Name="Album" ColumnDataType="int" ColumnName="Album" DataType="Integer" Entity="Album"/>
+			<Property Name="ID" ColumnDataType="INTEGER" ColumnName="ID" DataType="Integer" GeneratorType="Identity" PrimaryKey="1" Nullable="1"/>
+			<Property Name="Photo" ColumnDataType="int" ColumnName="Photo" DataType="Integer" Entity="Photo"/>
+		</Entity>
+		<Entity Name="PhotoViewerEntity" DiscriminatorValue="0" DiscriminatorType="Integer">
+			<Property Name="ID" DataType="Int64" GeneratorType="Identity" PrimaryKey="1" Unique="1"/>
+			<Property Name="Caption"/>
+			<Property Name="Date" DataType="TDate"/>
+		</Entity>
+	</Entities>
+	<Associations>
+		<Association Name="Photo_AlbumContent_Photo" Entity1="Photo" Entity2="AlbumContent" Entity1CollectionPropertyName="AlbumContent_Photo" Type="OneToMany" AssociationDeleteRule="Cascade" Entity2RefrenceProperty="Photo"/>
+		<Association Name="Album_AlbumContent_Album" Entity1="Album" Entity2="AlbumContent" Entity1CollectionPropertyName="Content" Type="OneToMany" AssociationDeleteRule="Cascade" Entity2RefrenceProperty="Album"/>
+	</Associations>
+</DataModel>
+<Diagram>
+	<Entities>
+		<Item Name="Album" Expanded="True" Left="48" Top="240" Width="112" Height="79"/>
+		<Item Name="Effect" Expanded="True" Left="880" Top="400" Width="96" Height="654"/>
+		<Item Name="PhotoViewerEntity" Expanded="True" Left="448" Top="48" Width="224" Height="104"/>
+		<Item Name="Photo" Expanded="True" Left="464" Top="240" Width="192" Height="104"/>
+		<Item Name="CustomFilter" Expanded="True" Left="720" Top="240" Width="144" Height="54"/>
+		<Item Name="Filter" Expanded="True" Left="624" Top="400" Width="176" Height="104"/>
+		<Item Name="AlbumContent" Expanded="True" Left="224" Top="240" Width="160" Height="104"/>
+	</Entities>
+</Diagram>
+<DatabaseStructure ConnectionString="Name=Unnamed;DriverID=SQLite;Database=D:\VCS\VCL\2017.2\Demos\WebSite\Product Demos\EMF\Data\PhotoViewerJL181sym.z3X.db">
+	<Tables>
+		<Table Name="Album">
+			<Column Name="Comment" DataType="String"/>
+			<Column Name="Caption" DataType="String"/>
+			<Column Name="Date" DataType="DateTime"/>
+			<Column Name="ID" DataType="Int32" PrimaryKey="1"/>
+		</Table>
+		<Table Name="Photo">
+			<Column Name="Image" DataType="ByteArray"/>
+			<Column Name="Rating" DataType="Int32"/>
+			<Column Name="Caption" DataType="String"/>
+			<Column Name="Date" DataType="DateTime"/>
+			<Column Name="ID" DataType="Int32" PrimaryKey="1"/>
+		</Table>
+		<Table Name="Filter">
+			<Column Name="Image" DataType="ByteArray"/>
+			<Column Name="Caption" DataType="String"/>
+			<Column Name="Date" DataType="DateTime"/>
+			<Column Name="ID" DataType="Int32" PrimaryKey="1"/>
+			<Column Name="DISCRIMINATOR" DataType="Int32"/>
+		</Table>
+		<Table Name="UserFilter">
+			<Indexes>
+				<Index>ID</Index>
+			</Indexes>
+			<ForeignKeys>
+				<ForeignKey PrimaryKeyTable="Filter" PrimaryKeyTableKeyColumns="ID" KeyColumns="ID"/>
+			</ForeignKeys>
+			<Column Name="Brightness" DataType="Byte"/>
+			<Column Name="Color" DataType="Int32"/>
+			<Column Name="Contrast" DataType="Byte"/>
+			<Column Name="ID" DataType="Int32" PrimaryKey="1"/>
+		</Table>
+		<Table Name="Effects">
+			<Indexes>
+				<Index>ID</Index>
+			</Indexes>
+			<ForeignKeys>
+				<ForeignKey PrimaryKeyTable="Filter" PrimaryKeyTableKeyColumns="ID" KeyColumns="ID"/>
+			</ForeignKeys>
+			<Column Name="M00" DataType="Single"/>
+			<Column Name="M01" DataType="Single"/>
+			<Column Name="M02" DataType="Single"/>
+			<Column Name="M03" DataType="Single"/>
+			<Column Name="M04" DataType="Single"/>
+			<Column Name="M10" DataType="Single"/>
+			<Column Name="M11" DataType="Single"/>
+			<Column Name="M12" DataType="Single"/>
+			<Column Name="M13" DataType="Single"/>
+			<Column Name="M14" DataType="Single"/>
+			<Column Name="M20" DataType="Single"/>
+			<Column Name="M21" DataType="Single"/>
+			<Column Name="M22" DataType="Single"/>
+			<Column Name="M23" DataType="Single"/>
+			<Column Name="M24" DataType="Single"/>
+			<Column Name="M30" DataType="Single"/>
+			<Column Name="M31" DataType="Single"/>
+			<Column Name="M32" DataType="Single"/>
+			<Column Name="M33" DataType="Single"/>
+			<Column Name="M34" DataType="Single"/>
+			<Column Name="M40" DataType="Single"/>
+			<Column Name="M41" DataType="Single"/>
+			<Column Name="M42" DataType="Single"/>
+			<Column Name="M43" DataType="Single"/>
+			<Column Name="M44" DataType="Single"/>
+			<Column Name="ID" DataType="Int32" PrimaryKey="1"/>
+		</Table>
+		<Table Name="AlbumContent">
+			<Indexes>
+				<Index>Photo</Index>
+				<Index>Album</Index>
+			</Indexes>
+			<ForeignKeys>
+				<ForeignKey PrimaryKeyTable="Photo" PrimaryKeyTableKeyColumns="ID" KeyColumns="Photo"/>
+				<ForeignKey PrimaryKeyTable="Album" PrimaryKeyTableKeyColumns="ID" KeyColumns="Album"/>
+			</ForeignKeys>
+			<Column Name="Album" DataType="Int32"/>
+			<Column Name="ID" DataType="Int32" PrimaryKey="1"/>
+			<Column Name="Photo" DataType="Int32"/>
+		</Table>
+	</Tables>
+</DatabaseStructure>

@@ -1,0 +1,761 @@
+object dxSpreadSheetEditHyperlinkDialogForm: TdxSpreadSheetEditHyperlinkDialogForm
+  Left = 0
+  Top = 0
+  AutoSize = True
+  BorderStyle = bsDialog
+  Caption = 'Insert Hyperlink'
+  ClientHeight = 335
+  ClientWidth = 621
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poOwnerFormCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lcMain: TdxLayoutControl
+    Left = 0
+    Top = 0
+    Width = 621
+    Height = 335
+    TabOrder = 0
+    AutoSize = True
+    LayoutLookAndFeel = dxLayoutCxLookAndFeel1
+    HighlightRoot = False
+    object btnOK: TcxButton
+      Left = 435
+      Top = 300
+      Width = 85
+      Height = 25
+      Caption = 'OK'
+      Default = True
+      ModalResult = 1
+      TabOrder = 11
+    end
+    object btnCancel: TcxButton
+      Left = 526
+      Top = 300
+      Width = 85
+      Height = 25
+      Cancel = True
+      Caption = 'Cancel'
+      ModalResult = 2
+      TabOrder = 12
+    end
+    object edtAddress: TcxButtonEdit
+      Left = 311
+      Top = 80
+      Properties.Buttons = <
+        item
+          Default = True
+          Kind = bkEllipsis
+        end>
+      Properties.OnButtonClick = edtAddressPropertiesButtonClick
+      Properties.OnChange = edtAddressPropertiesChange
+      Style.HotTrack = False
+      TabOrder = 5
+      Width = 300
+    end
+    object edtEmail: TcxTextEdit
+      Left = 311
+      Top = 107
+      Properties.OnChange = edtEmailPropertiesChange
+      Style.HotTrack = False
+      TabOrder = 6
+      OnExit = edtEmailExit
+      Width = 300
+    end
+    object edtTextToDisplay: TcxTextEdit
+      Left = 311
+      Top = 26
+      Properties.ReadOnly = False
+      Properties.UseNullString = True
+      Properties.OnChange = EditDisplayTextChanged
+      Properties.OnEditValueChanged = EditDisplayTextChanged
+      Style.HotTrack = False
+      TabOrder = 3
+      Width = 300
+    end
+    object edtSubject: TcxTextEdit
+      Left = 311
+      Top = 134
+      Properties.OnChange = EditValueChanged
+      Style.HotTrack = False
+      TabOrder = 7
+      Width = 300
+    end
+    object edtCellRef: TcxTextEdit
+      Left = 311
+      Top = 161
+      Properties.OnChange = EditValueChanged
+      Style.HotTrack = False
+      TabOrder = 8
+      Text = 'A1'
+      Width = 300
+    end
+    object edtScreenTip: TcxTextEdit
+      Left = 311
+      Top = 53
+      Properties.OnChange = edtScreenTipPropertiesChange
+      Style.HotTrack = False
+      TabOrder = 4
+      Width = 300
+    end
+    object tvDocumentPlace: TcxTreeView
+      Left = 311
+      Top = 188
+      Width = 300
+      Height = 94
+      TabOrder = 9
+      HideSelection = False
+      ReadOnly = True
+      RowSelect = True
+      OnChange = tvDocumentPlaceChange
+    end
+    object btnRemoveLink: TcxButton
+      Left = 344
+      Top = 300
+      Width = 85
+      Height = 25
+      Cancel = True
+      Caption = '&Remove link'
+      ModalResult = 3
+      TabOrder = 10
+    end
+    object pnPlaceInDocument: TPanel
+      Tag = 1
+      Left = 10
+      Top = 122
+      Width = 125
+      Height = 86
+      BevelOuter = bvNone
+      TabOrder = 1
+      OnClick = NavbarItemClick
+      OnMouseEnter = NavbarItemMouseEnter
+      OnMouseLeave = NavbarItemMouseLeave
+      object cxImage2: TcxImage
+        Tag = 1
+        Left = 0
+        Top = 0
+        TabStop = False
+        Align = alTop
+        Enabled = False
+        ParentColor = True
+        Picture.Data = {
+          0D546478536D617274496D6167653C3F786D6C2076657273696F6E3D22312E30
+          2220656E636F64696E673D225554462D38223F3E0D0A3C737667207665727369
+          6F6E3D22312E31222069643D224E65772220786D6C6E733D22687474703A2F2F
+          7777772E77332E6F72672F323030302F7376672220786D6C6E733A786C696E6B
+          3D22687474703A2F2F7777772E77332E6F72672F313939392F786C696E6B2220
+          783D223070782220793D22307078222076696577426F783D2230203020333220
+          333222207374796C653D22656E61626C652D6261636B67726F756E643A6E6577
+          203020302033322033323B2220786D6C3A73706163653D227072657365727665
+          223E262331333B262331303B3C7374796C6520747970653D22746578742F6373
+          732220786D6C3A73706163653D227072657365727665223E2E426C61636B7B66
+          696C6C3A233732373237323B7D262331333B262331303B2623393B2E426C7565
+          7B66696C6C3A233131373744373B7D262331333B262331303B2623393B2E7374
+          307B6F7061636974793A302E37353B7D3C2F7374796C653E0D0A3C7061746820
+          636C6173733D22426C61636B2220643D224D31392C32483543342E342C322C34
+          2C322E342C342C3376323463302C302E362C302E342C312C312C316832306330
+          2E362C302C312D302E342C312D3156394C31392C327A204D32342C3236483656
+          34683132763563302C302E362C302E342C312C312C31683520202623393B5632
+          367A222F3E0D0A3C6720636C6173733D22737430223E0D0A09093C7061746820
+          636C6173733D22426C61636B2220643D224D31372E322C3130682D3456386833
+          2E375631307A204D32322E352C3132682D34763268332E375631327A204D3137
+          2E322C3132682D34763268332E375631327A204D31372E322C3136682D347632
+          68332E375631367A204D32322E352C3136682D34763268332E37563136202026
+          23393B2623393B7A204D32322E352C3230682D34763268332E375632307A204D
+          31372E322C3230682D34763268332E375632307A222F3E0D0A093C2F673E0D0A
+          3C7061746820636C6173733D22426C75652220643D224D31322C313048385638
+          68332E375631307A204D31322C31324838763268332E375631327A204D31322C
+          31364838763268332E375631367A204D31322C32304838763268332E37563230
+          7A222F3E0D0A3C2F7376673E0D0A}
+        Properties.GraphicClassName = 'TdxSmartImage'
+        Properties.ReadOnly = True
+        Style.BorderStyle = ebsNone
+        Style.HotTrack = False
+        StyleFocused.BorderStyle = ebsNone
+        TabOrder = 0
+        Transparent = True
+        OnClick = NavbarItemClick
+        OnMouseEnter = NavbarItemMouseEnter
+        OnMouseLeave = NavbarItemMouseLeave
+        Height = 48
+        Width = 125
+      end
+      object lbPlaceInDocument: TcxLabel
+        Tag = 1
+        Left = 0
+        Top = 48
+        Align = alClient
+        AutoSize = False
+        Caption = '&Place in This'#13#10'Document'
+        Style.HotTrack = True
+        StyleFocused.BorderStyle = ebsNone
+        StyleFocused.TextStyle = [fsUnderline]
+        StyleHot.BorderStyle = ebsNone
+        StyleHot.TextStyle = [fsUnderline]
+        Properties.Alignment.Horz = taCenter
+        Properties.Alignment.Vert = taVCenter
+        Properties.WordWrap = True
+        OnClick = NavbarItemClick
+        OnMouseEnter = NavbarItemMouseEnter
+        OnMouseLeave = NavbarItemMouseLeave
+        Height = 38
+        Width = 125
+        AnchorX = 63
+        AnchorY = 67
+      end
+    end
+    object pnFileOrWebPage: TPanel
+      Left = 10
+      Top = 30
+      Width = 125
+      Height = 86
+      BevelOuter = bvNone
+      TabOrder = 0
+      OnClick = NavbarItemClick
+      OnMouseEnter = NavbarItemMouseEnter
+      OnMouseLeave = NavbarItemMouseLeave
+      object cxImage1: TcxImage
+        Left = 0
+        Top = 0
+        TabStop = False
+        Align = alTop
+        Enabled = False
+        ParentColor = True
+        Picture.Data = {
+          0D546478536D617274496D6167653C3F786D6C2076657273696F6E3D22312E30
+          2220656E636F64696E673D225554462D38223F3E0D0A3C737667207665727369
+          6F6E3D22312E31222069643D224C617965725F312220786D6C6E733D22687474
+          703A2F2F7777772E77332E6F72672F323030302F7376672220786D6C6E733A78
+          6C696E6B3D22687474703A2F2F7777772E77332E6F72672F313939392F786C69
+          6E6B2220783D223070782220793D22307078222076696577426F783D22302030
+          20333220333222207374796C653D22656E61626C652D6261636B67726F756E64
+          3A6E6577203020302033322033323B2220786D6C3A73706163653D2270726573
+          65727665223E262331333B262331303B3C7374796C6520747970653D22746578
+          742F6373732220786D6C3A73706163653D227072657365727665223E2E426C75
+          657B66696C6C3A233131373744373B7D262331333B262331303B2623393B2E47
+          7265656E7B66696C6C3A233033394332333B7D262331333B262331303B262339
+          3B2E59656C6C6F777B66696C6C3A234646423131353B7D262331333B26233130
+          3B2623393B2E426C61636B7B66696C6C3A233732373237323B7D262331333B26
+          2331303B2623393B2E57686974657B66696C6C3A234646464646463B7D262331
+          333B262331303B2623393B2E5265647B66696C6C3A234431314331433B7D2623
+          31333B262331303B2623393B2E7374307B6F7061636974793A302E37353B7D3C
+          2F7374796C653E0D0A3C672069643D22576F726C645F315F223E0D0A09093C70
+          61746820636C6173733D22426C75652220643D224D31352E382C32632D372E37
+          2C302D31342C362E332D31342C313473362E332C31342C31342C31347331342D
+          362E332C31342D31345332332E362C322C31352E382C327A204D32302E312C31
+          392E31632D302E352C302E312D302E352D302E332D302E312D302E3420202623
+          393B2623393B4332302E312C31382E392C32302E322C31382E382C32302E312C
+          31392E317A204D382E342C31332E3363302D302E312C302D302E312C302D302E
+          3243382E342C31332E322C382E342C31332E332C382E342C31332E337A204D32
+          322E312C32312E3963302D302E312D302E312D302E312D302E312D302E312020
+          2623393B2623393B63302E312C302E332D302E312C302E392D302E312C312E32
+          632D302E312C302E342D302E342C312E332D302E372C312E3363302C302E322D
+          302E342C302D302E332C302E32632D302E352C302E312D302E382C302E352D30
+          2E382C302E3863302C302E312D302E332C312E312D302E342C312E3120202623
+          393B2623393B63302D302E312C302E312D302E322C302E312D302E3363302C30
+          2E312D302E312C302E312D302E312C3063302C302E322D302E332C302E382D30
+          2E342C302E39632D302E312C302E312D302E332C302E332D302E352C302E3263
+          2D302E312C302D302E332D302E322D302E332D302E3420202623393B2623393B
+          63302C302E332C302E322C302E362C302E322C302E38632D302E392C302E322D
+          312E382C302E332D322E372C302E33632D302E312C302D302E322C302D302E33
+          2C3063302E312D302E332C302E312D302E352C302E322D302E3863302E322D30
+          2E372C302E322D312E352C302E332D322E3220202623393B2623393B63302E31
+          2D302E342C302E332D312E352C302E312D312E39632D302E312D302E322D302E
+          332D302E322D302E352D302E34632D302E362D302E342D302E362D302E372D30
+          2E382D312E33632D302E312D302E342D302E332D302E352D302E352D302E3963
+          2D302E312D302E322D302E322D302E322D302E322D302E3520202623393B2623
+          393B63302D302E322C302E322D302E342C302E322D302E3663302C302D302E31
+          2C302E312D302E312C302E3163302C302D302E312D302E312D302E312D302E31
+          63302D302E312C302D302E342C302E312D302E3463302D302E322C302E312D30
+          2E372C302E332D302E3763302D302E332C302E322D302E332C302E312D302E35
+          20202623393B2623393B63302E332D302E322C302D302E392C302D31632D302E
+          322C302D302E312D302E312D302E332D302E3263302C302E312D302E322C302E
+          312D302E322C302E3263302C302E312C302E312C302C302E312C302E31632D30
+          2E332C302D302E342D302E322D302E362D302E3320202623393B2623393B6330
+          2C302E322D302E312D302E322D302E332D302E3363302E312C302E322D302E32
+          2D302E322D302E322D302E33632D302E312D302E322D302E322D302E332D302E
+          322D302E35632D302E352C302D302E362D302E312D312D302E34632D302E342D
+          302E332D302E372D302E312D312E322D302E3320202623393B2623393B632D30
+          2E332D302E312D302E372D302E332D302E392D302E35632D302E342D302E332D
+          302E332D302E362D302E352D31632D302E312D302E332D302E372D302E372D30
+          2E362D31632D302E362C302D302E352D312E332D312E312D312E3363302C302E
+          322C302E362C312E352C302E382C3220202623393B2623393B632D302E322D30
+          2E342D302E382D302E362D302E392D3163302E352C302D302E322D302E382D30
+          2E342D31632D302E322D302E332D302E322D302E362D302E372D302E3663302D
+          302E322D302E322D302E342D302E322D302E37632D302E312C302D302E322D30
+          2E312D302E322D302E3220202623393B2623393B63302C302C302E312C302C30
+          2E312C3063302D302E312D302E312D302E312C302D302E32632D302E312C302C
+          302C302D302E312C3063302C302C302C302C302C302E3143362C392E352C352E
+          392C392E332C352E382C392E3263312E312D312E362C322E362D332C342E342D
+          332E3920202623393B2623393B63302E312C302E312C302E312C302E332C302E
+          322C302E3363302D302E312C302D302E322C302D302E3363302E372D302E342C
+          312E352D302E372C322E342D302E3963302E312C302C302E312C302E312C302E
+          322C302E3163302E322C302E312C302E342C302E312C302E362C302E32202026
+          23393B2623393B63302E322C302E312C302E312C302E312C302E322C302E3463
+          302C302E312C302E312C302E322C302E312C302E3363302E312C302C302E312C
+          302C302E322C3063302C302E312D302E312C302E312D302E312C304331342C35
+          2E372C31342E322C362C31342E342C352E3620202623393B2623393B63302E31
+          2D302E322D302E322D302E342D302E312D302E3763302E312D302E322C302E35
+          2D302E342C302E352D302E3663302C302C302C302C302C3063302D302E312C30
+          2D302E322D302E312D302E334331352C342C31352E342C342C31352E372C3463
+          302E372C302C312E332C302E312C322C302E3220202623393B2623393B63302C
+          302C302C302C302C302E3163302C302D302E312C302D302E322C3063302C302C
+          302C302E322C302C302E3163302E312C302C302E342C302E322C302E332C302E
+          3463302E312C302C302E312C302E312C302E322C302E3163302D302E322C302E
+          332C302E332C302E332C3020202623393B2623393B632D302E312C302C302E31
+          2C302E312C302E312C302E3163302C302E312D302E352C302E332D302E362C30
+          2E3363302C302E332C302E382D302E352C302E382C3063302C302C302C302C30
+          2E312D302E3163302C302E362D302E382C302E392D312E312C302E39632D302E
+          322C302D302E362C302D302E382C3020202623393B2623393B632D302E322C30
+          2E312D302E342C302E362D302E372C302E3663302C302E332D302E312C302E33
+          2D302E322C302E3463302C302C312E332D312E332C312E332D302E3663302C30
+          2D302E312C302E322D302E332C302E3363302C302C302D302E312C302D302E31
+          632D302E312C302E312C302C302E312C302C302E3220202623393B2623393B63
+          302E312C302C302E322D302E312C302E322D302E3163302C302E312C302C302E
+          322D302E312C302E3263302C302C302E312C302C302E312C3063302C302E312D
+          302E312C302E332C302E312C302E3363302C302C302C302C302C3063302C302C
+          302C302E312D302E312C302E3163302C302C302C302C302C3020202623393B26
+          23393B63302E322C302C302E322C302C302E342C3063302C302E332C302C302C
+          302E312C302E32632D302E312C302D302E342C302E332D302E342C302E336330
+          2C302C302D302E312D302E312D302E3163302C302D302E322C302E332D302E32
+          2C302E3363302C302C302C302C302D302E3120202623393B2623393B632D302E
+          372C302C302E332D302E352C302E332D302E35632D302E352C302D302E322C30
+          2E312D302E322D302E3263302C302D302E312C302D302E312C3063302C302E31
+          2D302E312C302E322D302E322C302E3263302C302C302D302E312C302D302E31
+          632D302E312C302E312D302E312C302E312C302C302E3120202623393B262339
+          3B632D302E312C302E312D302E312C302D302E322C30632D302E312C302E312C
+          302E312C302E342D302E322C302E3263302C302E312C302C302C302C302E3163
+          2D302E312C302C302D302E312D302E312D302E3163302C302E332D302E362C30
+          2E322D302E332C302E37632D302E312C302D302E312C302D302E322C30202026
+          23393B2623393B63302C302E312C302C302E312C302C302E31632D302E312C30
+          2D302E322C302E312D302E332C302E3263302E312C302C302E332C302C302E32
+          2C3063302C302E312D302E322C302E312D302E332C302E314331352E332C392C
+          31352E322C392E322C31352C392E3163302C302E322C302E312C302E332D302E
+          312C302E3520202623393B2623393B63302C302E312C302D302E342C302D302E
+          35632D302E312C302E312D302E332C302E342D302E322C302E3463302C302E32
+          2C302E312C302E312C302E312C302E32632D302E322C302C302C302E322C302E
+          312C302E33632D302E312C302D302E312C302D302E312C302E3120202623393B
+          2623393B63302E312C302C302E322C302E312C302E322C302E31632D302E312C
+          302D302E312C302D302E322C3063302C302E352D302E392C302E372D302E382C
+          312E3463302C302E332C302E342C312C302E312C312E3263302D302E332D302E
+          332D302E342D302E332D302E37632D302E312C302C302C302E312D302E312C30
+          2E3120202623393B2623393B632D302E312D302E312C302D302E332D302E312D
+          302E35632D302E312D302E312D302E322C302D302E342D302E31632D302E312C
+          302D302E352D302E322D302E352D302E32632D302E312C302D302E332C302D30
+          2E342C302E3163302E312C302E322C302E322C302C302E312C302E3220202623
+          393B2623393B63302E312C302C302E312C302C302E312C302E31632D302E312C
+          302D302E322D302E312D302E332D302E3263302C302E312C302C302E312C302C
+          302E31632D302E312C302D302E312C302D302E322C3063302D302E312C302D30
+          2E312C302D302E3163302C302D302E372C302D302E372C3020202623393B2623
+          393B63302C302E322D302E342C302E352D302E352C302E38632D302E312C302E
+          332C302C302E392C302C312E3363302E312C302C302E322C302E342C302E342C
+          302E3663302E322C302E312C302E372C302E322C302E392C302E3163302E322D
+          302E322C302E322D302E382C302E362D302E3820202623393B2623393B63302E
+          342C302C302C302E352C302E312C302E39632D302E312C302D302E312D302E31
+          2D302E312D302E3163302C302E322D302E312C302E352D302E312C302E376330
+          2E342C302C302E392D302E322C312E312C302E3263302E312C302E322D302E32
+          2C302E352D302E312C302E3820202623393B2623393B63302C302E322C302E32
+          2C302E352C302E342C302E3563302E322C302E312C302E322D302E312C302E33
+          2D302E3163302E322C302C302E322C302E312C302E342C302E3163302E312C30
+          2C302E312C302E322C302E322C302E3263302E312D302E352C302E332D302E37
+          2C302E372D302E3920202623393B2623393B63302E332D302E312C302E322D30
+          2E332C302E312C302E3163302E322C302D302E312C302E352C302E312C302E35
+          63302D302E322C302D302E352C302E332D302E3663302D302E312D302E312C30
+          2D302E312D302E3163302E312D302E312C302E352C302E332C302E342C302E33
+          20202623393B2623393B63302C302E312C302E392C302E312C302E392C306330
+          2C302C302E332C302C302E332C3063302C302E312C302C302D302E312C302E31
+          63302C302E312C302E332C302E322C302E332C302E31632D302E312C302E332D
+          302E312C302E312D302E332C302E3463302E362C302C302E362D302E322C302E
+          372C302E3420202623393B2623393B63302E312C302C302C302C302E312C3063
+          302D302E332C302E332D302E312C302E332C302E3163302C302C302E352D302E
+          322C302E352C3063302E362C302C302E342C302E372C302E372C302E3963302E
+          312C302D302E312C302C302E312C3063302C302D302E312C302E332D302E312C
+          302E3320202623393B2623393B63302E312C302C302D302E312C302E312D302E
+          3163302C302E312C302C302E312C302C302E3163302C302C302C302C302C302E
+          3163302C302C302C302C302C30632D302E322C302D302E312C302D302E312D30
+          2E3163302C302D302E352C302E352D302E382C302E3720202623393B2623393B
+          63302E322D302E312C302E332D302E322C302E362D302E3263302C302E332C30
+          2C302E312C302C302E3363302E312C302C302D302E332C302E322D302E336330
+          2C302E342C302E342C302E312C302E352C302E3163302C302C302E362D302E33
+          2C302E352C302E3163302E322C302C302E312C302E332C302E332C302E332020
+          2623393B2623393B63302E332D302E332C312E322C302E332C312E352C302E35
+          4332332E322C32302E372C32322E342C32312E312C32322E312C32312E397A20
+          4D31372E352C372E336C2D302E312D302E31632D302E312C302D302E342D302E
+          312D302E312D302E326C302E312C302E3263302C302C302E312C302C302E312C
+          3020202623393B2623393B4331372E342C372E332C31372E342C372E332C3137
+          2E352C372E337A204D31372E312C362E3263302E312C302C302E342C302E312C
+          302E352C302E3263302C302C302C302C302C302E314331372E352C362E352C31
+          372E312C362E332C31372E312C362E327A204D31322E332C31312E3820202623
+          393B2623393B4331322E322C31312E382C31322E322C31312E372C31322E332C
+          31312E384331322E332C31312E372C31322E332C31312E372C31322E332C3131
+          2E387A204D31392E362C31382E394331392E362C31382E392C31392E352C3139
+          2C31392E362C31382E394C31392E362C31382E397A204D31392E352C31392020
+          2623393B2623393B4331392E362C31392C31392E352C31392E312C31392E352C
+          31394C31392E352C31397A222F3E0D0A093C2F673E0D0A3C2F7376673E0D0A}
+        Properties.GraphicClassName = 'TdxSmartImage'
+        Properties.ReadOnly = True
+        Style.BorderStyle = ebsNone
+        Style.HotTrack = False
+        StyleFocused.BorderStyle = ebsNone
+        TabOrder = 0
+        Transparent = True
+        OnClick = NavbarItemClick
+        OnMouseEnter = NavbarItemMouseEnter
+        OnMouseLeave = NavbarItemMouseLeave
+        Height = 48
+        Width = 125
+      end
+      object lbFileOrWebPage: TcxLabel
+        Left = 0
+        Top = 48
+        Align = alClient
+        AutoSize = False
+        Caption = 'Existing &File or'#13#10'Web Page'
+        Style.HotTrack = True
+        StyleFocused.BorderStyle = ebsNone
+        StyleFocused.TextStyle = [fsUnderline]
+        StyleHot.BorderStyle = ebsNone
+        StyleHot.TextStyle = [fsUnderline]
+        Properties.Alignment.Horz = taCenter
+        Properties.Alignment.Vert = taVCenter
+        Properties.WordWrap = True
+        OnClick = NavbarItemClick
+        OnMouseEnter = NavbarItemMouseEnter
+        OnMouseLeave = NavbarItemMouseLeave
+        Height = 38
+        Width = 125
+        AnchorX = 63
+        AnchorY = 67
+      end
+    end
+    object pnEMail: TPanel
+      Tag = 2
+      Left = 10
+      Top = 214
+      Width = 125
+      Height = 78
+      BevelOuter = bvNone
+      TabOrder = 2
+      OnClick = NavbarItemClick
+      OnMouseEnter = NavbarItemMouseEnter
+      OnMouseLeave = NavbarItemMouseLeave
+      object cxImage3: TcxImage
+        Tag = 2
+        Left = 0
+        Top = 0
+        TabStop = False
+        Align = alTop
+        Enabled = False
+        ParentColor = True
+        Picture.Data = {
+          0D546478536D617274496D6167653C3F786D6C2076657273696F6E3D22312E30
+          2220656E636F64696E673D225554462D38223F3E0D0A3C737667207665727369
+          6F6E3D22312E31222069643D224C617965725F312220786D6C6E733D22687474
+          703A2F2F7777772E77332E6F72672F323030302F7376672220786D6C6E733A78
+          6C696E6B3D22687474703A2F2F7777772E77332E6F72672F313939392F786C69
+          6E6B2220783D223070782220793D22307078222076696577426F783D22302030
+          20333220333222207374796C653D22656E61626C652D6261636B67726F756E64
+          3A6E6577203020302033322033323B2220786D6C3A73706163653D2270726573
+          65727665223E262331333B262331303B3C7374796C6520747970653D22746578
+          742F6373732220786D6C3A73706163653D227072657365727665223E2E426C61
+          636B7B66696C6C3A233732373237323B7D262331333B262331303B2623393B2E
+          59656C6C6F777B66696C6C3A234646423131353B7D262331333B262331303B26
+          23393B2E426C75657B66696C6C3A233131373744373B7D262331333B26233130
+          3B2623393B2E5265647B66696C6C3A234431314331433B7D262331333B262331
+          303B2623393B2E57686974657B66696C6C3A234646464646463B7D262331333B
+          262331303B2623393B2E477265656E7B66696C6C3A233033394332333B7D2623
+          31333B262331303B2623393B2E7374307B66696C6C3A233732373237323B7D26
+          2331333B262331303B2623393B2E7374317B6F7061636974793A302E353B7D26
+          2331333B262331303B2623393B2E7374327B6F7061636974793A302E37353B7D
+          3C2F7374796C653E0D0A3C672069643D224D61696C223E0D0A09093C70617468
+          20636C6173733D22426C61636B2220643D224D31362C31382E336C31342D3856
+          323563302C302E352D302E352C312D312C314833632D302E352C302D312D302E
+          352D312D315631302E334C31362C31382E337A204D32392C36483343322E352C
+          362C322C362E352C322C3776316C31342C386C31342D38563720202623393B26
+          23393B4333302C362E352C32392E352C362C32392C367A222F3E0D0A093C2F67
+          3E0D0A3C2F7376673E0D0A}
+        Properties.GraphicClassName = 'TdxSmartImage'
+        Properties.ReadOnly = True
+        Style.BorderStyle = ebsNone
+        Style.HotTrack = False
+        StyleFocused.BorderStyle = ebsNone
+        StyleFocused.TextStyle = [fsUnderline]
+        StyleHot.BorderStyle = ebsNone
+        TabOrder = 0
+        Transparent = True
+        OnClick = NavbarItemClick
+        OnMouseEnter = NavbarItemMouseEnter
+        OnMouseLeave = NavbarItemMouseLeave
+        Height = 48
+        Width = 125
+      end
+      object lbEMail: TcxLabel
+        Tag = 2
+        Left = 0
+        Top = 48
+        Align = alClient
+        AutoSize = False
+        Caption = '&E-mail Address'
+        Style.HotTrack = True
+        StyleFocused.BorderStyle = ebsNone
+        StyleFocused.TextStyle = [fsUnderline]
+        StyleHot.BorderStyle = ebsNone
+        StyleHot.TextStyle = [fsUnderline]
+        Properties.Alignment.Horz = taCenter
+        Properties.Alignment.Vert = taVCenter
+        Properties.WordWrap = True
+        OnClick = NavbarItemClick
+        OnMouseEnter = NavbarItemMouseEnter
+        OnMouseLeave = NavbarItemMouseLeave
+        Height = 30
+        Width = 125
+        AnchorX = 63
+        AnchorY = 63
+      end
+    end
+    object lcMainGroup_Root: TdxLayoutGroup
+      AlignHorz = ahLeft
+      AlignVert = avTop
+      CaptionOptions.Visible = False
+      LayoutLookAndFeel = dxLayoutCxLookAndFeel1
+      ButtonOptions.Buttons = <>
+      Hidden = True
+      Padding.AssignedValues = [lpavBottom]
+      ShowBorder = False
+      Index = -1
+    end
+    object lcMainGroup3: TdxLayoutGroup
+      Parent = lcMainGroup_Root
+      AlignHorz = ahClient
+      AlignVert = avTop
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      ButtonOptions.Buttons = <>
+      LayoutDirection = ldHorizontal
+      ShowBorder = False
+      Index = 0
+    end
+    object lcMainGroup1: TdxLayoutGroup
+      Parent = lcMainGroup3
+      AlignHorz = ahLeft
+      AlignVert = avClient
+      CaptionOptions.Text = 'Link To:'
+      CaptionOptions.Visible = False
+      SizeOptions.Width = 125
+      ButtonOptions.Buttons = <>
+      ShowBorder = False
+      Index = 0
+    end
+    object lcMainSpaceItem1: TdxLayoutEmptySpaceItem
+      Parent = lcMainGroup2
+      CaptionOptions.Text = 'Empty Space Item'
+      SizeOptions.Height = 10
+      SizeOptions.Width = 10
+      Index = 1
+    end
+    object lcMainGroup2: TdxLayoutAutoCreatedGroup
+      Parent = lcMainGroup3
+      AlignHorz = ahClient
+      Index = 1
+    end
+    object lclbLinkTo: TdxLayoutLabeledItem
+      Parent = lcMainGroup1
+      CaptionOptions.Text = 'Link to:'
+      LayoutLookAndFeel = dxLayoutCxLookAndFeel1
+      Index = 0
+    end
+    object lcMainGroup14: TdxLayoutGroup
+      Parent = lcMainGroup_Root
+      AlignHorz = ahRight
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      ButtonOptions.Buttons = <>
+      LayoutDirection = ldHorizontal
+      ShowBorder = False
+      Index = 1
+    end
+    object lcbtnOK: TdxLayoutItem
+      Parent = lcMainGroup14
+      AlignHorz = ahLeft
+      AlignVert = avTop
+      CaptionOptions.Text = 'Ok'
+      CaptionOptions.Visible = False
+      Control = btnOK
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 85
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcbtnCancel: TdxLayoutItem
+      Parent = lcMainGroup14
+      CaptionOptions.Visible = False
+      Control = btnCancel
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 85
+      ControlOptions.ShowBorder = False
+      Index = 2
+    end
+    object lcEditAddress: TdxLayoutItem
+      Parent = lcMainGroup2
+      CaptionOptions.AlignHorz = taRightJustify
+      CaptionOptions.Text = 'Address:'
+      Control = edtAddress
+      ControlOptions.AlignHorz = ahRight
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 300
+      ControlOptions.ShowBorder = False
+      Index = 4
+    end
+    object lcMainSeparatorItem1: TdxLayoutSeparatorItem
+      Parent = lcMainGroup2
+      AlignVert = avBottom
+      CaptionOptions.Text = 'Separator'
+      Index = 0
+    end
+    object lcEditEMailAddress: TdxLayoutItem
+      Parent = lcMainGroup2
+      AlignHorz = ahClient
+      AlignVert = avTop
+      CaptionOptions.AlignHorz = taRightJustify
+      CaptionOptions.Text = 'E-mail address:'
+      Control = edtEmail
+      ControlOptions.AlignHorz = ahRight
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 300
+      ControlOptions.ShowBorder = False
+      Index = 5
+    end
+    object lcEditSubject: TdxLayoutItem
+      Parent = lcMainGroup2
+      CaptionOptions.AlignHorz = taRightJustify
+      CaptionOptions.Text = 'Subject:'
+      Control = edtSubject
+      ControlOptions.AlignHorz = ahRight
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 300
+      ControlOptions.ShowBorder = False
+      Index = 6
+    end
+    object lcEditTextToDisplay: TdxLayoutItem
+      Parent = lcMainGroup2
+      AlignHorz = ahClient
+      AlignVert = avTop
+      CaptionOptions.AlignHorz = taRightJustify
+      CaptionOptions.Text = '&Text to display:'
+      Control = edtTextToDisplay
+      ControlOptions.AlignHorz = ahRight
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 300
+      ControlOptions.ShowBorder = False
+      Index = 2
+    end
+    object lcEditCellRef: TdxLayoutItem
+      Parent = lcMainGroup2
+      CaptionOptions.AlignHorz = taRightJustify
+      CaptionOptions.Text = 'Type the cell reference:'
+      SizeOptions.Width = 300
+      Control = edtCellRef
+      ControlOptions.AlignHorz = ahRight
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 300
+      ControlOptions.ShowBorder = False
+      Index = 7
+    end
+    object lcEditScreenTip: TdxLayoutItem
+      Parent = lcMainGroup2
+      AlignHorz = ahClient
+      AlignVert = avTop
+      CaptionOptions.AlignHorz = taRightJustify
+      CaptionOptions.Text = 'ScreenTi&p:'
+      Control = edtScreenTip
+      ControlOptions.AlignHorz = ahRight
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 300
+      ControlOptions.ShowBorder = False
+      Index = 3
+    end
+    object lcEditPlaceInDocument: TdxLayoutItem
+      Parent = lcMainGroup2
+      AlignVert = avClient
+      CaptionOptions.AlignHorz = taRightJustify
+      CaptionOptions.AlignVert = tavTop
+      CaptionOptions.Text = 'Or select a place in this document:'
+      Control = tvDocumentPlace
+      ControlOptions.AlignHorz = ahRight
+      ControlOptions.OriginalHeight = 94
+      ControlOptions.OriginalWidth = 300
+      ControlOptions.ShowBorder = False
+      Index = 8
+    end
+    object lcbtnRemoveLink: TdxLayoutItem
+      Parent = lcMainGroup14
+      AlignVert = avClient
+      CaptionOptions.Text = 'New Item'
+      CaptionOptions.Visible = False
+      Control = btnRemoveLink
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 85
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lcFileOrWebPage: TdxLayoutItem
+      Parent = lcMainGroup1
+      CaptionOptions.AlignHorz = taCenter
+      CaptionOptions.Text = 'New Item'
+      CaptionOptions.Visible = False
+      CaptionOptions.Layout = clBottom
+      Control = pnFileOrWebPage
+      ControlOptions.AutoColor = True
+      ControlOptions.OriginalHeight = 86
+      ControlOptions.OriginalWidth = 125
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcPlaceInDocument: TdxLayoutItem
+      Parent = lcMainGroup1
+      CaptionOptions.AlignHorz = taCenter
+      CaptionOptions.Text = 'New Item'
+      CaptionOptions.Visible = False
+      CaptionOptions.Layout = clBottom
+      Control = pnPlaceInDocument
+      ControlOptions.AutoColor = True
+      ControlOptions.OriginalHeight = 86
+      ControlOptions.OriginalWidth = 125
+      ControlOptions.ShowBorder = False
+      Index = 2
+    end
+    object lcMainItem1: TdxLayoutItem
+      Parent = lcMainGroup1
+      CaptionOptions.AlignHorz = taCenter
+      CaptionOptions.Text = 'New Item'
+      CaptionOptions.Visible = False
+      CaptionOptions.Layout = clBottom
+      Control = pnEMail
+      ControlOptions.AutoColor = True
+      ControlOptions.OriginalHeight = 78
+      ControlOptions.OriginalWidth = 125
+      ControlOptions.ShowBorder = False
+      Index = 3
+    end
+  end
+  object dxLayoutLookAndFeelList1: TdxLayoutLookAndFeelList
+    Left = 424
+    Top = 232
+    object dxLayoutCxLookAndFeel1: TdxLayoutCxLookAndFeel
+      PixelsPerInch = 96
+    end
+  end
+  object ChooseFile: TFileOpenDialog
+    FavoriteLinks = <>
+    FileTypes = <>
+    Options = []
+    Left = 520
+    Top = 232
+  end
+end

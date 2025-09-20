@@ -1,0 +1,26 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="-463 265 32 32" style="enable-background:new -463 265 32 32;" xml:space="preserve">
+<style type="text/css">
+	.Black{fill:#3F3F3F;}
+	.st0{opacity:0.4;}
+</style>
+<g class="st0">
+	<rect x="-443" y="267" class="Black" width="4" height="2"/>
+	<polygon class="Black" points="-437,267 -437,269 -435,269 -435,271 -433,271 -433,267 	"/>
+	<rect x="-455" y="267" class="Black" width="4" height="2"/>
+	<rect x="-435" y="273" class="Black" width="2" height="4"/>
+	<polygon class="Black" points="-459,269 -457,269 -457,267 -461,267 -461,271 -459,271 	"/>
+	<rect x="-443" y="293" class="Black" width="4" height="2"/>
+	<rect x="-461" y="285" class="Black" width="2" height="4"/>
+	<polygon class="Black" points="-435,293 -437,293 -437,295 -433,295 -433,291 -435,291 	"/>
+	<rect x="-435" y="279" class="Black" width="2" height="4"/>
+	<rect x="-455" y="293" class="Black" width="4" height="2"/>
+	<rect x="-449" y="267" class="Black" width="4" height="2"/>
+	<rect x="-461" y="279" class="Black" width="2" height="4"/>
+	<polygon class="Black" points="-459,291 -461,291 -461,295 -457,295 -457,293 -459,293 	"/>
+	<rect x="-461" y="273" class="Black" width="2" height="4"/>
+	<rect x="-449" y="293" class="Black" width="4" height="2"/>
+	<rect x="-435" y="285" class="Black" width="2" height="4"/>
+</g>
+<rect x="-459" y="279" class="Black" width="24" height="4" transform="matrix(0, 1, -1, 0, -166, 728)"></rect>
+</svg>

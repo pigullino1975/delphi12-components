@@ -1,0 +1,6 @@
+This demo shows a simple application built with the PDF Viewer control. In this demo, you can:
+
+- "Open..." a PDF document.
+- "Append..." another PDF document to the end of the current document.
+- "Save..." the resulting document.
+- Click "New" to clear the current document.

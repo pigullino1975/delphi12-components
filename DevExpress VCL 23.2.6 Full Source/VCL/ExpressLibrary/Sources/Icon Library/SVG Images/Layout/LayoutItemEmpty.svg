@@ -1,0 +1,21 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve">
+<style type="text/css">
+	.Black{fill:#3F3F3F;}
+</style>
+<g transform="matrix(1, 0, 0, 1, -0.233091, -0.641)">
+	<rect x="20.2" y="4.659" class="Black" width="4" height="2"></rect>
+	<polygon class="Black" points="26.2 4.659 26.2 6.659 29.2 6.659 29.2 9.659 31.2 9.659 31.2 4.659"></polygon>
+	<rect x="8.2" y="4.659" class="Black" width="4" height="2"></rect>
+	<polygon class="Black" points="3.2 6.659 6.2 6.659 6.2 4.659 1.2 4.659 1.2 9.659 3.2 9.659"></polygon>
+	<rect x="1.2" y="17.659" class="Black" width="2" height="4"></rect>
+	<rect x="14.2" y="4.659" class="Black" width="4" height="2"></rect>
+	<polygon class="Black" points="3.2 23.659 1.2 23.659 1.2 28.659 6.2 28.659 6.2 26.659 3.2 26.659"></polygon>
+	<rect x="1.2" y="11.659" class="Black" width="2" height="4"></rect>
+	<polygon class="Black" points="26.2 26.659 26.2 28.659 31.2 28.659 31.2 23.659 29.2 23.659 29.2 26.659"></polygon>
+	<rect x="29.2" y="17.659" class="Black" width="2" height="4"></rect>
+	<rect x="29.2" y="11.659" class="Black" width="2" height="4"></rect>
+	<rect x="20.2" y="26.659" class="Black" width="4" height="2"></rect>
+	<rect x="8.2" y="26.659" class="Black" width="4" height="2"></rect>
+	<polygon class="Black" points="14.2 26.659 18.2 26.659 18.2 28.659 14.2 28.659"></polygon>
+</g>
+</svg>

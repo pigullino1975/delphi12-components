@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="_x33__Stars" x="0px" y="0px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+	.Yellow{fill:#FFB115;}
+	.Black{fill:#727272;}
+	.st0{opacity:0.5;}
+</style>
+  <g class="st0" transform="matrix(1, 0, 0, 1, -14.116147, 0.020975)">
+    <path class="Black" d="M28.3,6.6L23.9,6L22,2v10 l3.9,2l-0.7-4.3L28.3,6.6z"/>
+  </g>
+  <path class="Yellow" d="M 7.863 11.959 L 7.863 1.959 L 5.963 5.959 L 1.563 6.559 L 4.763 9.659 L 3.963 13.959 L 7.863 11.959 Z"/>
+</svg>

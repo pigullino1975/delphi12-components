@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="_x34__Ratings" x="0px" y="0px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+	.Black{fill:#727272;}
+	.Blue{fill:#1177D7;}
+	.st0{opacity:0.5;}
+</style>
+  <path class="Blue" d="M 2.98 14.026 L 0.98 14.026 L 0.98 8.026 L 2.98 8.026 L 2.98 14.026 Z M 6.98 14.026 L 4.98 14.026 L 4.98 6.026 L 6.98 6.026 L 6.98 14.026 Z"/>
+  <g class="st0" transform="matrix(1, 0, 0, 1, 0.979832, 0.025784)">
+    <path class="Black" d="M10,4H8v10h2V4z M14,2h-2v12h2V2z"/>
+  </g>
+</svg>

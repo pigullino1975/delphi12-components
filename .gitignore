@@ -1,0 +1,83 @@
+# Delphi specific files
+*.dcu
+*.~*
+*.local
+*.identcache
+*.tgs
+*.tgw
+*.dsk
+*.dcu
+*.ddp
+*.rsm
+*.tvsconfig
+*.dproj.local
+*.groupproj.local
+*.cbproj.local
+
+# Compiled Output
+Win32/
+Win64/
+OSX32/
+OSX64/
+Linux64/
+Android/
+iOS32/
+iOS64/
+Debug/
+Release/
+__history/
+__recovery/
+
+# Project specific
+*.exe
+*.dll
+*.map
+*.tds
+*.res
+*.pdb
+*.ilk
+*.lib
+*.exp
+*.obj
+*.o
+*.so
+*.dylib
+
+# IDE files
+*.cfg
+*.dof
+*.bdsproj
+*.cbproj
+*.dpr.cfg
+*.groupproj
+*.stat
+
+# Backup files
+*.backup
+*.bak
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Git
+.git/
+
+# Node modules (if any web components)
+node_modules/
+
+# Build directories
+build/
+dist/

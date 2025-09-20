@@ -1,0 +1,14 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<style type="text/css">
+	.Black{fill:#3F3F3F;}
+	.Blue{fill:#1177D7;}
+	.Green{fill:#039C23;}
+</style>
+<polygon class="Black" points="30,2 30,8 32,8 32,0 24,0 24,2 "/>
+<polygon class="Black" points="2,2 8,2 8,0 0,0 0,8 2,8 "/>
+<polygon class="Black" points="2,30 2,24 0,24 0,32 8,32 8,30 "/>
+<polygon class="Black" points="30,30 24,30 24,32 32,32 32,24 30,24 "/>
+<rect x="14" y="6" class="Green" width="12" height="12"/>
+<rect x="6" y="12" class="Blue" width="14" height="14"/>
+</svg>

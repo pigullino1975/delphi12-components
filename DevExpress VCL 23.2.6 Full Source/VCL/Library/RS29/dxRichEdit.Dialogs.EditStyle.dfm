@@ -1,0 +1,1718 @@
+inherited dxRichEditEditStyleDialogForm: TdxRichEditEditStyleDialogForm
+  Caption = 'Modify Style'
+  ClientHeight = 452
+  ClientWidth = 524
+  OnCloseQuery = FormCloseQuery
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited dxLayoutControl1: TdxLayoutControl
+    Width = 524
+    Height = 452
+    object edtName: TcxTextEdit [0]
+      Left = 164
+      Top = 77
+      Style.HotTrack = False
+      TabOrder = 1
+      Width = 350
+    end
+    object cmbParent: TcxComboBox [1]
+      Left = 164
+      Top = 104
+      Properties.DropDownListStyle = lsFixedList
+      Style.HotTrack = False
+      TabOrder = 2
+      Width = 350
+    end
+    object cmbNextStyle: TcxComboBox [2]
+      Left = 164
+      Top = 131
+      Properties.DropDownListStyle = lsFixedList
+      Style.HotTrack = False
+      TabOrder = 3
+      Width = 350
+    end
+    object cmbCurrentStyle: TcxComboBox [3]
+      Left = 164
+      Top = 30
+      Properties.DropDownListStyle = lsFixedList
+      Style.HotTrack = False
+      TabOrder = 0
+      Width = 350
+    end
+    object cmbFontEdit: TdxRichEditFontNameComboBox [4]
+      Left = 10
+      Top = 179
+      Properties.FontPreview.Visible = False
+      Properties.ItemHeight = 24
+      Properties.OnChange = FontEditPropertiesChange
+      Style.HotTrack = False
+      TabOrder = 4
+      Width = 121
+    end
+    object cmbFontSize: TcxComboBox [5]
+      Left = 137
+      Top = 179
+      Style.HotTrack = False
+      TabOrder = 5
+      Width = 62
+    end
+    object cmbFontColor: TdxColorEdit [6]
+      Left = 283
+      Top = 179
+      Properties.OnChange = FontColorPropertiesChange
+      Style.HotTrack = False
+      TabOrder = 9
+      Width = 121
+    end
+    object btnToggleParagraphAlignmentLeft: TcxButton [7]
+      Left = 10
+      Top = 220
+      Width = 25
+      Height = 25
+      Action = aToggleParagraphAlignmentLeft
+      PaintStyle = bpsGlyph
+      ParentShowHint = False
+      ShowHint = True
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 10
+    end
+    object btnToggleParagraphAlignmentCenter: TcxButton [8]
+      Left = 35
+      Top = 220
+      Width = 25
+      Height = 25
+      Action = aToggleParagraphAlignmentCenter
+      PaintStyle = bpsGlyph
+      ParentShowHint = False
+      ShowHint = True
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 11
+    end
+    object btnToggleParagraphAlignmentRight: TcxButton [9]
+      Left = 60
+      Top = 220
+      Width = 25
+      Height = 25
+      Action = aToggleParagraphAlignmentRight
+      PaintStyle = bpsGlyph
+      ParentShowHint = False
+      ShowHint = True
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 12
+    end
+    object btnToggleParagraphAlignmentJustify: TcxButton [10]
+      Left = 85
+      Top = 220
+      Width = 25
+      Height = 25
+      Action = aToggleParagraphAlignmentJustify
+      PaintStyle = bpsGlyph
+      ParentShowHint = False
+      ShowHint = True
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 13
+    end
+    object btnSingleParagraphSpacing: TcxButton [11]
+      Left = 116
+      Top = 220
+      Width = 25
+      Height = 25
+      Action = aSetSingleParagraphSpacing
+      PaintStyle = bpsGlyph
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 14
+    end
+    object btnIncreaseParagraphSpacing: TcxButton [12]
+      Left = 197
+      Top = 220
+      Width = 25
+      Height = 25
+      Action = aSpacingIncrease
+      PaintStyle = bpsGlyph
+      ParentShowHint = False
+      ShowHint = True
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 17
+    end
+    object btnDecreaseParagraphSpacing: TcxButton [13]
+      Left = 222
+      Top = 220
+      Width = 25
+      Height = 25
+      Action = aSpacingDecrease
+      PaintStyle = bpsGlyph
+      ParentShowHint = False
+      ShowHint = True
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 18
+    end
+    object btnDecrementIndent: TcxButton [14]
+      Left = 253
+      Top = 220
+      Width = 25
+      Height = 25
+      Action = aDecrementIndent
+      PaintStyle = bpsGlyph
+      ParentShowHint = False
+      ShowHint = True
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 19
+    end
+    object btnIncrementIndent: TcxButton [15]
+      Left = 278
+      Top = 220
+      Width = 25
+      Height = 25
+      Action = aIncrementIndent
+      PaintStyle = bpsGlyph
+      ParentShowHint = False
+      ShowHint = True
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 20
+    end
+    object PreviewRichEditControl: TdxRichEditControl [16]
+      Left = 10
+      Top = 251
+      Width = 504
+      Height = 149
+      ActiveViewType = Simple
+      Enabled = False
+      Options.HorizontalRuler.Visibility = Hidden
+      Options.HorizontalScrollbar.Visibility = Hidden
+      Options.VerticalRuler.Visibility = Hidden
+      Options.VerticalScrollbar.Visibility = Hidden
+      TabOrder = 21
+    end
+    object btnFormat: TcxButton [17]
+      Left = 10
+      Top = 406
+      Width = 75
+      Height = 25
+      Caption = 'F&ormat'
+      DropDownMenu = pmFormat
+      Kind = cxbkOfficeDropDown
+      TabOrder = 22
+    end
+    object btnOk: TcxButton [18]
+      Left = 358
+      Top = 406
+      Width = 75
+      Height = 25
+      Caption = 'OK'
+      Default = True
+      ModalResult = 1
+      TabOrder = 23
+    end
+    object btnCancel: TcxButton [19]
+      Left = 439
+      Top = 406
+      Width = 75
+      Height = 25
+      Cancel = True
+      Caption = 'Cancel'
+      ModalResult = 2
+      TabOrder = 24
+    end
+    object btnToggleFontBold: TcxButton [20]
+      Left = 193
+      Top = 178
+      Width = 24
+      Height = 24
+      Action = aToggleFontBold
+      LookAndFeel.Kind = lfStandard
+      PaintStyle = bpsGlyph
+      ParentShowHint = False
+      ShowHint = True
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 6
+      TabStop = False
+    end
+    object btnToggleFontItalic: TcxButton [21]
+      Left = 217
+      Top = 178
+      Width = 24
+      Height = 24
+      Action = aToggleFontItalic
+      LookAndFeel.Kind = lfStandard
+      PaintStyle = bpsGlyph
+      ParentShowHint = False
+      ShowHint = True
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 7
+      TabStop = False
+    end
+    object btnToggleFontUnderline: TcxButton [22]
+      Left = 241
+      Top = 178
+      Width = 24
+      Height = 24
+      Action = aToggleFontUnderline
+      LookAndFeel.Kind = lfStandard
+      PaintStyle = bpsGlyph
+      ParentShowHint = False
+      ShowHint = True
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 8
+      TabStop = False
+    end
+    object btnSesquialteralParagraphSpacing: TcxButton [23]
+      Left = 141
+      Top = 220
+      Width = 25
+      Height = 25
+      Action = aSetSesquialteralParagraphSpacing
+      PaintStyle = bpsGlyph
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 15
+    end
+    object btnDoubleParagraphSpacing: TcxButton [24]
+      Left = 166
+      Top = 220
+      Width = 25
+      Height = 25
+      Action = aSetDoubleParagraphSpacing
+      PaintStyle = bpsGlyph
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 16
+    end
+    object lcMainGroup_Root: TdxLayoutGroup
+      Parent = dxLayoutControl1Group_Root
+      CaptionOptions.Text = 'New Group'
+      ShowBorder = False
+      Index = 0
+    end
+    object lblSelectedStyle: TdxLayoutSeparatorItem
+      Parent = lcMainGroup_Root
+      CaptionOptions.Text = 'Select Style'
+      CaptionOptions.Visible = True
+      Index = 0
+    end
+    object dxLayoutControl1Group1: TdxLayoutGroup
+      Parent = lcMainGroup_Root
+      CaptionOptions.Text = 'New Group'
+      ShowBorder = False
+      Index = 3
+    end
+    object lblProperties: TdxLayoutSeparatorItem
+      Parent = lcMainGroup_Root
+      CaptionOptions.Text = 'Properties'
+      CaptionOptions.Visible = True
+      Index = 2
+    end
+    object lcilName: TdxLayoutItem
+      Parent = dxLayoutControl1Group1
+      CaptionOptions.Text = '&Name:'
+      Control = edtName
+      ControlOptions.AlignHorz = ahRight
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 350
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lcilStyleBasedOn: TdxLayoutItem
+      Parent = dxLayoutControl1Group1
+      CaptionOptions.Text = 'Style &based on:'
+      Control = cmbParent
+      ControlOptions.AlignHorz = ahRight
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 350
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lciStyleForFollowingParagraph: TdxLayoutItem
+      Parent = dxLayoutControl1Group1
+      CaptionOptions.Text = '&Style for following paragraph:'
+      Control = cmbNextStyle
+      ControlOptions.AlignHorz = ahRight
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 350
+      ControlOptions.ShowBorder = False
+      Index = 2
+    end
+    object lblFormatting: TdxLayoutSeparatorItem
+      Parent = lcMainGroup_Root
+      CaptionOptions.Text = 'Formatting'
+      CaptionOptions.Visible = True
+      Index = 4
+    end
+    object lciCurrentStyle: TdxLayoutItem
+      Parent = lcMainGroup_Root
+      CaptionOptions.Text = 'Current style:'
+      Control = cmbCurrentStyle
+      ControlOptions.AlignHorz = ahRight
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 350
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object dxLayoutControl1Item14: TdxLayoutSeparatorItem
+      Parent = lcMainGroup_Root
+      LayoutLookAndFeel = dxLayoutBarLookAndFeel
+      Index = 6
+    end
+    object lcgBarFontFormatting: TdxLayoutGroup
+      Parent = lcMainGroup_Root
+      CaptionOptions.Text = 'New Group'
+      LayoutDirection = ldHorizontal
+      ShowBorder = False
+      Index = 5
+    end
+    object dxLayoutControl1Item8: TdxLayoutItem
+      Parent = lcgBarFontFormatting
+      AlignHorz = ahLeft
+      AlignVert = avCenter
+      CaptionOptions.Visible = False
+      Control = cmbFontEdit
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 121
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object dxLayoutControl1Item9: TdxLayoutItem
+      Parent = lcgBarFontFormatting
+      AlignVert = avCenter
+      CaptionOptions.Visible = False
+      Control = cmbFontSize
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 62
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object dxLayoutControl1Item10: TdxLayoutItem
+      Parent = lcgBarFontFormatting
+      AlignVert = avCenter
+      CaptionOptions.Visible = False
+      Control = cmbFontColor
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 121
+      ControlOptions.ShowBorder = False
+      Index = 5
+    end
+    object dxLayoutControl1Group2: TdxLayoutGroup
+      Parent = lcMainGroup_Root
+      CaptionOptions.Text = 'New Group'
+      LayoutLookAndFeel = dxLayoutBarLookAndFeel
+      LayoutDirection = ldHorizontal
+      ShowBorder = False
+      Index = 7
+    end
+    object dxLayoutControl1Item15: TdxLayoutItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'cxButton4'
+      CaptionOptions.Visible = False
+      Control = btnToggleParagraphAlignmentLeft
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 25
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object dxLayoutControl1Item16: TdxLayoutItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'cxButton5'
+      CaptionOptions.Visible = False
+      Control = btnToggleParagraphAlignmentCenter
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 25
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object dxLayoutControl1Item17: TdxLayoutItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'cxButton6'
+      CaptionOptions.Visible = False
+      Control = btnToggleParagraphAlignmentRight
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 25
+      ControlOptions.ShowBorder = False
+      Index = 2
+    end
+    object dxLayoutControl1Item18: TdxLayoutItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'cxButton7'
+      CaptionOptions.Visible = False
+      Control = btnToggleParagraphAlignmentJustify
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 25
+      ControlOptions.ShowBorder = False
+      Index = 3
+    end
+    object dxLayoutControl1Item19: TdxLayoutItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'cxButton8'
+      CaptionOptions.Visible = False
+      Control = btnSingleParagraphSpacing
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 25
+      ControlOptions.ShowBorder = False
+      Index = 5
+    end
+    object dxLayoutControl1Item20: TdxLayoutItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'cxButton9'
+      CaptionOptions.Visible = False
+      Control = btnIncreaseParagraphSpacing
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 25
+      ControlOptions.ShowBorder = False
+      Index = 9
+    end
+    object dxLayoutControl1Item21: TdxLayoutItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'cxButton10'
+      CaptionOptions.Visible = False
+      Control = btnDecreaseParagraphSpacing
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 25
+      ControlOptions.ShowBorder = False
+      Index = 10
+    end
+    object dxLayoutControl1Item22: TdxLayoutItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'cxButton11'
+      CaptionOptions.Visible = False
+      Control = btnDecrementIndent
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 25
+      ControlOptions.ShowBorder = False
+      Index = 12
+    end
+    object dxLayoutControl1Item23: TdxLayoutItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'cxButton12'
+      CaptionOptions.Visible = False
+      Control = btnIncrementIndent
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 25
+      ControlOptions.ShowBorder = False
+      Index = 13
+    end
+    object dxLayoutControl1Item24: TdxLayoutItem
+      Parent = lcMainGroup_Root
+      CaptionOptions.Visible = False
+      Control = PreviewRichEditControl
+      ControlOptions.AutoColor = True
+      ControlOptions.OriginalHeight = 149
+      ControlOptions.OriginalWidth = 504
+      ControlOptions.ShowBorder = False
+      Enabled = False
+      Index = 8
+    end
+    object dxLayoutControl1Item25: TdxLayoutItem
+      Parent = dxLayoutControl1Group4
+      AlignHorz = ahLeft
+      CaptionOptions.Text = 'cxButton13'
+      CaptionOptions.Visible = False
+      Control = btnFormat
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 75
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object dxLayoutControl1Item26: TdxLayoutItem
+      Parent = dxLayoutControl1Group4
+      AlignHorz = ahRight
+      CaptionOptions.Text = 'cxButton14'
+      CaptionOptions.Visible = False
+      Control = btnOk
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 75
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object dxLayoutControl1Group4: TdxLayoutAutoCreatedGroup
+      Parent = dxLayoutControl1Group_Root
+      LayoutDirection = ldHorizontal
+      Index = 1
+    end
+    object dxLayoutControl1Item27: TdxLayoutItem
+      Parent = dxLayoutControl1Group4
+      AlignHorz = ahRight
+      CaptionOptions.Text = 'cxButton15'
+      CaptionOptions.Visible = False
+      Control = btnCancel
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 75
+      ControlOptions.ShowBorder = False
+      Index = 2
+    end
+    object dxLayoutControl1Group3: TdxLayoutGroup
+      Parent = lcgBarFontFormatting
+      AlignVert = avClient
+      CaptionOptions.Text = 'New Group'
+      LayoutLookAndFeel = dxLayoutBarLookAndFeel
+      LayoutDirection = ldHorizontal
+      ShowBorder = False
+      Index = 3
+    end
+    object dxLayoutControl1Item12: TdxLayoutItem
+      Parent = dxLayoutControl1Group3
+      CaptionOptions.Text = 'cxButton2'
+      CaptionOptions.Visible = False
+      Control = btnToggleFontBold
+      ControlOptions.OriginalHeight = 24
+      ControlOptions.OriginalWidth = 24
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object dxLayoutControl1Item13: TdxLayoutItem
+      Parent = dxLayoutControl1Group3
+      CaptionOptions.Text = 'cxButton3'
+      CaptionOptions.Visible = False
+      Control = btnToggleFontItalic
+      ControlOptions.OriginalHeight = 24
+      ControlOptions.OriginalWidth = 24
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object dxLayoutControl1Item11: TdxLayoutItem
+      Parent = dxLayoutControl1Group3
+      CaptionOptions.Text = 'cxButton1'
+      CaptionOptions.Visible = False
+      Control = btnToggleFontUnderline
+      ControlOptions.OriginalHeight = 24
+      ControlOptions.OriginalWidth = 24
+      ControlOptions.ShowBorder = False
+      Index = 2
+    end
+    object dxLayoutSeparatorItem1: TdxLayoutSeparatorItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'Separator'
+      Index = 4
+    end
+    object dxLayoutSeparatorItem2: TdxLayoutSeparatorItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'Separator'
+      Index = 8
+    end
+    object dxLayoutSeparatorItem3: TdxLayoutSeparatorItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'Separator'
+      Index = 11
+    end
+    object dxLayoutItem1: TdxLayoutItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'cxButton1'
+      CaptionOptions.Visible = False
+      Control = btnSesquialteralParagraphSpacing
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 25
+      ControlOptions.ShowBorder = False
+      Index = 6
+    end
+    object dxLayoutItem2: TdxLayoutItem
+      Parent = dxLayoutControl1Group2
+      CaptionOptions.Text = 'cxButton2'
+      CaptionOptions.Visible = False
+      Control = btnDoubleParagraphSpacing
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 25
+      ControlOptions.ShowBorder = False
+      Index = 7
+    end
+    object dxLayoutSeparatorItem4: TdxLayoutSeparatorItem
+      Parent = lcgBarFontFormatting
+      CaptionOptions.Text = 'Separator'
+      Index = 2
+    end
+    object dxLayoutSeparatorItem5: TdxLayoutSeparatorItem
+      Parent = lcgBarFontFormatting
+      CaptionOptions.Text = 'Separator'
+      Index = 4
+    end
+  end
+  inherited dxLayoutLookAndFeelList1: TdxLayoutLookAndFeelList
+    Left = 64
+    Top = 344
+    inherited dxLayoutCxLookAndFeel1: TdxLayoutCxLookAndFeel
+      PixelsPerInch = 96
+    end
+    object dxLayoutBarLookAndFeel: TdxLayoutStandardLookAndFeel
+      Offsets.ItemOffset = 0
+      PixelsPerInch = 96
+    end
+  end
+  object pmFormat: TPopupMenu
+    Left = 168
+    Top = 344
+    object miFontDialog: TMenuItem
+      Action = aFontDialog
+    end
+    object miParagraphDialog: TMenuItem
+      Action = aParagraphDialog
+    end
+    object miTabsDialog: TMenuItem
+      Action = aTabsDialog
+    end
+  end
+  object ilActions: TcxImageList
+    SourceDPI = 96
+    FormatVersion = 1
+    Left = 336
+    Top = 344
+    Bitmap = {
+      494C01010F001800040010001000FFFFFFFF2100FFFFFFFFFFFFFFFF424D3600
+      0000000000003600000028000000400000004000000001002000000000000040
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000040000
+      0004000000040000000400000004000000040000000400000004000000040000
+      0004000000040000000400000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000666666F36D6D
+      6DFB6D6D6DFB6D6D6DFB6D6D6DFB6D6D6DFB6D6D6DFB6D6D6DFB6D6D6DFB6D6D
+      6DFB6D6D6DFB6D6D6DFB00000008000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000040000
+      0004000000040000000400000004000000040000000400000004000000040000
+      0004000000040000000400000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000046D6D6DFB6D6D
+      6DFB6D6D6DFB6D6D6DFB6D6D6DFB6D6D6DFB6D6D6DFB6D6D6DFB6D6D6DFB6D6D
+      6DFB6D6D6DFB6A6A6AF700000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000000E0701420000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000D77610FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000371E0482D77610FF371E
+      0482000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000D77610FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF0000000000000000371E0482D77610FFD77610FFD776
+      10FF371E04820000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000D77610FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000D77610FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000341D037ED77610FFD77610FFD776
+      10FF341D037E0000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000D77610FF0000
+      00000000000000000000717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF717171FF0000000000000000341D037ED77610FF341D
+      037E0000000000000000717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF717171FF000000000000000000000000000000000000
+      0000080400320000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000070400310000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000D77610FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000000C07003E0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000CF7210FA371E04820000000600000000717171FF717171FF717171FF7171
+      71FF717171FF717171FF0000000000000000000000000000000000000006361E
+      0481CF7210FA000000000000000000000000717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000D77610FFD776
+      10FFD77610FFD77610FF552E06A0000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000532D069ED776
+      10FFD77610FFD77610FFD77610FF000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF717171FF000000000000000000000000000000000000
+      00000000000000000000717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF717171FF000000000000000000000000000000000000
+      0000CD7010F9341D037E0000000500000000717171FF717171FF717171FF7171
+      71FF717171FF717171FF0000000000000000000000000000000000000005331C
+      037DCD7010F9000000000000000000000000717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000704002F0000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000703002E0000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000D77610FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000000E0701420000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000D77610FF0000
+      00000000000000000000717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF717171FF0000000000000000371E0482D77610FF371E
+      04820000000000000000717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF717171FF000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000D77610FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000371E0482D77610FFD77610FFD776
+      10FF371E04820000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF0000000000000000341D037ED77610FFD77610FFD776
+      10FF341D037E0000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000D77610FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000341D037ED77610FF341D
+      037E000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000D77610FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000000C07003E0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000D77610FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      0000717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      0000080400320000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000CF7210FA371E04820000000600000000717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000D77610FFD776
+      10FFD77610FFD77610FF552E06A0000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000CD7010F9341D037E0000000500000000717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      0000717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      00000704002F0000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000007171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF0000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000717171FF717171FF717171FF717171FF707070FE585858E12323238F0000
+      0010000000000000000000000000000000000000000000000000000000000000
+      000004040430717171FF717171FF717171FF535353DB00000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000717171FF717171FF5B5B5BE5484848CB595959E2717171FF717171FF4545
+      45C8000000020000000000000000000000000000000000000000000000000000
+      00000000000000000000595959E25E5E5EE90000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000F0F0F5F4D4D4DD36D6D6DFB6B6B6BF9474747CA0B0B0B520000
+      0000000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      0000717171FF717171FF1C1C1C80000000000000000125252593717171FF7171
+      71FF050505390000000000000000000000000000000000000000000000000000
+      00000000000000000000333333AC717171FF0101012000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000D0D0D59717171FF606060EB2323238F2121218A5A5A5AE3717171FE0A0A
+      0A4E000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000717171FF717171FF1C1C1C8000000000000000000C0C0C56717171FF7171
+      71FF090909480000000000000000000000000000000000000000000000000000
+      0000000000000000000018181876717171FF0D0D0D5700000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000464646C86F6F6FFC0303032C0000000000000000010101206B6B6BF84343
+      43C3000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000717171FF717171FF2C2C2CA0070707400D0D0D59525252D9717171FF5B5B
+      5BE50000000C0000000000000000000000000000000000000000000000000000
+      0000000000000000000007070740717171FF2222228C00000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000686868F5484848CC00000000000000000000000000000000424242C36969
+      69F6000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000717171FF717171FF717171FF717171FF717171FF696969F62E2E2EA30202
+      0223000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000D6F6F6FFC414141C200000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000717171FE393939B500000000000000000000000000000000353535B07171
+      71FF000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      0000717171FF717171FF434343C52222228C3E3E3EBD717171FF404040C00000
+      0016000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000004E4E4ED3676767F400000004000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000717171FF373737B300000000000000000000000000000000353535AF7171
+      71FF000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000717171FF717171FF1C1C1C8000000000000000014E4E4ED4717171FF3030
+      30A7000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000002A2A2A9D717171FF0303032F000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000717171FF373737B300000000000000000000000000000000353535AF7171
+      71FF000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000717171FF717171FF1C1C1C8000000000010101195A5A5AE4717171FF5050
+      50D6000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000012121268717171FF11111165000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000717171FF373737B300000000000000000000000000000000353535AF7171
+      71FF000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000717171FF717171FF676767F35E5E5EE96F6F6FFC717171FF717171FF2323
+      238E000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000004040432717171FF2929299A000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000717171FF373737B300000000000000000000000000000000353535AF7171
+      71FF000000000000000000000000000000000000000000000000717171FF7171
+      71FF717171FF717171FF717171FF717171FF717171FF717171FF717171FF7171
+      71FF717171FF717171FF00000000000000000000000000000000000000000000
+      0000717171FF717171FF717171FF717171FF6B6B6BF84F4F4FD51A1A1A7A0000
+      0005000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000017717171FF717171FF717171FF5E5E5EE80000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000717171FF373737B300000000000000000000000000000000353535AF7171
+      71FF000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000424D3E000000000000003E000000
+      2800000040000000400000000100010000000000000200000000000000000000
+      000000000000000000000000FFFFFF0000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000}
+    DesignInfo = 22544720
+    ImageInfo = <
+      item
+        ImageClass = 'TdxSmartImage'
+        Image.Data = {
+          3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+          462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D2242
+          6F6C642220786D6C6E733D22687474703A2F2F7777772E77332E6F72672F3230
+          30302F7376672220786D6C6E733A786C696E6B3D22687474703A2F2F7777772E
+          77332E6F72672F313939392F786C696E6B2220783D223070782220793D223070
+          78222076696577426F783D2230203020333220333222207374796C653D22656E
+          61626C652D6261636B67726F756E643A6E6577203020302033322033323B2220
+          786D6C3A73706163653D227072657365727665223E262331333B262331303B3C
+          7374796C6520747970653D22746578742F637373223E2E426C61636B7B66696C
+          6C3A233732373237323B7D3C2F7374796C653E0D0A3C7061746820636C617373
+          3D22426C61636B2220643D224D382C32365634683863322E352C302C342E332C
+          302E352C352E372C312E3463312E332C302E392C322C322E322C322C332E3863
+          302C312E322D302E342C322E322D312E322C332E31632D302E382C302E392D31
+          2E382C312E352D332E312C312E3976302E3120202623393B63312E362C302E32
+          2C322E382C302E382C332E382C312E3763302E392C312C312E342C322E312C31
+          2E342C332E3563302C322D302E372C332E362D322E322C342E384332302E392C
+          32352E342C31392C32362C31362E352C323648387A204D31332C372E3776352E
+          3268322E3220202623393B63312C302C312E382D302E322C322E342D302E3763
+          302E362D302E352C302E392D312E322C302E392D3263302D312E362D312E322D
+          322E342D332E362D322E344831337A204D31332C31362E3676352E3868322E37
+          63312E312C302C322D302E332C322E372D302E3863302E362D302E352C312D31
+          2E332C312D322E3220202623393B63302D302E392D302E332D312E362D312D32
+          2E31632D302E362D302E352D312E352D302E382D322E372D302E384831337A22
+          2F3E0D0A3C2F7376673E0D0A}
+        FileName = 'SVG Images\RichEdit\Bold.svg'
+        Keywords = 'RichEdit;Bold'
+      end
+      item
+        ImageClass = 'TdxSmartImage'
+        Image.Data = {
+          3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+          462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D2249
+          74616C69632220786D6C6E733D22687474703A2F2F7777772E77332E6F72672F
+          323030302F7376672220786D6C6E733A786C696E6B3D22687474703A2F2F7777
+          772E77332E6F72672F313939392F786C696E6B2220783D223070782220793D22
+          307078222076696577426F783D2230203020333220333222207374796C653D22
+          656E61626C652D6261636B67726F756E643A6E6577203020302033322033323B
+          2220786D6C3A73706163653D227072657365727665223E262331333B26233130
+          3B3C7374796C6520747970653D22746578742F637373223E2E426C61636B7B66
+          696C6C3A233732373237323B7D3C2F7374796C653E0D0A3C706F6C79676F6E20
+          636C6173733D22426C61636B2220706F696E74733D2232312E362C362032322C
+          342031342C342031332E362C362031352E382C362031322C323420392E382C32
+          3420392E342C32362031372E362C32362031372E382C32342031352E362C3234
+          2031392E342C3620222F3E0D0A3C2F7376673E0D0A}
+        FileName = 'SVG Images\Format\Italic.svg'
+        Keywords = 'Format;Italic'
+      end
+      item
+        ImageClass = 'TdxSmartImage'
+        Image.Data = {
+          3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+          462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D2255
+          6E6465726C696E652220786D6C6E733D22687474703A2F2F7777772E77332E6F
+          72672F323030302F7376672220786D6C6E733A786C696E6B3D22687474703A2F
+          2F7777772E77332E6F72672F313939392F786C696E6B2220783D223070782220
+          793D22307078222076696577426F783D2230203020333220333222207374796C
+          653D22656E61626C652D6261636B67726F756E643A6E65772030203020333220
+          33323B2220786D6C3A73706163653D227072657365727665223E262331333B26
+          2331303B3C7374796C6520747970653D22746578742F637373223E2E426C6163
+          6B7B66696C6C3A233732373237323B7D3C2F7374796C653E0D0A3C7061746820
+          636C6173733D22426C61636B2220643D224D382C31352E37563468332E347631
+          3163302C342C312E362C362C342E372C3663332C302C342E352D312E392C342E
+          352D352E3856344832347631312E3463302C352E372D322E372C382E362D382E
+          322C382E3620202623393B4331302E362C32342C382C32312E322C382C31352E
+          377A204D362C32387632683230762D3248367A222F3E0D0A3C2F7376673E0D0A}
+        FileName = 'SVG Images\Format\Underline.svg'
+        Keywords = 'Format;Underline'
+      end
+      item
+        ImageClass = 'TdxSmartImage'
+        Image.Data = {
+          3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+          462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D224C
+          617965725F312220786D6C6E733D22687474703A2F2F7777772E77332E6F7267
+          2F323030302F7376672220786D6C6E733A786C696E6B3D22687474703A2F2F77
+          77772E77332E6F72672F313939392F786C696E6B2220783D223070782220793D
+          22307078222076696577426F783D2230203020333220333222207374796C653D
+          22656E61626C652D6261636B67726F756E643A6E657720302030203332203332
+          3B2220786D6C3A73706163653D227072657365727665223E262331333B262331
+          303B3C7374796C6520747970653D22746578742F6373732220786D6C3A737061
+          63653D227072657365727665223E2E59656C6C6F777B66696C6C3A2346464231
+          31353B7D262331333B262331303B2623393B2E5265647B66696C6C3A23443131
+          4331433B7D262331333B262331303B2623393B2E426C75657B66696C6C3A2331
+          31373744373B7D262331333B262331303B2623393B2E477265656E7B66696C6C
+          3A233033394332333B7D262331333B262331303B2623393B2E426C61636B7B66
+          696C6C3A233732373237323B7D262331333B262331303B2623393B2E57686974
+          657B66696C6C3A234646464646463B7D262331333B262331303B2623393B2E73
+          74307B6F7061636974793A302E353B7D262331333B262331303B2623393B2E73
+          74317B646973706C61793A6E6F6E653B7D262331333B262331303B2623393B2E
+          7374327B646973706C61793A696E6C696E653B66696C6C3A233033394332333B
+          7D262331333B262331303B2623393B2E7374337B646973706C61793A696E6C69
+          6E653B66696C6C3A234431314331433B7D262331333B262331303B2623393B2E
+          7374347B646973706C61793A696E6C696E653B66696C6C3A233732373237323B
+          7D3C2F7374796C653E0D0A3C672069643D22416C69676E4C656674223E0D0A09
+          093C7061746820636C6173733D22426C61636B2220643D224D32382C38483456
+          3668323456387A204D32302C3130483476326831365631307A204D32382C3134
+          483476326832345631347A204D32382C3232483476326832345632327A204D32
+          302C3138483476326831365631387A222F3E0D0A093C2F673E0D0A3C2F737667
+          3E0D0A}
+        FileName = 'SVG Images\Outlook Inspired\AlignLeft.svg'
+        Keywords = 'Outlook Inspired;AlignLeft'
+      end
+      item
+        ImageClass = 'TdxSmartImage'
+        Image.Data = {
+          3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+          462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D224C
+          617965725F312220786D6C6E733D22687474703A2F2F7777772E77332E6F7267
+          2F323030302F7376672220786D6C6E733A786C696E6B3D22687474703A2F2F77
+          77772E77332E6F72672F313939392F786C696E6B2220783D223070782220793D
+          22307078222076696577426F783D2230203020333220333222207374796C653D
+          22656E61626C652D6261636B67726F756E643A6E657720302030203332203332
+          3B2220786D6C3A73706163653D227072657365727665223E262331333B262331
+          303B3C7374796C6520747970653D22746578742F6373732220786D6C3A737061
+          63653D227072657365727665223E2E59656C6C6F777B66696C6C3A2346464231
+          31353B7D262331333B262331303B2623393B2E5265647B66696C6C3A23443131
+          4331433B7D262331333B262331303B2623393B2E426C75657B66696C6C3A2331
+          31373744373B7D262331333B262331303B2623393B2E477265656E7B66696C6C
+          3A233033394332333B7D262331333B262331303B2623393B2E426C61636B7B66
+          696C6C3A233732373237323B7D262331333B262331303B2623393B2E57686974
+          657B66696C6C3A234646464646463B7D262331333B262331303B2623393B2E73
+          74307B6F7061636974793A302E353B7D262331333B262331303B2623393B2E73
+          74317B646973706C61793A6E6F6E653B7D262331333B262331303B2623393B2E
+          7374327B646973706C61793A696E6C696E653B66696C6C3A233033394332333B
+          7D262331333B262331303B2623393B2E7374337B646973706C61793A696E6C69
+          6E653B66696C6C3A234431314331433B7D262331333B262331303B2623393B2E
+          7374347B646973706C61793A696E6C696E653B66696C6C3A233732373237323B
+          7D3C2F7374796C653E0D0A3C672069643D22416C69676E43656E746572223E0D
+          0A09093C7061746820636C6173733D22426C61636B2220643D224D32382C3848
+          34563668323456387A204D32342C3130483876326831365631307A204D32382C
+          3134483476326832345631347A204D32382C3232483476326832345632327A20
+          4D32342C3138483876326831365631387A222F3E0D0A093C2F673E0D0A3C2F73
+          76673E0D0A}
+        FileName = 'SVG Images\Outlook Inspired\AlignCenter.svg'
+        Keywords = 'Outlook Inspired;AlignCenter'
+      end
+      item
+        ImageClass = 'TdxSmartImage'
+        Image.Data = {
+          3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+          462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D224C
+          617965725F312220786D6C6E733D22687474703A2F2F7777772E77332E6F7267
+          2F323030302F7376672220786D6C6E733A786C696E6B3D22687474703A2F2F77
+          77772E77332E6F72672F313939392F786C696E6B2220783D223070782220793D
+          22307078222076696577426F783D2230203020333220333222207374796C653D
+          22656E61626C652D6261636B67726F756E643A6E657720302030203332203332
+          3B2220786D6C3A73706163653D227072657365727665223E262331333B262331
+          303B3C7374796C6520747970653D22746578742F6373732220786D6C3A737061
+          63653D227072657365727665223E2E59656C6C6F777B66696C6C3A2346464231
+          31353B7D262331333B262331303B2623393B2E5265647B66696C6C3A23443131
+          4331433B7D262331333B262331303B2623393B2E426C75657B66696C6C3A2331
+          31373744373B7D262331333B262331303B2623393B2E477265656E7B66696C6C
+          3A233033394332333B7D262331333B262331303B2623393B2E426C61636B7B66
+          696C6C3A233732373237323B7D262331333B262331303B2623393B2E57686974
+          657B66696C6C3A234646464646463B7D262331333B262331303B2623393B2E73
+          74307B6F7061636974793A302E353B7D262331333B262331303B2623393B2E73
+          74317B646973706C61793A6E6F6E653B7D262331333B262331303B2623393B2E
+          7374327B646973706C61793A696E6C696E653B66696C6C3A233033394332333B
+          7D262331333B262331303B2623393B2E7374337B646973706C61793A696E6C69
+          6E653B66696C6C3A234431314331433B7D262331333B262331303B2623393B2E
+          7374347B646973706C61793A696E6C696E653B66696C6C3A233732373237323B
+          7D3C2F7374796C653E0D0A3C672069643D22416C69676E5269676874223E0D0A
+          09093C7061746820636C6173733D22426C61636B2220643D224D32382C384834
+          563668323456387A204D32382C313048313276326831365631307A204D32382C
+          3134483476326832345631347A204D32382C3232483476326832345632327A20
+          4D32382C313848313276326831365631387A222F3E0D0A093C2F673E0D0A3C2F
+          7376673E0D0A}
+        FileName = 'SVG Images\Outlook Inspired\AlignRight.svg'
+        Keywords = 'Outlook Inspired;AlignRight'
+      end
+      item
+        ImageClass = 'TdxSmartImage'
+        Image.Data = {
+          3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+          462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D224C
+          617965725F312220786D6C6E733D22687474703A2F2F7777772E77332E6F7267
+          2F323030302F7376672220786D6C6E733A786C696E6B3D22687474703A2F2F77
+          77772E77332E6F72672F313939392F786C696E6B2220783D223070782220793D
+          22307078222076696577426F783D2230203020333220333222207374796C653D
+          22656E61626C652D6261636B67726F756E643A6E657720302030203332203332
+          3B2220786D6C3A73706163653D227072657365727665223E262331333B262331
+          303B3C7374796C6520747970653D22746578742F6373732220786D6C3A737061
+          63653D227072657365727665223E2E59656C6C6F777B66696C6C3A2346464231
+          31353B7D262331333B262331303B2623393B2E5265647B66696C6C3A23443131
+          4331433B7D262331333B262331303B2623393B2E426C75657B66696C6C3A2331
+          31373744373B7D262331333B262331303B2623393B2E477265656E7B66696C6C
+          3A233033394332333B7D262331333B262331303B2623393B2E426C61636B7B66
+          696C6C3A233732373237323B7D262331333B262331303B2623393B2E57686974
+          657B66696C6C3A234646464646463B7D262331333B262331303B2623393B2E73
+          74307B6F7061636974793A302E353B7D262331333B262331303B2623393B2E73
+          74317B646973706C61793A6E6F6E653B7D262331333B262331303B2623393B2E
+          7374327B646973706C61793A696E6C696E653B66696C6C3A233033394332333B
+          7D262331333B262331303B2623393B2E7374337B646973706C61793A696E6C69
+          6E653B66696C6C3A234431314331433B7D262331333B262331303B2623393B2E
+          7374347B646973706C61793A696E6C696E653B66696C6C3A233732373237323B
+          7D3C2F7374796C653E0D0A3C672069643D22416C69676E4A757374696679223E
+          0D0A09093C7061746820636C6173733D22426C61636B2220643D224D32382C38
+          4834563668323456387A204D32382C3130483476326832345631307A204D3238
+          2C3134483476326832345631347A204D32382C3232483476326832345632327A
+          204D32382C3138483476326832345631387A222F3E0D0A093C2F673E0D0A3C2F
+          7376673E0D0A}
+        FileName = 'SVG Images\Outlook Inspired\AlignJustify.svg'
+        Keywords = 'Outlook Inspired;AlignJustify'
+      end
+      item
+        ImageClass = 'TdxSmartImage'
+        Image.Data = {
+          3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+          462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D2249
+          6E64656E745F496E6372656173652220786D6C6E733D22687474703A2F2F7777
+          772E77332E6F72672F323030302F7376672220786D6C6E733A786C696E6B3D22
+          687474703A2F2F7777772E77332E6F72672F313939392F786C696E6B2220783D
+          223070782220793D22307078222076696577426F783D22302030203332203332
+          22207374796C653D22656E61626C652D6261636B67726F756E643A6E65772030
+          20302033322033323B2220786D6C3A73706163653D227072657365727665223E
+          262331333B262331303B3C7374796C6520747970653D22746578742F63737322
+          20786D6C3A73706163653D227072657365727665223E2E426C75657B66696C6C
+          3A233131373744373B7D262331333B262331303B2623393B2E426C61636B7B66
+          696C6C3A233732373237323B7D3C2F7374796C653E0D0A3C7061746820636C61
+          73733D22426C61636B2220643D224D32382C364834563468323456367A204D32
+          382C384834763268323456387A204D32382C313248313676326831325631327A
+          204D32382C3230483476326832345632307A204D32382C323448347632683234
+          5632347A204D32382C313648313676326831325631367A20202623393B222F3E
+          0D0A3C7061746820636C6173733D22426C75652220643D224D342C3134683476
+          2D336C362C346C2D362C34762D3348345631347A222F3E0D0A3C2F7376673E0D
+          0A}
+        FileName = 'SVG Images\RichEdit\IndentIncrease.svg'
+        Keywords = 'RichEdit;IndentIncrease'
+      end
+      item
+        ImageClass = 'TdxSmartImage'
+        Image.Data = {
+          3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+          462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D2249
+          6E64656E745F496E6372656173652220786D6C6E733D22687474703A2F2F7777
+          772E77332E6F72672F323030302F7376672220786D6C6E733A786C696E6B3D22
+          687474703A2F2F7777772E77332E6F72672F313939392F786C696E6B2220783D
+          223070782220793D22307078222076696577426F783D22302030203332203332
+          22207374796C653D22656E61626C652D6261636B67726F756E643A6E65772030
+          20302033322033323B2220786D6C3A73706163653D227072657365727665223E
+          262331333B262331303B3C7374796C6520747970653D22746578742F63737322
+          20786D6C3A73706163653D227072657365727665223E2E426C75657B66696C6C
+          3A233131373744373B7D262331333B262331303B2623393B2E426C61636B7B66
+          696C6C3A233732373237323B7D3C2F7374796C653E0D0A3C7061746820636C61
+          73733D22426C61636B2220643D224D32382C364834563468323456367A204D32
+          382C384834763268323456387A204D32382C313248313676326831325631327A
+          204D32382C3230483476326832345632307A204D32382C323448347632683234
+          5632347A204D32382C313648313676326831325631367A20202623393B222F3E
+          0D0A3C7061746820636C6173733D22426C75652220643D224D342C3134683476
+          2D336C362C346C2D362C34762D3348345631347A222F3E0D0A3C2F7376673E0D
+          0A}
+        FileName = 'SVG Images\RichEdit\IndentIncrease.svg'
+        Keywords = 'RichEdit;IndentIncrease'
+      end
+      item
+        ImageClass = 'TdxSmartImage'
+        Image.Data = {
+          3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+          462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D224C
+          617965725F312220786D6C6E733D22687474703A2F2F7777772E77332E6F7267
+          2F323030302F7376672220786D6C6E733A786C696E6B3D22687474703A2F2F77
+          77772E77332E6F72672F313939392F786C696E6B2220783D223070782220793D
+          22307078222076696577426F783D2230203020333220333222207374796C653D
+          22656E61626C652D6261636B67726F756E643A6E657720302030203332203332
+          3B2220786D6C3A73706163653D227072657365727665223E262331333B262331
+          303B3C7374796C6520747970653D22746578742F6373732220786D6C3A737061
+          63653D227072657365727665223E2E59656C6C6F777B66696C6C3A2346464231
+          31353B7D262331333B262331303B2623393B2E5265647B66696C6C3A23443131
+          4331433B7D262331333B262331303B2623393B2E426C75657B66696C6C3A2331
+          31373744373B7D262331333B262331303B2623393B2E477265656E7B66696C6C
+          3A233033394332333B7D262331333B262331303B2623393B2E426C61636B7B66
+          696C6C3A233732373237323B7D262331333B262331303B2623393B2E57686974
+          657B66696C6C3A234646464646463B7D262331333B262331303B2623393B2E73
+          74307B6F7061636974793A302E353B7D262331333B262331303B2623393B2E73
+          74317B646973706C61793A6E6F6E653B7D262331333B262331303B2623393B2E
+          7374327B646973706C61793A696E6C696E653B66696C6C3A233033394332333B
+          7D262331333B262331303B2623393B2E7374337B646973706C61793A696E6C69
+          6E653B66696C6C3A234431314331433B7D262331333B262331303B2623393B2E
+          7374347B646973706C61793A696E6C696E653B66696C6C3A233732373237323B
+          7D3C2F7374796C653E0D0A3C672069643D22496E64656E744465637265617365
+          223E0D0A09093C7061746820636C6173733D22426C61636B2220643D224D3238
+          2C364834563468323456367A204D32382C384834763268323456387A204D3238
+          2C313248313676326831325631327A204D32382C323048347632683234563230
+          7A204D32382C3234483476326832345632347A204D32382C3136483136763268
+          313256313620202623393B2623393B7A222F3E0D0A09093C7061746820636C61
+          73733D22426C75652220643D224D31342C3136682D3476336C2D362D346C362D
+          34763368345631367A222F3E0D0A093C2F673E0D0A3C2F7376673E0D0A}
+        FileName = 'SVG Images\Outlook Inspired\IndentDecrease.svg'
+        Keywords = 'Outlook Inspired;IndentDecrease'
+      end
+      item
+        ImageClass = 'TdxSmartImage'
+        Image.Data = {
+          3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+          462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D224C
+          696E6553706163696E672220786D6C6E733D22687474703A2F2F7777772E7733
+          2E6F72672F323030302F7376672220786D6C6E733A786C696E6B3D2268747470
+          3A2F2F7777772E77332E6F72672F313939392F786C696E6B2220783D22307078
+          2220793D22307078222076696577426F783D2230203020333220333222207374
+          796C653D22656E61626C652D6261636B67726F756E643A6E6577203020302033
+          322033323B2220786D6C3A73706163653D227072657365727665223E26233133
+          3B262331303B3C7374796C6520747970653D22746578742F6373732220786D6C
+          3A73706163653D227072657365727665223E2E426C75657B66696C6C3A233131
+          373744373B7D262331333B262331303B2623393B2E426C61636B7B66696C6C3A
+          233732373237323B7D3C2F7374796C653E0D0A3C7061746820636C6173733D22
+          426C61636B2220643D224D33302C3136483132762D326831385631367A204D33
+          302C38483132763268313856387A204D33302C32304831327632683138563230
+          7A222F3E0D0A3C7061746820636C6173733D22426C75652220643D224D362C32
+          3468346C2D352C356C2D352D356834762D3668325632347A204D342C31326832
+          563668344C352C314C302C3668345631327A222F3E0D0A3C2F7376673E0D0A}
+        FileName = 'SVG Images\Rich Edit\LineSpacing.svg'
+        Keywords = 'Rich Edit;LineSpacing'
+      end
+      item
+        ImageClass = 'TdxSmartImage'
+        Image.Data = {
+          3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+          462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D224C
+          696E6553706163696E6744656372656173655F315F2220786D6C6E733D226874
+          74703A2F2F7777772E77332E6F72672F323030302F7376672220786D6C6E733A
+          786C696E6B3D22687474703A2F2F7777772E77332E6F72672F313939392F786C
+          696E6B2220783D223070782220793D22307078222076696577426F783D223020
+          3020333220333222207374796C653D22656E61626C652D6261636B67726F756E
+          643A6E6577203020302033322033323B2220786D6C3A73706163653D22707265
+          7365727665223E262331333B262331303B3C7374796C6520747970653D227465
+          78742F6373732220786D6C3A73706163653D227072657365727665223E2E426C
+          75657B66696C6C3A233131373744373B7D262331333B262331303B2623393B2E
+          426C61636B7B66696C6C3A233732373237323B7D3C2F7374796C653E0D0A3C70
+          61746820636C6173733D22426C61636B2220643D224D33302C3136483132762D
+          326831385631367A204D33302C38483132763268313856387A204D33302C3230
+          48313276326831385632307A222F3E0D0A3C7061746820636C6173733D22426C
+          75652220643D224D362C3668346C2D352C354C302C3668345630683256367A20
+          4D342C33306832762D3668346C2D352D356C2D352C3568345633307A222F3E0D
+          0A3C2F7376673E0D0A}
+        FileName = 'SVG Images\RichEdit\SpacingDecrease.svg'
+        Keywords = 'RichEdit;SpacingDecrease'
+      end
+      item
+        ImageClass = 'TdxSmartImage'
+        Image.Data = {
+          3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+          462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D2250
+          617261677261706853696E676C6553706163696E672220786D6C6E733D226874
+          74703A2F2F7777772E77332E6F72672F323030302F7376672220786D6C6E733A
+          786C696E6B3D22687474703A2F2F7777772E77332E6F72672F313939392F786C
+          696E6B2220783D223070782220793D22307078222076696577426F783D223020
+          3020333220333222207374796C653D22656E61626C652D6261636B67726F756E
+          643A6E6577203020302033322033323B2220786D6C3A73706163653D22707265
+          7365727665223E262331333B262331303B3C7374796C6520747970653D227465
+          78742F637373223E2E426C61636B7B66696C6C3A233732373237323B7D3C2F73
+          74796C653E0D0A3C7061746820636C6173733D22426C61636B2220643D224D32
+          382C3130483476326832345631307A204D32382C313448347632683234563134
+          7A204D32382C313848347632683234222F3E0D0A3C2F7376673E0D0A}
+      end
+      item
+        ImageClass = 'TdxSmartImage'
+        Image.Data = {
+          3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+          462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D2250
+          6172616772617068536573717569616C746572616C53706163696E672220786D
+          6C6E733D22687474703A2F2F7777772E77332E6F72672F323030302F73766722
+          20786D6C6E733A786C696E6B3D22687474703A2F2F7777772E77332E6F72672F
+          313939392F786C696E6B2220783D223070782220793D22307078222076696577
+          426F783D2230203020333220333222207374796C653D22656E61626C652D6261
+          636B67726F756E643A6E6577203020302033322033323B2220786D6C3A737061
+          63653D227072657365727665223E262331333B262331303B3C7374796C652074
+          7970653D22746578742F637373223E2E426C61636B7B66696C6C3A2337323732
+          37323B7D3C2F7374796C653E0D0A3C7061746820636C6173733D22426C61636B
+          2220643D224D2032372E3935322031302E303332204C20332E3935322031302E
+          303332204C20332E39353220382E303332204C2032372E39353220382E303332
+          204C2032372E3935322031302E303332205A222F3E0D0A3C7061746820636C61
+          73733D22426C61636B2220643D224D32382C3134483476326832345631347A22
+          2F3E0D0A3C7061746820636C6173733D22426C61636B2220643D224D2032382E
+          3034382032302E303136204C20342E3034382032302E303136204C20342E3034
+          382032322E303136204C2032382E3034382032322E303136204C2032382E3034
+          382032302E303136205A222F3E0D0A3C2F7376673E0D0A}
+      end
+      item
+        ImageClass = 'TdxSmartImage'
+        Image.Data = {
+          3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+          462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D2250
+          6172616772617068446F75626C6553706163696E672220786D6C6E733D226874
+          74703A2F2F7777772E77332E6F72672F323030302F7376672220786D6C6E733A
+          786C696E6B3D22687474703A2F2F7777772E77332E6F72672F313939392F786C
+          696E6B2220783D223070782220793D22307078222076696577426F783D223020
+          3020333220333222207374796C653D22656E61626C652D6261636B67726F756E
+          643A6E6577203020302033322033323B2220786D6C3A73706163653D22707265
+          7365727665223E262331333B262331303B3C7374796C6520747970653D227465
+          78742F637373223E2E426C61636B7B66696C6C3A233732373237323B7D3C2F73
+          74796C653E0D0A3C7061746820636C6173733D22426C61636B2220643D224D32
+          382C384834563668323456387A204D32382C3134483476326832345631347A20
+          4D32382C3232483476326832345632327A205631387A222F3E0D0A3C2F737667
+          3E0D0A}
+      end>
+  end
+  object alActions: TActionList
+    Images = ilActions
+    Left = 416
+    Top = 344
+    object aToggleFontBold: TAction
+      AutoCheck = True
+      Caption = '&Bold'
+      Hint = 'Bold'
+      ImageIndex = 0
+    end
+    object aToggleFontItalic: TAction
+      AutoCheck = True
+      Caption = '&Italic'
+      Hint = 'Italic'
+      ImageIndex = 1
+    end
+    object aToggleFontUnderline: TAction
+      AutoCheck = True
+      Caption = '&Underline'
+      Hint = 'Underline'
+      ImageIndex = 2
+    end
+    object aToggleParagraphAlignmentLeft: TAction
+      AutoCheck = True
+      Caption = 'Align Text &Left'
+      GroupIndex = 1
+      Hint = 'Align Left'
+      ImageIndex = 3
+    end
+    object aToggleParagraphAlignmentCenter: TAction
+      Tag = 2
+      AutoCheck = True
+      Caption = '&Center'
+      GroupIndex = 1
+      Hint = 'Center'
+      ImageIndex = 4
+    end
+    object aToggleParagraphAlignmentRight: TAction
+      Tag = 1
+      AutoCheck = True
+      Caption = 'Align Text &Right'
+      GroupIndex = 1
+      Hint = 'Align Right'
+      ImageIndex = 5
+    end
+    object aToggleParagraphAlignmentJustify: TAction
+      Tag = 3
+      AutoCheck = True
+      Caption = '&Justify'
+      GroupIndex = 1
+      Hint = 'Justify'
+      ImageIndex = 6
+    end
+    object aSetSingleParagraphSpacing: TAction
+      AutoCheck = True
+      GroupIndex = 2
+      ImageIndex = 12
+    end
+    object aSetDoubleParagraphSpacing: TAction
+      Tag = 2
+      AutoCheck = True
+      GroupIndex = 2
+      ImageIndex = 14
+    end
+    object aSetSesquialteralParagraphSpacing: TAction
+      Tag = 1
+      AutoCheck = True
+      GroupIndex = 2
+      ImageIndex = 13
+    end
+    object aIncrementIndent: TAction
+      Hint = 'Increase Indent'
+      ImageIndex = 8
+      OnExecute = aIncrementIndentExecute
+    end
+    object aDecrementIndent: TAction
+      Hint = 'Decrease Indent'
+      ImageIndex = 9
+      OnExecute = aDecrementIndentExecute
+    end
+    object aFontDialog: TAction
+      Caption = 'Font...'
+      OnExecute = aFontDialogExecute
+    end
+    object aParagraphDialog: TAction
+      Caption = 'Paragraph...'
+      OnExecute = aParagraphDialogExecute
+    end
+    object aTabsDialog: TAction
+      Caption = 'Tabs...'
+      OnExecute = aTabsDialogExecute
+    end
+    object aSpacingDecrease: TAction
+      Caption = 'aSpacingDecrease'
+      ImageIndex = 11
+      OnExecute = aSpacingDecreaseExecute
+    end
+    object aSpacingIncrease: TAction
+      Caption = 'aSpacingIncrease'
+      ImageIndex = 10
+      OnExecute = aSpacingIncreaseExecute
+    end
+  end
+end

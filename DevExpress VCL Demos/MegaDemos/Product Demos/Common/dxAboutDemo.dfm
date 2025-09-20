@@ -1,0 +1,664 @@
+object dxAboutDemoForm: TdxAboutDemoForm
+  Left = 0
+  Top = 0
+  BorderIcons = []
+  BorderStyle = bsNone
+  Caption = 'About Demo'
+  ClientHeight = 422
+  ClientWidth = 540
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Position = poMainFormCenter
+  OnKeyDown = FormKeyDown
+  DesignSize = (
+    540
+    422)
+  TextHeight = 13
+  object pnBackground: TdxPanel
+    Left = 0
+    Top = 0
+    Width = 540
+    Height = 422
+    Margins.Left = 0
+    Margins.Top = 0
+    Margins.Right = 0
+    Margins.Bottom = 0
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Frame.Color = clWhite
+    Frame.Borders = []
+    Frame.Visible = False
+    Color = clWhite
+    TabOrder = 0
+    DesignSize = (
+      540
+      422)
+    object pnTopCaptions: TdxPanel
+      Left = 20
+      Top = 20
+      Width = 500
+      Height = 172
+      Anchors = [akLeft, akTop, akRight]
+      Frame.Color = 2004215
+      Frame.Borders = []
+      Frame.Visible = False
+      Color = 2004215
+      TabOrder = 0
+      DesignSize = (
+        500
+        172)
+      object lbVCLSubscription: TcxLabel
+        Left = 12
+        Top = 96
+        Anchors = [akLeft, akRight, akBottom]
+        AutoSize = False
+        Caption = 'VCL Subscription'
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWhite
+        Style.Font.Height = -37
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = []
+        Style.LookAndFeel.SkinName = ''
+        Style.TextColor = clWhite
+        Style.TransparentBorder = False
+        Style.IsFontAssigned = True
+        StyleDisabled.LookAndFeel.SkinName = ''
+        StyleFocused.LookAndFeel.SkinName = ''
+        StyleHot.LookAndFeel.SkinName = ''
+        Properties.ShowAccelChar = False
+        Transparent = True
+        Height = 50
+        Width = 468
+      end
+      object lbDemo: TcxLabel
+        Left = 378
+        Top = 20
+        Anchors = [akTop, akRight]
+        AutoSize = False
+        Caption = 'DEMO'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = clWhite
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 2004215
+        Style.Font.Height = -19
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = [fsBold]
+        Style.LookAndFeel.SkinName = ''
+        Style.IsFontAssigned = True
+        StyleDisabled.LookAndFeel.SkinName = ''
+        StyleFocused.LookAndFeel.SkinName = ''
+        StyleHot.LookAndFeel.SkinName = ''
+        Properties.Alignment.Horz = taCenter
+        Properties.Alignment.Vert = taVCenter
+        Properties.ShowAccelChar = False
+        Height = 40
+        Width = 124
+        AnchorX = 440
+        AnchorY = 40
+      end
+      object lbVersion: TcxLabel
+        Left = 426
+        Top = 142
+        Anchors = [akRight, akBottom]
+        AutoSize = False
+        Caption = 'lbVersion'
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWhite
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = []
+        Style.LookAndFeel.SkinName = ''
+        Style.TextColor = clWhite
+        Style.TransparentBorder = False
+        Style.IsFontAssigned = True
+        StyleDisabled.LookAndFeel.SkinName = ''
+        StyleFocused.LookAndFeel.SkinName = ''
+        StyleHot.LookAndFeel.SkinName = ''
+        Properties.Alignment.Horz = taRightJustify
+        Properties.Alignment.Vert = taBottomJustify
+        Properties.ShowAccelChar = False
+        Transparent = True
+        Height = 17
+        Width = 54
+        AnchorX = 480
+        AnchorY = 159
+      end
+      object lbForDelphiAndCBuilder: TcxLabel
+        Left = 20
+        Top = 142
+        Anchors = [akLeft, akBottom]
+        AutoSize = False
+        Caption = 'for Delphi and C++Builder'
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWhite
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = []
+        Style.LookAndFeel.SkinName = ''
+        Style.TextColor = clWhite
+        Style.TransparentBorder = False
+        Style.IsFontAssigned = True
+        StyleDisabled.LookAndFeel.SkinName = ''
+        StyleFocused.LookAndFeel.SkinName = ''
+        StyleHot.LookAndFeel.SkinName = ''
+        Properties.Alignment.Vert = taBottomJustify
+        Properties.ShowAccelChar = False
+        Transparent = True
+        Height = 17
+        Width = 154
+        AnchorY = 159
+      end
+    end
+    object pnCopyright: TdxPanel
+      Left = 20
+      Top = 348
+      Width = 500
+      Height = 54
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 0
+      Anchors = [akLeft, akRight, akBottom]
+      Frame.Color = 15658734
+      Frame.Borders = []
+      Frame.Visible = False
+      Color = 15658734
+      TabOrder = 1
+      DesignSize = (
+        500
+        54)
+      object lbCopyright: TcxLabel
+        Left = 16
+        Top = 8
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        AutoSize = False
+        Caption = 
+          'Copyright (c) 2000-2023 Developer Express Inc.'#13#10'All Rights Reser' +
+          'ved'
+        ParentFont = False
+        Style.Edges = []
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clBlack
+        Style.Font.Height = -12
+        Style.Font.Name = 'Segoe UI Semibold'
+        Style.Font.Style = []
+        Style.LookAndFeel.SkinName = ''
+        Style.IsFontAssigned = True
+        StyleDisabled.LookAndFeel.SkinName = ''
+        StyleFocused.LookAndFeel.SkinName = ''
+        StyleHot.LookAndFeel.SkinName = ''
+        Properties.Alignment.Vert = taVCenter
+        Properties.ShowAccelChar = False
+        Transparent = True
+        Height = 38
+        Width = 468
+        AnchorY = 27
+      end
+      object imgLogoDevExpress: TcxImage
+        Left = 330
+        Top = 0
+        Anchors = [akTop, akRight, akBottom]
+        Picture.Data = {
+          0D546478536D617274496D6167653C3F786D6C2076657273696F6E3D22312E30
+          2220656E636F64696E673D225554462D38223F3E0D0A3C737667207665727369
+          6F6E3D22312E31222069643D224C617965725F312220786D6C6E733D22687474
+          703A2F2F7777772E77332E6F72672F323030302F7376672220786D6C6E733A78
+          6C696E6B3D22687474703A2F2F7777772E77332E6F72672F313939392F786C69
+          6E6B2220783D223070782220793D22307078222076696577426F783D22302030
+          2031353220333622207374796C653D22656E61626C652D6261636B67726F756E
+          643A6E657720302030203135322033363B2220786D6C3A73706163653D227072
+          657365727665223E262331333B262331303B3C706174682066696C6C3D222334
+          31343134322220643D224D33352E392C372E34632D312E362C302D332E322C30
+          2E312D342E342C302E347631362E3663302E392C302E312C322E312C302E322C
+          332E372C302E3263322E392C302C352E332D302E372C362E382D322E31202026
+          23393B63312E332D312E322C322E352D332E332C322E352D362E3963302D332E
+          312D302E392D352E312D322E352D362E354334302E362C372E392C33382E372C
+          372E342C33352E392C372E347A204D33362C32312E39632D302E342C302D302E
+          392C302D312E332D302E3156313020202623393B63302E342D302E312C302E39
+          2D302E312C312E352D302E3163332C302C342E392C312E392C342E392C352E37
+          4334312E322C32302C33392E312C32322C33362C32312E397A222F3E0D0A3C70
+          6174682066696C6C3D22233431343134322220643D224D35312E382C31312E39
+          632D332E362C302D352E362C332D352E362C362E3563302C332E382C322E322C
+          362E322C352E392C362E3263312E352C302C322E392D302E332C342D302E376C
+          2D302E352D322E32632D302E382C302E332D312E382C302E352D332C302E3520
+          202623393B632D312E382C302D332E332D302E382D332E332D322E3968372E33
+          63302E312D302E342C302E312D302E382C302E312D312E334335362E372C3134
+          2C35342E382C31312E392C35312E382C31312E397A204D34392E332C31376330
+          2E312D312E322C302E372D322E382C322E332D322E3820202623393B63312E36
+          2C302C322E312C312E362C322E312C322E384834392E337A222F3E0D0A3C7061
+          74682066696C6C3D22233431343134322220643D224D36352E382C31322E316C
+          2D312E352C352E39632D302E332C312E312D302E352C322E312D302E372C332E
+          31682D302E31632D302E322D312E312D302E342D322E312D302E372D332E316C
+          2D312E362D352E39682D332E356C342E312C31322E3248363520202623393B6C
+          342E322D31322E324836352E387A222F3E0D0A3C706F6C79676F6E2066696C6C
+          3D22236635383232302220706F696E74733D2237342E322C31362E392037392E
+          382C31362E392037392E382C31342E332037342E322C31342E332037342E322C
+          31302E322038302E312C31302E322038302E312C372E352037312C372E352037
+          312C32342E342038302E342C32342E342020202623393B38302E342C32312E36
+          2037342E322C32312E3620222F3E0D0A3C706174682066696C6C3D2223663538
+          3232302220643D224D39322E372C31322E31682D332E346C2D312E312C322E32
+          632D302E332C302E362D302E362C312E332D302E392C326830632D302E332D30
+          2E362D302E362D312E332D302E392D312E396C2D312E322D322E32682D332E36
+          6C332E362C366C2D332E372C362E3220202623393B68332E354C38362C323263
+          302E332D302E362C302E362D312E332C302E392D312E39683063302E332C302E
+          372C302E362C312E332C302E392C312E396C312E322C322E3468332E364C3839
+          2E312C31384C39322E372C31322E317A222F3E0D0A3C706174682066696C6C3D
+          22236635383232302220643D224D3130312C31312E39632D312E362C302D322E
+          382C302E372D332E362C312E3968306C2D302E322D312E37682D322E3863302C
+          312E312C302E312C322E342C302E312C347631332E3168332E32762D362E3168
+          3020202623393B63302E352C302E382C312E362C312E342C322E392C312E3463
+          322E352C302C352D322C352D362E35433130352E362C31342E342C3130332E36
+          2C31312E392C3130312C31312E397A204D39392E382C32322E31632D312E312C
+          302D322E322D302E392D322E322D322E36762D322E3320202623393B63302D31
+          2E352C312D322E372C322E322D322E3763312E362C302C322E342C312E362C32
+          2E342C332E38433130322E332C32302E342C3130312E352C32322E312C39392E
+          382C32322E317A222F3E0D0A3C706174682066696C6C3D222366353832323022
+          20643D224D3131302E382C31342E334C3131302E382C31342E336C2D302E322D
+          322E31682D322E3863302C312E312C302E312C322E332C302E312C332E387638
+          2E3468332E3356313863302D322E312C312E312D332E312C322E362D332E3120
+          202623393B63302E332C302C302E362C302C302E382C302E31762D332E31632D
+          302E322C302D302E342D302E312D302E372D302E31433131322E372C31312E39
+          2C3131312E342C31322E372C3131302E382C31342E337A222F3E0D0A3C706174
+          682066696C6C3D22236635383232302220643D224D3132312E332C31312E3963
+          2D332E362C302D352E362C332D352E362C362E3563302C332E382C322E322C36
+          2E322C352E392C362E3263312E352C302C322E392D302E332C342D302E376C2D
+          302E352D322E3220202623393B632D302E382C302E332D312E382C302E352D33
+          2C302E35632D312E382C302D332E322D302E382D332E332D322E3968372E3363
+          302E312D302E342C302E312D302E382C302E312D312E33433132362E322C3134
+          2C3132342E332C31312E392C3132312E332C31312E397A204D3131382E382C31
+          3720202623393B63302E312D312E322C302E372D322E382C322E332D322E3863
+          312E362C302C322E312C312E362C322E312C322E38483131382E387A222F3E0D
+          0A3C706174682066696C6C3D22236635383232302220643D224D3133332C3137
+          632D312E342D302E362D312E392D302E392D312E392D312E3663302D302E372C
+          302E352D312E322C312E352D312E3263302E392C302C312E382C302E332C322E
+          332C302E366C302E362D322E3320202623393B632D302E372D302E342D312E38
+          2D302E372D332D302E37632D322E372C302D342E352C312E372D342E352C332E
+          3963302C312E332C302E382C322E362C332E312C332E3663312E332C302E362C
+          312E382C312C312E382C312E3763302C302E372D302E352C312E322D312E372C
+          312E3220202623393B632D312C302D322E322D302E342D322E392D302E386C2D
+          302E362C322E3363302E382C302E352C322E312C302E382C332E342C302E3863
+          332E312C302C342E382D312E352C342E382D332E39433133362C31392C313335
+          2C31372E382C3133332C31377A222F3E0D0A3C706174682066696C6C3D222366
+          35383232302220643D224D3134322E372C3137632D312E342D302E362D312E39
+          2D302E392D312E392D312E3663302D302E372C302E352D312E322C312E352D31
+          2E3263302E392C302C312E382C302E332C322E332C302E366C302E362D322E33
+          20202623393B632D302E372D302E342D312E382D302E372D332D302E37632D32
+          2E372C302D342E352C312E372D342E352C332E3963302C312E332C302E382C32
+          2E362C332E312C332E3663312E332C302E362C312E382C312C312E382C312E37
+          63302C302E372D302E352C312E322D312E372C312E3220202623393B632D312C
+          302D322E322D302E342D322E392D302E386C2D302E362C322E3363302E382C30
+          2E352C322E312C302E382C332E342C302E3863332E312C302C342E382D312E35
+          2C342E382D332E39433134352E372C31392C3134342E382C31372E382C313432
+          2E372C31377A222F3E0D0A3C706174682066696C6C3D22233431343134322220
+          643D224D312E372C32332E32632D302E362C302E382D312E312C312E342D312E
+          342C322E3143302E322C32352E342C302C32352E392C302C32362E3276302E34
+          43302C32372E342C302E362C32382C312E342C32386832312E3220202623393B
+          63302E382C302C312E342D302E362C312E342D312E345631302E334331322E34
+          2C31322E332C352E332C31382E362C312E372C32332E327A222F3E0D0A3C7061
+          74682066696C6C3D22236635383232302220643D224D32322E362C3448312E34
+          43302E362C342C302C342E362C302C352E347631322E3763342E322D342E342C
+          31312E372D392E322C32332E312D31302E3663302E332C302C302E392D302E32
+          2C302E392D3156352E3420202623393B4332342C342E362C32332E342C342C32
+          322E362C347A222F3E0D0A3C706174682066696C6C3D22236635383232302220
+          643D224D3134382E392C31312E344C3134382E392C31312E3463302E342D302E
+          312C302E352D302E332C302E352D302E3663302D302E322D302E312D302E342D
+          302E322D302E35632D302E312D302E312D302E342D302E322D302E362D302E32
+          682D302E3776322E3220202623393B68302E34762D302E3968302E3263302E31
+          2C302C302E322C302E312C302E332C302E336C302E322C302E3668302E356C2D
+          302E332D302E36433134392E312C31312E362C3134392C31312E352C3134382E
+          392C31312E347A204D3134382E352C31312E32682D302E33762D302E3668302E
+          3320202623393B63302E332C302C302E342C302E312C302E342C302E3363302C
+          302E312C302C302E322D302E312C302E32433134382E382C31312E322C313438
+          2E372C31312E322C3134382E352C31312E327A222F3E0D0A3C70617468206669
+          6C6C3D22236635383232302220643D224D3134392E392C31302E31632D302E33
+          2D302E332D302E382D302E352D312E332D302E35632D302E352C302D312C302E
+          322D312E332C302E35632D302E342C302E332D302E352C302E382D302E352C31
+          2E3363302C302E352C302E322C302E392C302E352C312E3320202623393B6330
+          2E332C302E332C302E382C302E352C312E332C302E3563302E352C302C302E39
+          2D302E322C312E332D302E3563302E342D302E332C302E352D302E382C302E35
+          2D312E33433135302E342C31302E382C3135302E322C31302E342C3134392E39
+          2C31302E317A204D3134392E362C31322E3420202623393B632D302E332C302E
+          332D302E372C302E342D312E312C302E34632D302E342C302D302E382D302E31
+          2D312E312D302E34632D302E332D302E332D302E342D302E372D302E342D312E
+          3163302D302E342C302E312D302E382C302E342D312E3163302E332D302E332C
+          302E372D302E342C312E312D302E3420202623393B63302E342C302C302E382C
+          302E312C312E312C302E3463302E332C302E332C302E342C302E372C302E342C
+          312E31433135302E312C31312E382C3134392E392C31322E312C3134392E362C
+          31322E347A222F3E0D0A3C2F7376673E0D0A}
+        Properties.GraphicClassName = 'TdxSmartImage'
+        Properties.ShowFocusRect = False
+        Style.BorderStyle = ebsNone
+        Style.Edges = []
+        TabOrder = 1
+        Transparent = True
+        Height = 54
+        Width = 164
+      end
+    end
+    object lbUseFollowingLinks: TcxLabel
+      Left = 20
+      Top = 214
+      Anchors = [akLeft, akTop, akRight]
+      AutoSize = False
+      Caption = 
+        'Use the following links to learn more about the VCL Subscription' +
+        '.'
+      ParentFont = False
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = 4144959
+      Style.Font.Height = -13
+      Style.Font.Name = 'Segoe UI'
+      Style.Font.Style = []
+      Style.LookAndFeel.SkinName = ''
+      Style.IsFontAssigned = True
+      StyleDisabled.LookAndFeel.SkinName = ''
+      StyleFocused.LookAndFeel.SkinName = ''
+      StyleHot.LookAndFeel.SkinName = ''
+      Properties.Alignment.Horz = taCenter
+      Properties.Alignment.Vert = taBottomJustify
+      Properties.ShowAccelChar = False
+      Transparent = True
+      Height = 20
+      Width = 500
+      AnchorX = 270
+      AnchorY = 234
+    end
+    object lbQuestions: TcxLabel
+      Left = 22
+      Top = 290
+      Anchors = [akLeft, akTop, akRight]
+      AutoSize = False
+      Caption = 'Questions?'
+      ParentFont = False
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = 4144959
+      Style.Font.Height = -13
+      Style.Font.Name = 'Segoe UI'
+      Style.Font.Style = [fsBold]
+      Style.LookAndFeel.SkinName = ''
+      Style.IsFontAssigned = True
+      StyleDisabled.LookAndFeel.SkinName = ''
+      StyleFocused.LookAndFeel.SkinName = ''
+      StyleHot.LookAndFeel.SkinName = ''
+      Properties.Alignment.Horz = taCenter
+      Properties.Alignment.Vert = taBottomJustify
+      Properties.ShowAccelChar = False
+      Transparent = True
+      Height = 20
+      Width = 500
+      AnchorX = 272
+      AnchorY = 310
+    end
+    object pnButtons: TdxPanel
+      Left = 20
+      Top = 232
+      Width = 500
+      Height = 38
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 0
+      Anchors = [akLeft, akTop, akRight]
+      Frame.Color = clWhite
+      Frame.Borders = []
+      Frame.Visible = False
+      Color = clWhite
+      LookAndFeel.SkinName = ''
+      TabOrder = 4
+      object lbBtnSubscribe: TcxLabel
+        Left = 334
+        Top = 0
+        Margins.Left = 1
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alRight
+        AutoSize = False
+        Caption = 'Subscribe'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 3947580
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWhite
+        Style.Font.Height = -11
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = []
+        Style.HotTrack = True
+        Style.LookAndFeel.SkinName = ''
+        Style.IsFontAssigned = True
+        StyleDisabled.LookAndFeel.SkinName = ''
+        StyleFocused.LookAndFeel.SkinName = ''
+        StyleHot.BorderStyle = ebsNone
+        StyleHot.Color = 2004215
+        StyleHot.LookAndFeel.SkinName = ''
+        Properties.Alignment.Horz = taCenter
+        Properties.Alignment.Vert = taVCenter
+        OnClick = lbBtnSubscribeClick
+        Height = 38
+        Width = 166
+        AnchorX = 417
+        AnchorY = 19
+      end
+      object lbBtnDownloadTrial: TcxLabel
+        Left = 166
+        Top = 0
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alClient
+        AutoSize = False
+        Caption = 'Download Trial'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 3947580
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWhite
+        Style.Font.Height = -11
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = []
+        Style.HotTrack = True
+        Style.LookAndFeel.SkinName = ''
+        Style.IsFontAssigned = True
+        StyleDisabled.LookAndFeel.SkinName = ''
+        StyleFocused.LookAndFeel.SkinName = ''
+        StyleHot.BorderStyle = ebsNone
+        StyleHot.Color = 2004215
+        StyleHot.LookAndFeel.SkinName = ''
+        Properties.Alignment.Horz = taCenter
+        Properties.Alignment.Vert = taVCenter
+        OnClick = lbBtnDownloadTrialClick
+        Height = 38
+        Width = 168
+        AnchorX = 250
+        AnchorY = 19
+      end
+      object lbBtnLearnMore: TcxLabel
+        Left = 0
+        Top = 0
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 1
+        Margins.Bottom = 0
+        Align = alLeft
+        AutoSize = False
+        Caption = 'Learn More'
+        ParentColor = False
+        ParentFont = False
+        Style.Color = 3947580
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWhite
+        Style.Font.Height = -11
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = []
+        Style.HotTrack = True
+        Style.LookAndFeel.SkinName = ''
+        Style.IsFontAssigned = True
+        StyleDisabled.LookAndFeel.SkinName = ''
+        StyleFocused.LookAndFeel.SkinName = ''
+        StyleHot.BorderStyle = ebsNone
+        StyleHot.Color = 2004215
+        StyleHot.LookAndFeel.SkinName = ''
+        Properties.Alignment.Horz = taCenter
+        Properties.Alignment.Vert = taVCenter
+        OnClick = lbBtnLearnMoreClick
+        Height = 38
+        Width = 166
+        AnchorX = 83
+        AnchorY = 19
+      end
+    end
+    object imgClose: TcxImage
+      Left = 520
+      Top = 2
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 0
+      Anchors = [akTop, akRight]
+      Picture.Data = {
+        0D546478536D617274496D6167653C3F786D6C2076657273696F6E3D22312E30
+        2220656E636F64696E673D225554462D38223F3E0D0A3C737667207665727369
+        6F6E3D22312E31222069643D224C617965725F312220786D6C6E733D22687474
+        703A2F2F7777772E77332E6F72672F323030302F7376672220786D6C6E733A78
+        6C696E6B3D22687474703A2F2F7777772E77332E6F72672F313939392F786C69
+        6E6B2220783D223070782220793D22307078222076696577426F783D22302030
+        2033322033322220656E61626C652D6261636B67726F756E643D226E65772030
+        20302033322033322220786D6C3A73706163653D227072657365727665223E26
+        2331333B262331303B20203C7374796C6520747970653D22746578742F637373
+        2220786D6C3A73706163653D227072657365727665223E2E46696C6C7B66696C
+        6C3A233732373237323B7D262331333B262331303B20203C2F7374796C653E0D
+        0A3C7061746820636C6173733D2246696C6C2220643D224D31392E312C31366C
+        362E362D362E3663302E342D302E342C302E342D312C302D312E344C32342C36
+        2E33632D302E342D302E342D312D302E342D312E342C304C31362C31322E394C
+        392E342C362E3343392C352E392C382E342C352E392C382C362E334C362E332C
+        3820632D302E342C302E342D302E342C312C302C312E346C362E362C362E366C
+        2D362E362C362E36632D302E342C302E342D302E342C312C302C312E344C382C
+        32352E3763302E342C302E342C312C302E342C312E342C306C362E362D362E36
+        6C362E362C362E3663302E342C302E342C312C302E342C312E342C30206C312E
+        372D312E3763302E342D302E342C302E342D312C302D312E344C31392E312C31
+        367A222F3E0D0A3C2F7376673E0D0A}
+      Properties.FitMode = ifmStretch
+      Properties.GraphicClassName = 'TdxSmartImage'
+      Properties.GraphicTransparency = gtTransparent
+      Properties.ReadOnly = True
+      Properties.ShowFocusRect = False
+      Style.BorderColor = clWhite
+      Style.BorderStyle = ebsNone
+      Style.Color = clWhite
+      Style.Edges = []
+      Style.LookAndFeel.Kind = lfUltraFlat
+      Style.LookAndFeel.SkinName = ''
+      Style.TextColor = clWhite
+      Style.TransparentBorder = False
+      StyleDisabled.LookAndFeel.Kind = lfUltraFlat
+      StyleDisabled.LookAndFeel.SkinName = ''
+      StyleFocused.LookAndFeel.Kind = lfUltraFlat
+      StyleFocused.LookAndFeel.SkinName = ''
+      StyleHot.BorderStyle = ebsNone
+      StyleHot.LookAndFeel.Kind = lfUltraFlat
+      StyleHot.LookAndFeel.SkinName = ''
+      TabOrder = 5
+      Transparent = True
+      OnMouseLeave = imgCloseMouseLeave
+      OnMouseMove = imgCloseMouseMove
+      Height = 16
+      Width = 16
+    end
+    object pnlLinks: TdxPanel
+      Left = 20
+      Top = 308
+      Width = 500
+      Height = 24
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 0
+      Anchors = [akLeft, akTop, akRight]
+      Frame.Color = clWhite
+      Frame.Borders = []
+      Frame.Visible = False
+      Color = clWhite
+      LookAndFeel.SkinName = ''
+      TabOrder = 6
+      DesignSize = (
+        500
+        24)
+      object bvlCenter: TdxBevel
+        Left = 250
+        Top = 8
+        Width = 6
+        Height = 12
+        Anchors = [akLeft, akTop, akRight]
+        Shape = dxbsLineCenteredHorz
+      end
+      object lbSupportCenter: TcxLabel
+        Left = 259
+        Top = 0
+        Cursor = crHandPoint
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Caption = 'DevExpress Support Center'
+        ParentFont = False
+        Style.Edges = []
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 2004215
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = [fsUnderline]
+        Style.HotTrack = True
+        Style.LookAndFeel.SkinName = ''
+        Style.IsFontAssigned = True
+        StyleDisabled.LookAndFeel.SkinName = ''
+        StyleFocused.LookAndFeel.SkinName = ''
+        StyleHot.BorderStyle = ebsNone
+        StyleHot.LookAndFeel.SkinName = ''
+        StyleHot.TextColor = 4144959
+        Properties.Alignment.Horz = taLeftJustify
+        Properties.ShowAccelChar = False
+        Transparent = True
+        OnClick = lbSupportCenterClick
+      end
+      object lbOnlineDocumentation: TcxLabel
+        Left = 114
+        Top = 0
+        Cursor = crHandPoint
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Anchors = [akTop, akRight]
+        Caption = 'Online Documentation'
+        ParentFont = False
+        Style.Edges = []
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = 2004215
+        Style.Font.Height = -13
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = [fsUnderline]
+        Style.HotTrack = True
+        Style.LookAndFeel.SkinName = ''
+        Style.IsFontAssigned = True
+        StyleDisabled.LookAndFeel.SkinName = ''
+        StyleFocused.LookAndFeel.SkinName = ''
+        StyleHot.BorderStyle = ebsNone
+        StyleHot.LookAndFeel.SkinName = ''
+        StyleHot.TextColor = 4144959
+        Properties.Alignment.Horz = taRightJustify
+        Properties.ShowAccelChar = False
+        Transparent = True
+        OnClick = lbOnlineDocumentationClick
+        AnchorX = 247
+      end
+    end
+  end
+end

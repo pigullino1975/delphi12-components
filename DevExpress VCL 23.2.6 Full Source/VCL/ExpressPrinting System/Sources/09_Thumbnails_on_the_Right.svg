@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<style type="text/css">.Black{fill:#737374}</style>
+  <path class="Black" d="M 31 16 L 23 16 C 22.5 16 22 16.5 22 17 L 22 27 C 22 27.5 22.5 28 23 28 L 31 28 C 31.5 28 32 27.5 32 27 L 32 17 C 32 16.5 31.5 16 31 16 Z M 30 26 L 24 26 L 24 18 L 30 18 L 30 26 Z"></path>
+  <path class="Black" d="M 31 2 L 23 2 C 22.5 2 22 2.5 22 3 L 22 13 C 22 13.5 22.5 14 23 14 L 31 14 C 31.5 14 32 13.5 32 13 L 32 3 C 32 2.5 31.5 2 31 2 Z M 30 12 L 24 12 L 24 4 L 30 4 L 30 12 Z"></path>
+  <path class="Black" d="M 19 2 L 1 2 C 0.5 2 0 2.5 0 3 L 0 27 C 0 27.5 0.5 28 1 28 L 19 28 C 19.5 28 20 27.5 20 27 L 20 3 C 20 2.5 19.5 2 19 2 Z M 18 26 L 2 26 L 2 4 L 18 4 L 18 26 Z"></path>
+</svg>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><svg id="Background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+<defs><style>.Blue{fill:#1177d7;}.Black{fill:#727272;}.cls-1{opacity:.25;}</style></defs>
+<g class="cls-1"><path class="Black" d="M4,2H28c1.1,0,2,.9,2,2v6H2V4c0-1.1,.9-2,2-2Z"/></g>
+<rect class="Blue" x="2" y="10" width="28" height="6"/><g class="cls-1"><rect class="Black" x="2" y="16" width="28" height="8"/></g>
+<path class="Blue" d="M2,24H30v4c0,1.1-.9,2-2,2H4c-1.1,0-2-.9-2-2v-4h0Z"/>
+</svg>

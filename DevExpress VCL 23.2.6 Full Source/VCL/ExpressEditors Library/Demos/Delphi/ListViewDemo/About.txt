@@ -1,0 +1,5 @@
+In this demo, you can:
+
+- Scroll through the list, select one or more items, switch the expanded state of groups, and drag and drop report columns to rearrange their items.
+- Try the appearance and behavior options displayed to the right of the ListView control.
+- Apply different paint styles to a form (the Look&Feel menu item).

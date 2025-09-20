@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DATAPACKET Version="2.0">
+  <METADATA>
+    <FIELDS>
+      <FIELD attrname="Name" fieldtype="string" WIDTH="24"/>
+      <FIELD attrname="Capital" fieldtype="string" WIDTH="24"/>
+      <FIELD attrname="Continent" fieldtype="string" WIDTH="24"/>
+      <FIELD attrname="Area" fieldtype="r8"/>
+      <FIELD attrname="Population" fieldtype="r8"/>
+    </FIELDS>
+    <PARAMS DEFAULT_ORDER="1" PRIMARY_KEY="1" LCID="2057"/>
+  </METADATA>
+  <ROWDATA>
+  </ROWDATA>
+</DATAPACKET>

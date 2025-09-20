@@ -1,0 +1,10 @@
+In this demo, you can perform the following operations with alert windows:
+
+- Move the alert windows anywhere on the screen.
+- Stick alert windows to the screen's edges.
+- Pin an alert window to the screen using the window's Pin button.
+- Close an alert window using its Close button.
+- Perform context actions using the dropdown menu, activated from an alert window's dropdown button.
+- Browse the messages associated with an alert window.
+- Change the different alert window settings using the Alert Options dialog (the Options menu item).
+- See how alert windows change appearance depending on the active look & feel setting (the Look&Feel menu item).

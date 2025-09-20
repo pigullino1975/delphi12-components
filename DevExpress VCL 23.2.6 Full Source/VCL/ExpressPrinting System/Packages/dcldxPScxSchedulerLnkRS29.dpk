@@ -1,0 +1,66 @@
+package dcldxPScxSchedulerLnkRS29;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressPrinting System ReportLink for ExpressScheduler by Developer Express Inc.'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  designide,
+  vcldesigner,
+  rtl,
+  vcl,
+  vcldb,
+  vclwinx,
+  vclimg,
+  vclx,
+  dxComnRS29,
+  dxCoreRS29,
+  dxGDIPlusRS29,
+  cxLibraryRS29,
+  cxExportRS29,
+  cxSchedulerRS29,
+  dxPSCoreRS29,
+  dxPSLnksRS29,
+  dxPScxCommonRS29,
+  dxPScxSchedulerLnkRS29,
+  dcldb,
+  dclstd,
+  dcldxCoreRS29,
+  dclcxLibraryRS29,
+  dclcxSchedulerRS29,
+  dcldxPSCoreRS29;
+
+contains
+  dxPScxSchedulerLnkReg;
+
+end.

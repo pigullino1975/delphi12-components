@@ -1,0 +1,118 @@
+{*******************************************************************************}
+{*   EMS Advanced Data Import for RAD Studio VCL                               *}
+{*                                                                             *}
+{*   Copyright (C) 1999-2021 EMS Software Development                          *}
+{*                                                                             *}
+{*******************************************************************************}
+
+IMPORTANT:
+  Read this file BEFORE installation.
+
+The Set of Native Delphi Components for Borland Delphi
+versions 5, 6, 7, 2005(9), 2006(10), Borland C++ Builder 
+versions 5, 6 and CodeGear RAD Studio 2007, 2009 & 2010, XE, XE2, XE3, XE4, XE5, XE6, XE7, XE8, 
+10 Seattle, 10.1 Berlin, 10.2 Tokyo, 10.3 Rio, 10.4 Sydney, 11 Alexandria
+to import data from most popular formats.
+
+Product Home Page:
+    http://www.sqlmanager.net/products/tools/advancedimport
+
+Registration Page:
+    http://www.sqlmanager.net/products/tools/advancedimport/buy
+
+Technical Support Center Page:
+    http://www.sqlmanager.net/support
+
+Support E-mail:
+   support@sqlmanager.net
+
+Authors:
+    Alex Paclin
+    Dmitry Schastlivtsev
+
+===============================================================
+
+INSTALLATION NOTES
+------------------
+
+Component packages are named in the following way:
+QImport3RT_<IDE code>
+where <IDE code> stands for IDE version:
+50 = Delphi 5
+60 = Delphi 6
+70 = Delphi 7
+90 = Delphi 2005
+100 = Delphi 2006
+110 = Delphi 2007
+120 = Delphi 2009
+140 = Delphi 2010
+150 = Delphi XE
+160 = Delphi XE2
+170 = Delphi XE3
+180 = Delphi XE4
+190 = Delphi XE5
+200 = Delphi XE6
+210 = Delphi XE7
+220 = Delphi XE8
+230 = Delphi 10 Seattle
+240 = Delphi 10.1 Berlin
+250 = Delphi 10.2 Tokyo
+260 = Delphi 10.3 Rio
+270 = Delphi 10.4 Sydney
+280 = Delphi 11 Alexandria
+50 = C++Builder 5
+60 = C++Builder 6
+the <IDE_code> part will be added to the final package BPL file name after compiling
+For example, QImport3RT120 is a run-time package for Delphi 2009.
+
+
+
+I. Full Source Version
+
+1. Uninstall previously installed version of EMS Advanced Data Import 
+for RAD Studio VCL from Delphi/C++Builder IDE:
+
+- Use the "Component\Install Packages..." menu item to open the "Packages" dialog box.
+- Find EMS Advanced Data Import package in the list and delete it by clicking "Remove".
+- Confirm deletion by pressing "OK".
+- Remove previously compiled packages (if any) QImport3RT<IDE code>.BPL and 
+  QImport3DT<IDE code>.BPL from your hard disk.
+
+2. Build Run-Time Package:
+
+- Use the "File\Open Project" menu item to open QImport3RT.dproj package.
+- Use the "View\Tool Windows\Project Manager" menu item to open "Project Manager".
+- Search for QImport3RT<IDE code> package in "Project Manager".
+- Double-click the package to select it.
+- Right-click the package and select "Compile\Build" menu item to build the package.
+
+3. Install Design-Time Package:
+
+- Use the "File\Open Project" menu item to open QImport3DT.dproj package.
+- Use the "View\Tool Windows\Project Manager" menu item to open "Project Manager".
+- Search for QImport3DT<IDE code> package in "Project Manager".
+- Double-click the package to select it.
+- Right-click the package and select "Compile\Build" menu item to build the package.
+- Right-click the package and select "Install" from the context menu.
+
+
+
+II. Trial Version
+
+1. Uninstall previously installed version of EMS Advanced Data Import
+for RAD Studio VCL from Delphi/C++Builder IDE:
+
+- Use the "Component\Install Packages..." menu item to open the "Packages" dialog box.
+- Find EMS Advanced Data Import package in the list and delete it by clicking "Remove".
+- Confirm deletion by pressing "OK".
+- Remove previously compiled packages (if any) QImport3RT<IDE code>.BPL and
+  QImport3DT<IDE code>.BPL from your hard disk.
+
+2. Put package QImport3RT<IDE code>.BPL into directory that is accessible through
+the search PATH (i.e. DOS "PATH" environment variable; for example,
+in the Windows\System directory).
+
+3. Use "Component\Install Packages..." menu item to open "Packages"
+dialog box. Then click "Add..." button and locate QImport3DT<IDE code>.BPL from the
+"C:\Program Files (x86)\EMS\Advanced Data Import 3\lib\RS<IDE_ver>\win(32|64)\release" directory and click "OK" to install package into IDE.
+

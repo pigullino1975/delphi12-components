@@ -1,0 +1,638 @@
+{*******************************************************************************}
+{*                                                                             *}
+{*   EMS Advanced Data Import for RAD Studio VCL                               *}
+{*                                                                             *}
+{*   Copyright (C) 2001-2021 EMS Software Development                          *}
+{*                                                                             *}
+{*******************************************************************************}
+
+28-09-2021
+Version 3.13.0
+  1. Support for RAD Studio 11 Alexandria implemented.
+  2. End of support for RAD Studio 2009 and older versions.
+  3. The Range out of bounds error fixed in TfmQImport3Editor editor on calling
+     a Map... menu item.
+  4. Lines from CSV files were sometimes mixed up. Fixed now.
+  5. Encoding for XML package files added to the TQImport3Wizard dialog.
+  6. A ReadToEnd method added to the TQImport3Encoding class to read and encode
+     large files at better performance.
+  7. Drawing issues occurred on vertical scrolling in TQImport3TXTViewer.
+     Fixed now.
+  8. An error occurred when reading XML data packet with UTF-8-BOM encoding with
+     TEncodedReadStream.ReadToEnd method. Fixed now.
+  9. XML Access parser improved to view data in a grid.
+  10. TQImport3ASCII in text mode did not correctly process control characters,
+      such as TAB. Fixed now.
+  11. Images are now imported correctly from XML files.
+
+22-06-2020
+Version 3.12.0
+  1. Implemented support for RAD Studio 10.4 Sydney.
+  2. Improved preview for XLSX files in TQImport3Wizard component.
+  3. The error occurred on cross-mapping columns in XLSX. Fixed now.
+  4. The interface froze if the TQImport3Xlsx.SheetName property contained
+     an erroneous sheet name. Fixed now.
+  5. Mapping was not always displayed correctly in TfmQImport3TXTEditor. Fixed now.
+  6. Now the TQImport3Xlsx.Execute method returns True on successful import and
+     False if it fails.
+  7. The error occurred on using two digits for year format. Fixed now.
+  8. Fixed error of defining the end of data stream in TQImport3Xlsx.
+  9. XML files with empty tags were previewed incorrectly. Fixed now.
+  10. Row values in OnUserDefinedImport event handler were not processed correctly
+      for DateTime columns. Fixed now.
+  11. Now XLSX file data can be imported even if it's opened in the MS Excel app.
+  12. Encoding for XML SOAP files was not defined correctly. Fixed now.
+
+13-12-2018
+Version 3.11.0
+  1. Implemented support for RAD Studio 10.3 Rio.
+  2. The OnImportCheckField event handler added to the  TQImport3Wizard component.
+  3. Import into BLOB columns implemented.
+  4. New SAX XML parser implemented to improve processing of big files.
+  5. XLS. Import supports 1904 date system now.
+  6. The ColCount property of the TXlsxWorkSheet class is calculated correctly now.
+  7. Content of JScript editor was not saved to a template file. Fixed now.
+  8. JScript didn�t save mapping to a selected field. Fixed now.
+  9. Import settings were not saved if AutoSaveTemplate and CloseAfterImport
+     properties were set to True. Fixed now.
+ 10. Null values were not replaced correctly with custom values. Fixed now.
+ 11. Now empty strings ('') are stored correctly in the configuration file.
+
+20-04-2017
+Version 3.10.1
+  1. Support of RAD Studio 10.2 Tokyo added.
+  2. The possibility to set topics of help file in the
+     TQExport4Dialog.HelpContext or TQExport4Dialog.HelpTopic properties added.
+  3. There were issues with TQImport3Wizard controls layout when large system
+     fonts used. Fixed now.
+  4. Some data was not displayed at the 'Data Formats' tab of the TQImport3Wizard
+     dialog after loading template. Fixed now.
+  5. The 'Encoding' property was not saved to configuration file for the CSV format.
+     Fixed now.
+
+07-03-2017
+Version 3.10.0
+  1. Support for 64-bit Windows target platform has been added.
+  2. Drag-and-drop for fields mapping has been implemented.
+  3. Processing of big XLSX, DOCX, ODS and ODT files has been cosiderably improved.
+  4. Possibility of importing the latest MS Access file versions has been added.
+  5. Now it's possible to import data from XLSX files containing unicode symbols in names.
+  6. HelpFile property has been added to the TQImport3Wizard component. It allows
+     assigning a custom help file name for the application using TQImport3Wizard component.
+  7. Added possibility to set the import format automatically in the TQImport3Wizard
+     component after loading the import file.
+  8. The biMinimize and biMaximize border icons have been added to the TQImport3WizardF form.
+  9. When the AutoLoadTemplate property is set to True and the template file is
+     loaded from code, the boolean values were not shown in Wizard editors. Fixed now.
+  10. TQImport3XLS and TQImport3Xlsx components were unable to read XLS and
+      XLSX files with charts. Fixed now.
+  11. If the last column of CSV file contained no value the column didn't appear
+      in the map dialog window. Fixed now.
+  12. If CSV file contained less than 20 rows the last row didn't appear in the map
+      dialog window. Fixed now.
+  13. If CSV contained CRLF symbols data was not read correctly. Fixed now.
+  14. If the CloseAfterImport property was set to True it always closed the wizard
+      independently of the ConfirmOnCancel property state. Fixed now.
+  15. If the 'Close wizard after import' option was enabled, the progress bar
+      wasn't displayed. Fixed now.
+
+23-05-2016
+Version 3.9.6
+  1. Support of RAD Studio 10.1 Berlin is added.
+  2. There was impossible to compile the class TXMLFile when Windows has the 
+     chinese locale. Fixed now.  
+
+20-01-2016
+Version 3.9.5
+  1. Support of RAD Studio 10 Seattle is added.
+  2. There were double fields count when going back to the first step 
+     in ImportWizard. Fixed now.
+  3. Fields mapping was cleared on loading template, even if there were 
+     no changes in fields information. Fixed now.
+  4. Some graphic artefacts in ImportWizard in Win64 build. Fixed now.
+  5. The resource file's identifiers conflicted with the Report Builder by 
+     Digital Metaphors component suite. Fixed now.
+  6. The property ImportEmptyRows did not allow to be assigned through 
+     the import wizard component. Fixed now. 
+  7. The event handlers OnCancelSetFieldValue and OnSetFieldValueAction were added.
+     The first one allows to cancel assigning of the field's values. The second 
+     handler allows to add any code in order to control the field's values 
+     assigning process.       
+  8. Some other small bug fixes.
+
+05-06-2015
+Version 3.9.4
+  1. Support of RAD Studio XE8 is added.
+
+03-04-2015
+Version 3.9.3
+  1. Some bug fixes.
+
+08-09-2014
+Version 3.9.2
+  1. Support of RAD Studio XE7 is added.
+  2. Now it is possible to hide invisible fields of the binded dataset or DBGrid
+     in component editors. "SkipInvisibleColumns" property was implemented in
+     TQImport3 class.
+  3. Now it is possible to hide invisible fields of the binded dataset or DBGrid
+     in TQImport3Wizard component. "SkipInvisibleColumns" property was implemented
+	 in TQImport3Wizard class.
+  4. Now the active import component is passed as sender into some TQImport3Wizard
+     events that are triggered during import process. This should simplify obtaining
+     extra info about import process in event handlers.
+  5. New error event "OnError" was added into import components. This event is
+     triggered with exceptions on any stages of the import process and provides
+     an info about the current stage as well as an error message text.
+  6. Some bug fixes.
+
+15-05-2014
+Version 3.9.1
+  1. Support of RAD Studio XE6 is added.
+
+23-10-2013
+Version 3.9.0
+  1. Support of RAD Studio XE5 is added.
+  2. QImport3XML. Added import from MS Access XML format files.
+  3. Qimport3Docx. Added BLOB fields import.
+  4. Other improvements and bug fixes.
+
+
+15-04-2013
+Version 3.80
+  1. Each value of the imported field can be processed using expressions in MS
+     JScript. To the TQImportFieldFormat class the TqiStrings Script property
+     containing the script code is added. To the TQImport3 basic class the
+     ScriptEngine property of TQImport3ScriptEngine type is added. This property
+     contains a reference to the component that will execute a script. The
+     TQImport3ScriptEngine is the basic type, it sets the program logic and
+     located in the QImport3ScriptEngine.pas module. It inherited the
+     TQImport3JscriptEngine class, which works with the TScriptControl object
+     from the QImport3MSScriptControlTLB.pas module in the context of MS
+     JScript. You can also write your successor of the TQImport3ScriptEngine
+     class to implement random script syntax. For TQImport3JscriptEngine the
+     scrip execution result corresponds to the last variable value. If you want
+     to use a filed value in the script, you need to specify the field name
+     enclosed in percent signs -% in TQImportFieldFormat.Script. Below there is
+     an example showing how to get a field value, convert it to number and
+     increase on a numeric value of the current month:
+     // FieldName means a filed name
+     R = %FieldName%;
+     var D = New Date();
+     k = parseInt(R) + D.getMonth() + 1;
+     If a script for the field is set, it will have the highest priority in the
+     field processing. I.e. the generator will not start, if it is set, etc.
+
+  2. Now, instead of the imported field value the following values can be
+     substituted: current date, current time, current date and time, full name
+     of the imported file, short name of the imported file.
+     To the TQImportFieldFormat class the Functions property of
+     TQImportFunctions = (ifNone, ifDate, ifTime, ifDateTime, ifLongFileName,
+     ifShortFileName) type is added;
+  3. QImport3HTML. Data from the files was imported. Fixed now.
+  4. If format masks correspond to system masks, they were not saved in the dfm
+     file. Fixed now.
+  5. QImport3Xlsx. The InlineStr cell values were not imported. Fixed now.
+  6. QImport3ASCII. Some errors occurred while working with CSV files. Fixed now.
+  7. Other improvements and bug fixes.
+
+12-10-2012
+Version 3.70
+  1. Support of RAD Studio XE3 is added.
+  2. Reading multi-byte encoding files caused data corruption. Fixed now.
+  3. QImport3Xlsx. When importing some files, an Access Violation error occurred. 
+     Fixed now.
+  4. QImport3Xlsx. When reading data in cells containing non-printable characters, 
+     an error occurred. Fixed now.
+  5. QImport3Xlsx. The Date/Time datatypes were displayed incorrectly. Fixed now.
+  6. QImport3Wizard. Import from CSV. When setting a MAP property, file data 
+     contained line break characters in the field values were displayed incorrectly. 
+     Fixed now.
+  7. QImport3Wizard. When importing from CSV and TXT, incorrect default encoding 
+     applied. Fixed now.
+  8. QImport3Wizard. Import from TXT. When loading a template in the MAP property 
+     settings, values of the block position and size were reversed. Fixed now.
+  9. QImport3Wizard. Even if the import process is fully complete, ProgressBar 
+     did not show 100% completion for some types of import. Fixed now.
+  10. Other improvements and bugfixes.
+
+30-03-2012
+Version 3.60
+  1. Added the �Functions� property (TQImportFunctions = (ifNone, ifDate, ifTime, 
+     ifDateTime, ifLongFileName, ifShortFileName) to
+     the TQImportFieldFormat class. This property allows to replace the imported 
+     value to the corresponding current date, current time, current date and time, 
+     the full name of the imported file, the short name of the imported file.
+  2. QImport3Xlsx. Restored the compatibility with the old-format config-file.
+  3. QImport3Xlsx. When setting a custom data format for numbers in an Excel cell,
+     the date format was applied to the imported values. Fixed now.
+  4. ADO_QImport3Access. The Blob data were not imported. Fixed now.
+  5. QImport3Xlsx. The first empty cell caused stopping the data import from 
+     the column. Fixed now.
+  6. QImport3Xlsx. When specifying column X1 in the Map, the data were imported 
+     from column A1. Fixed now.
+  7. QImport3Xlsx. If the date data format did not match the system format, 
+     an error occurred. Fixed now.
+  8. QImport3Xls. The absence of data in a column or in a row caused the error. 
+     Fixed now.
+  9. Other improvements and bugfixes.
+
+14-12-2011
+Version 3.50
+  1. TQImport3XML. Unicode support is added.
+  2. TQImport3Xlsx. The parsing logic of the Map property has been changed, now 
+     it is possible to specify the following parameters:
+     - range of cells in the row or column - A1-F1, B1-B12, C1-ROWFINISH, K4-COLFINISH;
+     - sheet name - [Sheet2]B1-B6;
+     - sheet number - [:3]D4-D9;
+     - several cellsets for the same field - [Sheet2]C12-C2;[:1]A1-A8;
+  3. Added the AutoTrimValue property. When AutoTrimValue = True, the Trim 
+     function will be applied to each string value.
+  4. Added the ImportEmptyRows property. When ImportEmptyRows = False, the empty 
+     strings will not be imported.
+  5. When importing from Excel 2003 a formula was calculated incorrectly. Fixed now.
+  6. TQImport3Wizard. Fractional numbers were always separated by a point, regional
+     settings were discarded. Fixed now.
+  7. Importing from CSV format caused the program hang-up. Fixed now.
+  8. TQImport3Wizard. XML files were imported with empty strings. Fixed now.
+  9. TQImport3Wizard. Strings longer than 8 KB were displayed incorrectly. Fixed now.
+  10. TQImport3Wizard. Now it is possible to resize the window of the wizard.
+  11. Other improvements and bugfixes.
+
+10-10-2011
+Version 3.40
+  1. Support of RAD Studio XE2 is added.
+  2. Some other improvements and bugfixes.
+
+11-18-2010
+Version 3.30
+  1. Support of Embarcadero RAD Studio XE is added.
+  2. When using the ASCII import type in RAD Studio 2010, strings were 
+      sometimes truncated. Fixed now.
+  3. QImport3XLS. When dealing with a large number of records, the destructor
+      of the TXLSFile class was executed for too long. Fixed now.
+  4. QImport3Wizard. Added the possibility to select the encoding for the CSV
+      import type.
+  5. QImport3Wizard. When reading from a template file, the Encoding, SkipLines
+      and Map properties were not set for the import into the TXT format. Fixed now.
+  6. Dates of the "1.1.1900" format were imported incorrectly. Fixed now.
+  7. Some other small improvements and bug fixes.
+
+24-11-2009
+Version 3.20
+1. Support of RAD Studio 2010 is added.
+2. Some other improvements and bugfixes.
+
+19-12-2008
+Version 3.10
+1. Support of RAD Studio 2009 is added.
+2. Some other improvements and bugfixes.
+
+20-11-2007
+Version 3.00
+1. Six new data import components have been added:
+ - TQImport3HTML component is intended for importing tables from HTML pages.
+ - TQImport3XMLDoc component is intended for importing generic XML files.
+   We have implemented import from any XML file using XPath 
+   language and DataLocation (tlAttributes, tlSubNodes).
+ - TQImport3Xlsx component is intended for importing the MS Excel 2007 sheets.
+ - TQImport3Docx component is intended for importing the MS Word 2007 tables.
+ - TQImport3ODS component is intended for importing the OpenDocument 
+   Spreadsheet files (Open Document Format).
+ - TQImport3ODT component is intended for importing the tables of the OpenDocument 
+   Text files (Open Document Format).
+2. Unicode support. Now you are able to import Unicode data 
+   (UTF-8, UTF-16/UCS-2, UTF-32/UCS-4).
+3. With a new installer the components will be installed and registered 
+   in Delphi\C++ Builder environment automatically.
+4. Support of BDS 2007, Delphi 2007 and C++ Builder 2007 is added.
+5. Memory usage and performance are improved. Large files are imported 
+   significantly faster.
+6. Some other improvements and bugfixes.
+
+05-12-2006
+Version 2.40
+
+1. Fixed the bug with XML Import editor � file filtering in Open File Dialog 
+   was incorrect: .dbf instead of .xml
+2. ADO_Import2Wizard.  The SkipLines value was neither saved nor restored 
+   when importing from TXT file. Fixed now.
+3. Import2Wizard and ADO_Import2Wizard. With the Show Error Log after import 
+   flag on the error log file was not shown. Fixed now.
+4. Import2Wizard � ADO_Import2Wizard. The repeated load of the template 
+   file (without closing the ImportWizard) caused the duplication of the values 
+   in the Replacements list. Fixed now.
+5. Import2Wizard and ADO_Import2Wizard.  With AutoLoadTemplate and 
+   AutoSaveTemplate options on there were some problems with loading and 
+   writing of the template. Fixed now.
+6. Now it is possible to log the errors caused by incorrect field formats. 
+7. QImport2XLS. When not all fields were mapped it caused error "List Index out of bounds" 
+   during opening the Map component editor in design time mode. Fixed now.
+8. QImport2DBF. When importing from DBF using an FPT file, the lengths of 
+   MEMO type fields were calculated incorrectly. 
+9. The new custom date-string parser allows to recognize dates in any format 
+   including the initial zeros, i.e. either 7/3/2000 or 07/03/2000.
+10. Significant improvements related to working with TQImportFieldFormat.NullValue 
+    and TQImportFieldFormat.DefaultValue options, including the correct saving of 
+    them into a template file.
+11. Added new AllowDuplicates feature that optionally allows to create duplicates 
+    during the import modes: Insert All, Update or Insert, Delete or Insert.
+12. Delphi 2006 support.
+13. EMS Quick Import Component Suite renamed to EMS Advanced Import Component Suite!
+
+08-01-2005
+Version 2.30
+
+1. Fixed the bug that caused shift of data in XLS files if they had several 
+   empty cells when property SkipRowsCount = 0. (QImport2XLS)
+2. Fixed the bug that caused duplicating of data during import of text 
+   files in "Insert New" mode. (QImport2ASCII)
+3. Added ability to import data from MS Access Databases secured with 
+   password. (ADO_QImport2Access)
+4. Now import of DateTime fields from Paradox tables works correctly. 
+5. Now "Replacements" finds all entries of substring and replaces them all 
+   unlike the previous versions.  
+6. Decreased processor loading while executing long import operations. 
+
+12-28-2004
+Version 2.20
+
+1. Delphi 2005 support.
+2. Now Quick Import can use several languages in one project. By default, it   
+   works with resources that are linked into .BPL file. If you need            
+   multi-language support in your project, make several language DLLs          
+   and switch to particular language by this code:                             
+                                                                              
+   uses QImport2;                                                              
+                                                                              
+   QImportLocale.LoadDll('QIEnglish.dll'); // load English resources           
+   ...                                                                         
+   QImportLocale.UnloadDll; // unload resource DLL and use default resources   
+                                                                              
+   To make the DLL, run MakeDll.bat file in this folder, or MakeAll.bat file   
+   in the LANGUAGES folder to make DLLs for all languages.                     
+
+3. We have tried to solve the problem with importing Date/Time fields. 
+   As a result we have improved the TQImport2.StringToField method where 
+   you will be able to find new functions: TryStrToDateTime, FormatStrToDateTime.   
+
+4. Also new event handler OnImportRowComplete was added to the base class TQImport2.
+   This event takes place when the import of row is complete.
+   
+5. Some small improvements and bugfixes.
+
+08-12-2003
+Version 2.10
+
+1. We have added the OnDestinationLocate event to all components of the 
+   suite including the TQImport2Wizard and TADOQImport2Wizard components. 
+   This event can be used when it is necessary to find a row by key values in the 
+   TDataset or TDBGrid destinations and allows you to control defining 
+   of the search condition parameters.
+
+2. We have added the WriteOnFly property in the TQImport2XML component. This 
+   property determines how the source xml file will be read and imported. If 
+   WriteOnFly is set to false then the source file will be read and parsed 
+   completely, and after that the prepared data will be imported to the 
+   destination object (e.g. TDataSet, TDBGrid etc.). If WriteOnFly is set to true 
+   each tag will be read, parsed and imported separately without temporary saving 
+   to memory. Corresponding options are added in the TQImport2Wizard and 
+   TADO_QImport2Wizard components.
+
+3. We have improved the Excel Map Editor in the TQImport2Wizard and 
+   TADO_QImport2Wizard components. Now you have a possibility of selecting one
+   or more columns or rows by one click. Press the Ctrl key and click on any column header
+   to select a whole column or click on the row number to select a whole
+   row. Use the Shift key to select a range of columns or rows.
+
+4. The Formats property editor available from the TADO_QImport2Wizard component now.
+
+5. A bug with displaying the SkipCols and SkipRows values in the Excel Map 
+   Editor in the TQImport2Wizard and TADO_QImport2Wizard components is fixed 
+   now.
+
+6. Some small improvements and bugfixes.
+
+06-17-2003
+Version 2.00
+
+1. We have added a possibility of importing data from different Excel sheets. 
+   You can import data from a single Excel sheet or from several Excel sheets
+   at once.
+
+2. Now it is possible to import formulas from Excel. You can add cells 
+   containing formulas to an imported range and get the formula result in your
+   import destination.
+
+3. We have added a possibility of defining relative ranges in the Map property 
+   of the TQImportXLS component. This feature allows to define import 
+   ranges without linking to certain cell numbers e.g.:
+
+   Field1=[Sheet 1]A-ColFinish;
+   Field2=[Sheet 1]B-ColStart;
+
+   You don't have to know where exactly your data start or finish. 
+
+4. We have implemented import from XML format. You can import data from XML 
+   files created via our QuickExport component suite 
+   http://www.ems-hitech.com/quickexport
+   or via the SaveToFile method of the TClientDataSet component.
+
+5. Now it is possible to import data into an user defined destination. 
+   You should set the ImportDestination property to qidUserDefined and call the 
+   Execute method. In this case you should use the OnUserDefinedImport event to 
+   manipulate imported data according to your purpose.
+
+6. Some new published properties are added to the Wizard components:
+   - property TXTViewRows: integer;
+   - property CSVViewRows: integer;
+   - property ExcelViewRows: integer;
+   - property ExcelMaxColWidth: integer;
+
+   These properties allow flexible tuning of the wizard appearance. Using the
+   first three properties you can define how many records are shown in the 
+   corresponding viewer. The last property defines the max width of the columns
+   in the Excel viewer.
+
+7. We have added the OnLoadTemplate event to the Wizard components. This event 
+   allows to perform any actions with the template file before it is loaded.
+
+8. A possibility of defining case insensitive replacements is implemented. Use
+   the CaseIgnore property of the TQImportReplacement object in all components 
+   of the suite.
+
+9. The appearance of the Import Wizards is improved significantly. We hope 
+   you will like its new interface.
+
+10. Some other improvements and bugfixes.
+
+
+04-29-2003
+Version 1.80
+
+1. The ShowErrorLog and the ErrorLogFileName properties are added to each
+   component of the set.
+
+2. A possibility of starting import process from the Map page in ImportWizard
+   is added. Now you can execute import immediately after the accordance
+   between destination and source columns is defined.
+
+3. The GoToLastPageAfterLoadTemplate property added to the Wizard components.
+   Now you can skip several wizard steps after the import template loaded.
+
+4. The CloseAfterImport property is added to the wizard components. Set this
+   property to true to close Import Wizard when import process is finished.
+
+5. A bug with importing Date type data from Excel is fixed.
+
+6. Some small improvements and bugfixes.
+
+03-03-2003
+Version 1.70
+
+1. A possibility of importing data to different destination is added.
+   Now you can import your data to TDataSet, TDBGrid, TListView, TStringGrid
+   or any decendants of them.
+
+2. A possibility of defining the importing mode is added. You can define how
+   the records from source file will be imported in the destination. You can
+   add all records from source file or new records only, update or delete
+   existing records. Use the ImportMode property for this purpose. Some modes
+   need to define the KeyColumns property.
+
+3. The SkipDeleted property is added to the TQImportDBF component. Use this
+   property to define if records, which marked as deleted, will be imported
+   or not. The default value of this property is true.
+
+4. Some small improvements and bugfixes.
+
+12-15-2002
+Version 1.65
+
+1. The DateSeparator and TimeSeparator properties are added to
+   TQImportFormats class. Use these properties for tuning regional
+   date and time formats.
+
+2. A bug with import from dbf with memo fields but without
+   corresponding memo file is fixed.
+
+3. The Wizard appearance is improved.
+
+4. Some small improvements and bugfixes.
+
+10-29-2002
+Version 1.6
+
+1. A possibily of defining the replacement list is added.
+   Use FieldFormats.Replacements to define replacement list for the field.
+
+2. The ImportToCSV method is added.
+   procedure ImportToCSV(Stream: TStream; ListSeparator, Quote: char);
+   This method allows you to convert your import data to csv format using
+   ListSeparator and Quote and direct them to the Stream.
+
+3. The AddType property is added.
+   This propery allows you to define method for adding data to DataSet.
+
+4. Some small improvements and bugfixes.
+
+09-25-2002
+Version 1.5
+
+1. Delphi 7 support.
+
+2. The new component TQImportDataSet is added.
+   This component allows you to import your data from any TDataSet compatible
+   data set.
+
+3. The bug with loading templates for csv files is fixed.
+
+4. Some small improvements and bugfixes.
+
+08-07-2002
+Version 1.4
+
+1. The new component TQImportAccess is added.
+   This component allows you to import data from MS Access database to any
+   TDataSet descendant. Also there is the new wizard component
+   (TADO_QImportWizard) for this purpose.
+
+   Please note that these features require the Borland ADO components
+   (included in Delphi 5 or higher Enterprise edition) for getting access to
+   MS Access databases.
+
+2. The Import Wizard form interface has been improved. We hope you'll like the new version as well.
+
+3. The bug occured during importing dates from a dbf file is fixed.
+
+4. Some small improvements and bugfixes.
+
+
+05-28-2002
+Version 1.25
+
+1. Support of C++ Builder 5 and 6 is added.
+
+2. A possibility of automatically saving/restoring templates in TQImportWizard
+   component is added.
+   Now you can determine a template file which will be saved/loaded automatically
+   when QImportWizard finished/started. Use the TemplateFileName,
+   AutoLoadTemplate and AutoSaveTemplate properties for this purpose.
+
+3. Two new methods are added to all components in the suite:
+     procedure LoadConfiguration(const FileName: string);
+     procedure SaveConfiguration(const FileName: string);
+
+4. Some small improvements and minor bugfixes.
+
+
+05-08-2002
+Version 1.20
+
+1. A possibility of saving/restoring templates in TQImportWizard component
+   is added.
+   Now you can save the most frequently used import settings: the source file,
+   the field correspondence, the format options, etc. to the template,
+   and load this template in the next import session.
+
+2. A possibility of setting the field correspondence automatically is added.
+   This feature allows you to set the correspondence between the source table
+   columns and the dataset fields by one cIick. It is very useful if the
+   source file and the result table have similar structure.
+
+3. Properties SkipFirstCols and SkipFirstRows were added to the TQImportXLS
+   component.
+
+Also in this version we have made some small improvements and minor bugfixes.
+
+04-09-2002
+Version 1.11
+
+Small improvements and bugfixes.
+
+03-25-2002
+Version 1.10
+
+Now the following features are available:
+  - defining autoincrement values;
+  - defining constant values;
+  - defining default values;
+  - defining quotation actions;
+  - defining char case;
+  - defining char set.
+You can get access to these new features through the FieldFormats property
+in the each component of the suite.
+
+Also in this version we have made some minor corrections and fixes.
+
+03-11-2002
+Version 1.02
+
+First bugfixes, some small improvements.
+
+03-04-2002
+Version 1.01
+
+First public commercial release!
+
+=================
+www.downloadly.ir

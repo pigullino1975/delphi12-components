@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<style type="text/css" xml:space="preserve">
+	.Blue{fill:#1177D7}
+	.Green{fill:#039C23}
+	.Black{fill:#3F3F3F}
+	.White{fill:#FFFFFF}
+	.Yellow{fill:#FFB115}
+</style>
+<polygon class="Blue" points="10,8 10,2 0,2 0,30 32,30 32,8 "/>
+<rect x="12" y="2" class="Green" width="10" height="4"/>
+<path class="Yellow" d="M30,24v-5c0-0.6-0.4-1-1-1h-6c-0.6,0-1,0.4-1,1v5h-2v8h12v-8H30z M24,24v-4h4v4H24z"/>
+<g id="Multiline" transform="matrix(0.278939, 0, 0, 0.294349, 16.641548, -0.751561)" style="">
+	<circle class="White" stroke="White" stroke-width="1" cx="642" cy="586" r="56" transform="matrix(0.537257, 0, 0, 0.50949, -316.932922, -269.790161)"/>
+	<path class="Black" d="M 1.898 25.597 L 17.092 25.597 L 17.092 18.69 L 27.945 28.574 L 17.092 38.457 L 17.092 31.55 L 1.898 31.55 L 1.898 25.597 Z" style="" transform="matrix(-1, 0, 0, -1, 29.843007, 57.146994)"/>
+	<path class="Black" d="M 24.971 29.442 L 24.971 43.774 L 18.848 43.774 L 28.302 54.011 L 37.154 43.774 L 31.032 43.774 L 31.032 29.442 L 24.971 29.442 Z" style=""/>
+	<path class="Black" d="M 25.017 27.547 L 25.017 13.547 L 18.988 13.547 L 28.024 3.547 L 37.062 13.547 L 31.032 13.547 L 31.032 27.547 L 25.017 27.547 Z" style=""/>
+	<path class="Black" d="M 27.758 25.587 L 43.11 25.587 L 43.11 18.637 L 54.076 28.575 L 43.11 38.513 L 43.11 31.562 L 27.758 31.562 L 27.758 25.587 Z" style=""/>
+</g>
+</svg>

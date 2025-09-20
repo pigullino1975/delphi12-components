@@ -1,0 +1,61 @@
+package QImport3DT;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'EMS Advanced Data Import VCL'}
+{$LIBSUFFIX '290'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  vcldb,
+  designide,
+  rtl,
+  dbrtl,
+  QImport3RT;
+
+contains
+  fuQImport3CSVEditor in '..\..\source\fuQImport3CSVEditor.pas' {fmQImport3CSVEditor},
+  fuQImport3DataSetEditor in '..\..\source\fuQImport3DataSetEditor.pas' {fmQImport3DataSetEditor},
+  fuQImport3DBFEditor in '..\..\source\fuQImport3DBFEditor.pas' {fmQImport3DBFEditor},
+  fuQImport3FormatsEditor in '..\..\source\fuQImport3FormatsEditor.pas' {fmQImport3FormatsEditor},
+  fuQImport3TXTEditor in '..\..\source\fuQImport3TXTEditor.pas' {fmQImport3TXTEditor},
+  fuQImport3XLSEditor in '..\..\source\fuQImport3XLSEditor.pas' {fmQImport3XLSEditor},
+  fuQImport3XMLEditor in '..\..\source\fuQImport3XMLEditor.pas' {fmQImport3XMLEditor},
+  fuQImport3HTMLEditor in '..\..\source\fuQImport3HTMLEditor.pas' {fmQImport3HTMLEditor},
+  fuQImport3XMLDocEditor in '..\..\source\fuQImport3XMLDocEditor.pas' {fmQImport3XMLDocEditor},
+  fuQImport3ODSEditor in '..\..\source\fuQImport3ODSEditor.pas' {fmQImport3ODSEditor},
+  fuQImport3ODTEditor in '..\..\source\fuQImport3ODTEditor.pas' {fmQImport3ODTEditor},
+  fuQImport3XlsxEditor in '..\..\source\fuQImport3XlsxEditor.pas' {fmQImport3XlsxEditor},
+  fuQImport3DocxEditor in '..\..\source\fuQImport3DocxEditor.pas' {fmQImport3DocxEditor},
+  fuQImport3Editor in '..\..\source\fuQImport3Editor.pas' {fmQImport3Editor},
+  fuQImport3GridEditor in '..\..\source\fuQImport3GridEditor.pas' {fmQImport3GridEditor},
+  fuQImport3TripleListEditor in '..\..\source\fuQImport3TripleListEditor.pas' {fmQImport3TripleListEditor},
+  fuQImport3PCEditor in '..\..\source\fuQImport3PCEditor.pas' {fmQImport3PCEditor},
+  QImport3Reg in '..\..\source\QImport3Reg.pas';
+
+end.

@@ -1,0 +1,364 @@
+// Czech
+
+#include "QImport3StrIDs.pas"
+
+STRINGTABLE                 
+BEGIN
+  // Errors
+  QIE_NoDataSet             "DataSet není definován"
+  QIE_NoDBGrid              "DBGrid není definována"  // since 1.7
+  QIE_NoListView            "ListView není definován"  // since 1.7
+  QIE_NoStringGrid          "StrinGrid není definována"  // since 1.7
+  QIE_NoSource              "Zdrojový DataSet není definován"  // since 1.5
+  QIE_NoFileName            "Nebylo zadáno jméno souboru"
+  QIE_NoTableName           "Table name is not specified" // since 3.9
+  QIE_FileNotExists         "Soubor %s nenalezen nebo neexistuje"
+  QIE_MappingEmpty          "Map je prázdný"
+  QIE_CanceledByUser        "Import pøerušen uživatelem"
+  QIE_MapMissing            "Chybìjící definice MAP"
+  QIE_FieldNotFound         "Sloupec %s definovaný v MAP nebyl nalezen v cíli importu"
+  QIE_SourceFieldNotFound   "Pole %s nenalezeno ve zdrojovém datasetu"  // since 1.5
+  QIE_DataSetClosed         "Operaci nelze provést na uzavøený cíl importu"
+  QIE_AllowedImportsEmpty   "Vlastnost AllowedImports nemùže obsahovat prázdnou množinu"
+  QIE_KeyColumnsNotDefined  "Nejsou definovány KEY sloupce"  // since 1.7
+  QIE_KeyColumnNotFound     "KEY sloupec %s neexistuje v cíli importu"  // since 1.7
+  QIE_XMLFieldListEmpty     "Seznam polí XML je prázdný"  // since 2.0
+  QIE_NeedDefineTextToFind  "Hledaný text musí být zadán"  // since 2.0
+  QIE_UnknownImportSource   "Neznámý zdroj importu" // since 2.2
+  QIE_WrongFileType         "Chybný typ souboru, je tøeba ""%s""" // since 2.2
+  QIE_UnknownFieldType      "Neznámý typo pole" // since 2.35
+  QIE_WrongDateFormat       "Chybný formát data v poli ""%s""" // since 2.35
+  QIE_ListIndexOutOfBounds  "Index seznamu je mimo rozsah (%d)" // since 3.00
+  QIE_GridCaptionPos        "GridCaptionRow cannot be greater than GridStartRow" // 3.1
+  QIE_IsNotBoolean          "The value ""%s"" is not a boolean value"  
+  QIE_ColumnIndexError      "Grid column index out of bounds (%d)"
+  QIE_RowIndexError         "Grid row index out of bounds (%d)"
+  QIE_MaxColumnsError       "Columns count out of bounds (%d)"
+  
+  QIE_CSVParseError         "CSV parse error:"
+  QIE_CSVLineNumberError    "Line: %d"
+  QIE_CSVColumnNumberError  "Column: %d"
+  QIE_CSVWrongNumberOfColumns   "Wrong number of columns"
+  QIE_CSVWrongColumnValueFormat "Wrong format of column value"  
+  QIE_CSVInvalidCharacter       "Invalid character (HexCode = %.8x). Input file is invalid."
+
+  QIE_CSVOperationNotAllowedInActiveState "Operation is not allowed in Active state."
+  QIE_CSVOperationNotAllowedInInactiveState "Operation is not allowed in Inactive state."
+  QIE_CSVGettingNextLine "Getting next line."
+  QIE_CSVModifyingInputParameter "Modifying %s input parameter."  
+  QIE_CSVGettingProperty "Getting %s property."
+  QIE_CSVSettingProperty "Setting %s property."
+
+  // Filters
+  QIF_TXT        "Textové soubory (*.txt)|*.txt|Všechny soubory (*.*)|*.*"
+  QIF_ASCII      "ASCII soubory (*.txt *.csv)|*.txt *.csv|Všechny soubory (*.*)|*.*"
+  QIF_CSV        "CSV soubory (*.csv)|*.csv|Všechny soubory (*.*)|*.*"
+  QIF_DBF        "DBF soubory (*.dbf)|*.dbf|Všechny soubory (*.*)|*.*"
+  QIF_XML        "XML soubory (*.xml)|*.xml|Všechny soubory (*.*)|*.*"  // since 2.0
+  QIF_XLS        "Microsoft Excel soubory (*.xls)|*.xls|Všechny soubory (*.*)|*.*"
+  QIF_XLSX       "Microsoft Excel 2007 soubory (*.xlsx)|*.xlsx|All files (*.*)|*.*"
+  QIF_DOCX       "Microsoft Word 2007 soubory (*.docx)|*.docx|All files (*.*)|*.*"
+  QIF_ODS        "Open Document sešity (*.ods)|*.ods|All files (*.*)|*.*"
+  QIF_ODT        "Open Document textové soubory (*.odt)|*.odt|All files (*.*)|*.*"
+  QIF_MDB        "Microsoft Access 97-2003 soubory (*.mdb)|*.mdb|Všechny soubory (*.*)|*.*" // since 3.9
+  QIF_ACCDB      "Microsoft Access files (*.accdb)|*.accdb|Všechny soubory (*.*)|*.*" // since 3.9
+  QIF_Access     "Microsoft Access 97-2003 soubory (*.mdb)|*.mdb|Microsoft Access soubory (*.accdb)|*.accdb|Všechny soubory (*.*)|*.*" // since 3.9  
+  QIF_ALL        "Všechny povolené soubory (*.txt *.csv *.dbf *.xls)|*.txt *.csv *.dbf *.xls"
+  QIF_TEMPLATE   "QuickImport Template soubory (*.imp)| *.imp"  // since 1.2
+  QIF_HTML       "HTML soubory (*.html; *.htm)|*.html;*.htm|All files (*.*)|*.*" // since 3.0
+
+  // Loading
+  QIL_Loading                 "Naèítání..."                        // since 2.0
+
+  // Defaults
+  QID_BooleanTrue             "Pravda"
+  QID_BooleanFalse            "Nepravda"
+  QID_NullValue               "Null"                              // since 1.8
+
+  // Wizard
+  QIW_importWizard            "Prùvodce importem"
+  QIW_ImportFrom              "Importovat z"
+  QIW_XLS                     "MS Excel 97-2003"
+  QIW_XLSX                    "MS Excel"
+  QIW_DOCX                    "MS Word"
+  QIW_ODS                     "ODS file"
+  QIW_ODT                     "ODT file"
+  QIW_Access                  "MS Access"                        // since 1.4  
+  QIW_Access97_2003           "MS Access 97-2003"                // since 3.9  
+  QIW_DBF                     "DBF"
+  QIW_XML                     "XML"                               // since 2.0
+  QIW_TXT                     "Textový soubor"
+  QIW_CSV                     "CSV soubor"
+  QIW_Comma                   "Comma"                             // since 2.0
+  QIW_Quote                   "Citace"                             // since 1.65
+  QIW_FileName                "Jméno zdrojového souboru"
+  QIW_SkipInvisibleColumns    "Skip Invisible Target Columns"
+  QIW_NeedCancelCaption       "Opravdu chcete..."
+  QIW_NeedCancel              "Opravdu chcete pøerušit import ?"
+  QIW_Question                "Potvrzení"                          // since 2.0
+  QIW_CancelWizard            "Pøejete si ukonèit ?"              // since 2.0
+  QIW_TemplateFileName        "Jméno souboru templatu"               // since 2.36
+  QIW_HTML                    "HTML soubor"                        // since 3.0
+  QIW_XMLDoc                  "XMLDoc"                           // since 3.0
+
+  QIW_Help                    "&Help"
+  QIW_Back                    "< &Zpìt"
+  QIW_Next                    "&Další >"
+  QIW_Cancel                  "&Storno"
+  QIW_Execute                 "&Provést"
+  QIW_Step                    "Krok %d z %d"
+  QIW_TemplateOptions         " Nastavení "                // since 2.0
+  QIW_GoToLastPage            "Jít na poslední stranu po naètení nastavení"                  // since 2.0
+  QIW_AutoSaveTemplate        "Uložit nastavení automaticky po zavøení prùvodce"                     // since 2.0
+  QIW_LoadTemplate            "Naèíst nastavení..."        // since 1.2
+  QIW_SaveTemplate            "Uložit nastavení..."          // since 1.2
+
+  QIW_CommitOptions           "Commit nastavení"                    // since 1.7
+  QIW_Commit                  "Commit"
+  QIW_CommitAfterDone         "Commit po ukonèení"
+  QIW_CommitRecCount          "Commit po každých"
+  QIW_Records                 "záznamù"
+  QIW_RecordCount             "Poèet záznamù"
+  QIW_ImportAllRecords        "Importovat všechny záznamy"
+  QIW_ImportRecCount          "Import pouze prvních "
+  QIW_CloseAfterImport        "Zavøít prùvodce po provedení importu"         // since 1.8
+
+  QIW_ImportAdvanced          "Rozšíøené"                          // since 1.7
+  QIW_AddType                 "Typ pøipojení"                          // since 1.6
+  QIW_AddType_Append          "Pøipojit"                            // since 1.6
+  QIW_AddType_Insert          "Vložit"                            // since 1.6
+
+  QIWIM_Caption               " Typ importu "                     // since 1.7
+  QIWIM_Insert_All            "Vložit vše"                        // since 1.7
+  QIWIM_Insert_New            "Vložit nový"                        // since 1.7
+  QIWIM_Update                "Aktualizovat"                            // since 1.7
+  QIWIM_Update_or_Insert      "Aktualizovat nebo vložit"                  // since 1.7
+  QIWIM_Delete                "Smazat"                            // since 1.7
+  QIWIM_Delete_or_Insert      "Smazat nebo vložit"                  // since 1.7
+
+  QIW_AvailableColumns        "Dostupné sloupce"                 // since 1.7
+  QIW_SelectedColumns         "KEY sloupce"                       // since 1.7
+
+  QIW_ErrorLog                "Chybový LOG soubor"
+  QIW_EnableErrorLog          "Povolit LOG chyb do souboru"
+  QIW_ErrorLogFileName        "Jméno LOG souboru"               // since 1.8
+  QIW_RewriteErrorLogFile     "Pøepsat LOG soubor pokud již existuje"                            // since 1.8
+  QIW_ShowErrorLog            "Zobrazit LOG soubor po ukonèení importu"
+  QIW_ErrorLogStarted         "%s - Import zahájen"       // since 1.8
+  QIW_ErrorLogFinished        "%s - Import ukonèen"      // since 1.8
+  QIW_SomeErrorsFound         "%d chyb nalezeno"                 // since 1.8
+  QIW_NoErrorsFound           "Bez chyb"                    // since 1.8
+
+  QIW_BaseFormats             "Základní formáty"
+  QIW_DateTimeFormats         "Formáty Datum a Èas"             // since 1.65
+  QIW_Separators              "Oddìlovaèe"                        // since 1.65
+  QIW_DecimalSeparator        "Desetinná místa"
+  QIW_ThousandSeparator       "Tisíce"
+  QIW_ShortDateFormat         "Krátké datum"
+  QIW_LongDateFormat          "Dlouhé datum"
+  QIW_DateSeparator           "Datum"                              // since 1.65
+  QIW_ShortTimeFormat         "Krátký èas"
+  QIW_LongTimeFormat          "Dlouhý èas"
+  QIW_TimeSeparator           "Èas"                              // since 1.65
+
+  QIW_BooleanTrue             "Boolean pravda"
+  QIW_BooleanFalse            "Boolean nepravda"
+  QIW_NullValue               "Null hodnoty"                       // since 2.0
+
+  QIWDF_Caption               "Datové formáty"
+  QIWDF_Fields                "Pole"
+  QIWDF_Tuning                "Úpravy"                            // since 1.6
+  QIWDF_Replacements          "Nahrazování"                      // since 1.6
+  QIWDF_TextToFind            "Hledaný text"                      // since 2.0
+  QIWDF_ReplaceWith           "Nahradit èím"                      // since 2.0
+  QIWDF_IgnoreCase            "Nerozlišovat M/V"                       // since 2.0
+  QIWDF_IgnoreCase_Yes        "Ano"                               // since 2.0
+  QIWDF_IgnoreCase_No         "Ne"                                // since 2.0
+  QIWDF_AddReplacement        "Pøidat nahrazování"                   // since 2.0
+  QIWDF_EditReplacement       "Editovat nahrazování"                  // since 2.0
+  QIWDF_DelReplacement        "Smazat nahrazování"                   // since 2.0
+  QIWDF_GeneratorValue        "Hodnota generátoru"
+  QIWDF_GeneratorStep         "Krok generátoru"
+  QIWDF_ConstantValue         "Konstanta"
+  QIWDF_NullValue             "Null hodnota"
+  QIWDF_DefaultValue          "Defaultní hodnota"
+  QIWDF_LeftQuote             "Levá citace"
+  QIWDF_RightQuote            "Pravá citace"
+  QIWDF_QuoteAction           "Citace - akce"
+  QIWDF_QuoteNone             "Žádná"
+  QIWDF_QuoteAdd              "Pøidat"
+  QIWDF_QuoteRemove           "Odebrat"
+  QIWDF_CharCase              "Velikost znakù"
+  QIWDF_CharCaseNone          "Ponechat"
+  QIWDF_CharCaseUpper         "Velká"
+  QIWDF_CharCaseLower         "Malá"
+  QIWDF_CharCaseUpperFirst    "První znak velký"
+  QIWDF_CharCaseUpperWord     "První slovo velké"
+  QIWDF_CharSet               "Sada znakù"
+  QIWDF_CharSetNone           "Ponechat"
+  QIWDF_CharSetAnsi           "Ansi"
+  QIWDF_CharSetOem            "Oem"
+
+  QIWDF_RE_Title              "Nahrazování"                       // since 2.0
+  QIWDF_RE_TextToFind         "Hledaný text"                      // since 2.0
+  QIWDF_RE_ReplaceWith        "Nahradit èím"                      // since 2.0
+  QIWDF_RE_IgnoreCase         "Ignorovat velikost znakù"                       // since 2.0
+
+  QIW_TXT_Fields              "Pole"
+  QIW_TXT_Fields_Pos          "P"                                 // since 2.0
+  QIW_TXT_Fields_Size         "S"                                 // since 2.0
+  QIW_TXT_Clear               "Vymazat"
+  QIW_TXT_SkipLines           "Pøeskoèit øádky"
+  QIW_TXT_Tip                 "Dvojklikem lze pøidat nebo odebrat oddìlovaèe sloupcù. Klepnutím do oblasti mezi oddìlovaèi lze urèit importované sloupce."       // since 2.0
+
+  QIW_CSV_Fields              "Pole"
+  QIW_CSV_ColNumber           "Èíslo sloupce"                        // since 2.0
+  QIW_CSV_SkipLines           "Pøeskoèit øádky"
+  QIW_CSV_AutoFill            "Vyplnit automaticky"                         // since 1.2
+  QIW_CSV_Clear               "Vymazat"                             // since 1.2
+  QIW_CSV_GridCol             "Sloupec_%d"                         // since 1.4
+  QIW_CSV_Tip                 "Vyberte jméno pole ze seznamu, a potom kliknìte na sloupec, do nìhož má být toto pole importováno."
+
+  QIW_DBF_Add                 "Pøidat"
+  QIW_DBF_Remove              "Odebrat"
+  QIW_DBF_AutoFill            "Vyplnit automaticky"                         // since 1.2
+  QIW_DBF_Clear               "Vymazat"                             // since 1.2
+  QIW_DBF_SkipDeleted         "Pøeskoèit smazané øádky"                 // since 1.7
+  QIW_DBF_Tip                 "Klepnìte na tlaèítko ""Pøidat"" pro urèení vazeb mezi importovanými sloupci a poli tabulky, nebo klepnìte na ""Odebrat"" pro jejich zrušení."
+
+  QIW_Xlsx_Fields             "Pole"
+  QIW_Xlsx_SkipRows           "Pøeskoèit øádky)"
+  QIW_Xlsx_AutoFill           "Vyplnit automaticky"
+  QIW_Xlsx_Clear              "Vymazat"
+  QIW_Xlsx_GridCol            "Sloupec %d"
+  QIW_Xlsx_Tip                "Vyberte jméno pole ze seznamu, a potom kliknìte na sloupec, do nìhož má být toto pole importováno."
+
+  QIW_Docx_Fields             "Pole"
+  QIW_Docx_SkipRows           "Pøeskoèit øádky"
+  QIW_Docx_AutoFill           "Vyplnit automaticky"
+  QIW_Docx_Clear              "Vymazat"
+  QIW_Docx_GridCol            "Sloupec %d"
+  QIW_Docx_Tip                "Vyberte jméno pole ze seznamu, a potom kliknìte na sloupec, do nìhož má být toto pole importováno."
+
+  QIW_ODS_Fields              "Pole"
+  QIW_ODS_SkipRows            "Pøeskoèit øádky"
+  QIW_ODS_AutoFill            "Vyplnit automaticky"
+  QIW_ODS_Clear               "Vymazat"
+  QIW_ODS_GridCol             "Sloupec %d"
+  QIW_ODS_Tip                 "Vyberte jméno pole ze seznamu, a potom kliknìte na sloupec, do nìhož má být toto pole importováno."
+
+  QIW_ODT_Fields              "Pole"
+  QIW_ODT_SkipRows            "Pøeskoèit øádky"
+  QIW_ODT_AutoFill            "Vyplnit automaticky"
+  QIW_ODT_Clear               "Vymazat"
+  QIW_ODT_GridCol             "Sloupec %d"
+  QIW_ODT_Tip                 "Vyberte jméno pole ze seznamu, a potom kliknìte na sloupec, do nìhož má být toto pole importováno."
+
+  QIW_HTML_Fields             "Pole"
+  QIW_HTML_ColNumber          "Èíslo sloupce"
+  QIW_HTML_TableNumber        "Èíslo tabulky"
+  QIW_HTML_SkipLines          "Pøeskoèit øádky"
+  QIW_HTML_AutoFill           "Vyplnit automaticky"
+  QIW_HTML_Clear              "Vymazat"
+  QIW_HTML_GridCol            "Sloupec %d"
+  QIW_HTML_Tip                "Vyberte jméno pole ze seznamu, a potom kliknìte na sloupec, do nìhož má být toto pole importováno."
+
+  QIW_XML_Add                 "Pøidat"                             // since 2.0
+  QIW_XML_Remove              "Odebrat"                            // since 2.0
+  QIW_XML_AutoFill            "Vyplnit automaticky"                // since 2.0
+  QIW_XML_Clear               "Vymazat"                            // since 2.0  
+  QIW_XML_Tip                 "Klepnìte na tlaèítko ""Pøidat"" pro urèení vazeb mezi importovanými sloupci a poli tabulky, nebo klepnìte na ""Odebrat"" pro jejich zrušení."
+
+  QIW_XMLDoc_Fields           "Pole";
+  QIW_XMLDoc_ColNumber        "Èíslo sloupce";
+  QIW_XMLDoc_SkipLines        "Pøeskoèit øádky";
+  QIW_XMLDoc_AutoFill         "Vyplnit automaticky";
+  QIW_XMLDoc_Clear            "Vymazat";
+  QIW_XMLDoc_GridCol          "Sloupec %d";
+  QIW_XMLDoc_Tip              "Vyberte jméno pole ze seznamu, a potom kliknìte na sloupec, do nìhož má být toto pole importováno.";
+  QIW_XMLDoc_XPath            "XPath";
+  QIW_XMLDoc_DataLocation     "Umístìní dat";
+
+  QIW_XLS_Fields              "Pole"
+  QIW_XLS_Ranges              "Rozsahy"                            // since 2.0
+  QIW_XLS_AddRange            "Pøidat rozsah"                         // since 2.0
+  QIW_XLS_EditRange           "Editovat rozsah"                        // since 2.0
+  QIW_XLS_DelRange            "Vymazat rozsah"                         // since 2.0
+  QIW_XLS_MoveRangeUp         "Posunout rozsah nahoru"                     // since 2.0
+  QIW_XLS_MoveRangeDown       "Posunout rozsah dolù"                   // since 2.0
+  QIW_XLS_SkipCols            "Pøeskoèit sloupce"                       // since 2.0
+  QIW_XLS_SkipRows            "Pøeskoèit øádky"                       // since 2.0
+  QIW_XLS_AutoFillCols        "Vyplnit sloupce automaticky"                    // since 1.2
+  QIW_XLS_AutoFillRows        "Vyplnit øádky automaticky"                    // since 1.2
+  QIW_XLS_ClearFieldRanges    "Vymazat rozsahy u polí"                // since 2.0
+  QIW_XLS_ClearAllRanges      "Vymazat všechny rozsahy"                  // since 2.0
+  QIW_XLS_Tip                 "Použijte editor pro vytvoøení/úpravy rozsahù nebo klepnìte na jednotlivé buòky za souèasného stisku Shift or Ctrl. Stisknìte Enter pro provedení zmìn nebo Escape pro jejich zrušení."
+
+  QIRE_Caption                "Rozsah"                             // since 2.0
+  QIRE_RangeType              " Typ rozsahu "                      // since 2.0
+  QIRE_RangeType_Col          "Sloupec"                               // since 2.0
+  QIRE_RangeType_Row          "Øádek"                               // since 2.0
+  QIRE_RangeType_Cell         "Buòka"                              // since 2.0
+  QIRE_Start                  " Zaèátek "                           // since 2.0
+  QIRE_Start_DataStarted      "Data zaèínají "                // since 2.0
+  QIRE_Start_Col              "Poè. sloupec"                         // since 2.0
+  QIRE_Start_Row              "Poè. øádek"                         // since 2.0
+  QIRE_Finish                 " Konec "                          // since 2.0
+  QIRE_Finish_DataFinished    "Data konèí "               // since 2.0
+  QIRE_Finish_Col             "Konc. sloupec"                        // since 2.0
+  QIRE_Finish_Row             "Konc. øádek"                        // since 2.0
+  QIRE_Direction              " Smìr "                       // since 2.0
+  QIRE_Direction_Down         "Dolù"                              // since 2.0
+  QIRE_Direction_Up           "Nahoru"                                // since 2.0
+  QIRE_Direction_Right        "Doprava"                             // since 2.0
+  QIRE_Direction_Left         "Doleva"                              // since 2.0
+  QIRE_Sheet                  " List "                           // since 2.0
+  QIRE_Sheet_Default          "Default List"                     // since 2.0
+  QIRE_Sheet_Custom           "Uživatelský list"                      // since 2.0
+  QIRE_Sheet_Custom_Number    "Èíslo listu"                      // since 2.0
+  QIRE_Sheet_Custom_Name      "Jméno listu"                        // since 2.0
+
+  QIW_Access_Table            "Chtìl bych importovat data z tabulky"                           // since 1.4
+  QIW_Access_SQL              "Chtìl bych importovat data z SQL dotazu"                      // since 1.4
+  QIW_Access_SQL_Load         "Naèíst SQL ze souboru"              // since 1.4
+  QIW_Access_SQL_Save         "Uložit SQL do souboru"                // since 1.4
+  QIW_Access_Add              "Pøidat"                               // since 1.4
+  QIW_Access_Remove           "Odebrat"                            // since 1.4
+  QIW_Access_AutoFill         "Vyplnit automaticky"                         // since 1.4
+  QIW_Access_Clear            "Vymazat"                             // since 1.4
+  QIW_Access_CustomQuery      "Uživatelský dotaz"
+  QIW_Access_Tip              "Klepnìte na tlaèítko ""Pøidat"" pro urèení vazeb mezi importovanými sloupci a poli tabulky, nebo klepnìte na ""Odebrat"" pro jejich zrušení."
+
+  QIW_Access_Password              "Heslo"                          // since 2.31
+
+  QIW_ImportErrorFormat       "%s - Øádek %d: %s"                 // since 2.35
+
+  QIPD_State                  "Prùbìh"
+  QIPD_Processed              "Zpracováno"
+  QIPD_Inserted               "Vloženo"
+  QIPD_Updated                "Aktualizováno"
+  QIPD_Deleted                "Smazáno"
+  QIPD_Errors                 "Chyby"
+  QIPD_Committed              "Potvrzeno"
+  QIPD_Time                   "Èas"
+  QIPD_Cancel                 "Storno"
+  QIPD_Import_finished        "Import dokonèen"
+  QIPD_OK                     "OK"
+  QIPD_Importing              "Import..."        
+  QIPD_Preparing              "Pøíprava"        
+  QIPD_Aborted                "Pøerušeno"          
+  QIPD_Finished               "Ukonèeno"         
+  QIPD_Paused                 "Pozastaveno"
+
+  QIRE_Cancel                 "Storno"
+
+  QIW_ODT_UseFirstRowAsHeader "Použít první øádek jako hlavièku"
+
+  QIW_TXT_Encoding            "Encoding"
+
+  QIW_XMLDoc_BuildTreeView    "Zobrazit strom"
+  QIW_XMLDoc_GetXPath         "Naèíst XPath"
+
+  QIW_DontWorkUserDefined     "Prùvodce nemusí pracovat správnì, pokud je parametr ImportDestination stejný jako hodnota qidUserDefined"
+
+END

@@ -1,0 +1,5 @@
+In this demo, you can add custom fields that can store extra information about tasks or resources.
+
+Do one of the following to add a custom field to a task or resource sheet:
+- Right-click a column header and click More... in the context menu. In the "Choose Details" dialog, click a check box to include the field in the sheet. Click OK to apply changes.
+- Right-click a column header, click "Insert Column" in the context menu, and select any field from the popup list.

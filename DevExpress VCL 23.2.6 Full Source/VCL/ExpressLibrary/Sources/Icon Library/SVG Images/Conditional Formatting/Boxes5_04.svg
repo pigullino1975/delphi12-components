@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="_x35__Boxes" x="0px" y="0px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+	.Black{fill:#727272;}
+	.Blue{fill:#1177D7;}
+	.st0{opacity:0.5;}
+</style>
+  <g class="st0" transform="matrix(1, 0, 0, 1, 0.96805, 1.002622)">
+    <path class="Black" d="M6,6H0V0h6V6z M6,8H0v6h6V8z M14,8H8v6h6V8z M14,6H8V0h6V6z"/>
+  </g>
+</svg>

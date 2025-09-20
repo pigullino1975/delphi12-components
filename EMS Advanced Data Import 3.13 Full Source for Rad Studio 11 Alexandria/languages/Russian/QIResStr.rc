@@ -1,0 +1,367 @@
+// Russian
+
+#include "QImport3StrIDs.pas"
+
+STRINGTABLE
+BEGIN
+  // Errors
+  QIE_NoDataSet                 "Свойство DataSet не определено"
+  QIE_NoDBGrid                  "Свойство DBGrid не определено"  // since 1.7
+  QIE_NoListView                "Свойство ListView не определено"  // since 1.7
+  QIE_NoStringGrid              "Свойство StrinGrid не определено"  // since 1.7
+  QIE_NoSource                  "Не определен DataSet-источник"  // since 1.5
+  QIE_NoFileName                "Не задано имя файла"
+  QIE_NoTableName               "Не задано имя таблицы" // since 3.9
+  QIE_FileNotExists             "Файл %s не существует"
+  QIE_MappingEmpty              "Свойство Map не заполнено"
+  QIE_CanceledByUser            "Процесс импорта прерван пользователем"
+  QIE_MapMissing                "Ошибки в определении свойства Map"
+  QIE_FieldNotFound             "Поле %s не найдено"
+  QIE_SourceFieldNotFound       "Не найдено поле %s в DataSet-источнике"  // since 1.5
+  QIE_DataSetClosed             "DataSet закрыт. Выполнение запрошеной операции невозможно."
+  QIE_AllowedImportsEmpty       "Свойство AllowedImports не может быть пустым множеством."
+  QIE_KeyColumnsNotDefined      "Ключевые колонки не определены"  // since 1.7
+  QIE_KeyColumnNotFound         "Ключевая колонка %s не найдена"  // since 1.7
+  QIE_XMLFieldListEmpty         "XML список полей пуст"  // since 2.0
+  QIE_NeedDefineTextToFind      "Текст для замены должен быть определен"  // since 2.0
+  QIE_UnknownImportSource       "Неизвестный источник импорта" // since 2.2
+  QIE_WrongFileType             "Неверный тип файла, должен быть ""%s""" // since 2.2
+  QIE_UnknownFieldType          "Неизвестный тип поля" // since 2.35
+  QIE_WrongDateFormat           "Неверный формат даты ""%s""" // since 2.35
+  QIE_ListIndexOutOfBounds      "Индекс списка вне диапазона (%d)" // since 3.00
+  QIE_GridCaptionPos            "GridCaptionRow должен быть меньше чем GridStartRow" // 3.1
+  QIE_IsNotBoolean              "Значение ""%s"" не является значением логического типа"  
+  QIE_ColumnIndexError          "Grid column index out of bounds (%d)"
+  QIE_RowIndexError             "Grid row index out of bounds (%d)"
+  QIE_ColumnIndexError          "Индекс колонки таблицы за пределами диапазона (%d)"
+  QIE_RowIndexError             "Индекм строки таблицы за пределами диапазона (%d)"
+  QIE_MaxColumnsError           "Количество колонок за пределами диапазона (%d)"
+
+  QIE_CSVParseError             "Ошибка разбора CSV формата:"
+  QIE_CSVLineNumberError        "Строка: %d"
+  QIE_CSVColumnNumberError      "Колонка: %d"
+  QIE_CSVWrongNumberOfColumns   "Неверное число колонок"
+  QIE_CSVWrongColumnValueFormat "Неверный формат значения колонки"
+  QIE_CSVInvalidCharacter       "Недействительный символ (HexCode = %.8x). Исходный файл некорректен."
+
+  QIE_CSVOperationNotAllowedInActiveState "Данная операция запрещена в активном состоянии."
+  QIE_CSVOperationNotAllowedInInactiveState "Данная операция запрещена в неактивном состоянии."
+  QIE_CSVGettingNextLine "Получение следующей строки."
+  QIE_CSVModifyingInputParameter "Изменение параметра %s."  
+  QIE_CSVGettingProperty "Получение значения свойства %s."
+  QIE_CSVSettingProperty "Установка значения свойства %s."
+
+  // Filters
+  QIF_TXT                       "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*"
+  QIF_ASCII                     "ASCII файлы (*.txt; *.csv)|*.txt;*.csv|Все файлы (*.*)|*.*"
+  QIF_CSV                       "CSV файлы (*.csv)|*.csv|Все файлы (*.*)|*.*"
+  QIF_DBF                       "DBF файлы (*.dbf)|*.dbf|Все файлы (*.*)|*.*"
+  QIF_XML                       "XML файлы (*.xml)|*.xml|Все файлы (*.*)|*.*"  // since 2.0
+  QIF_XLS                       "Файлы Microsoft Excel (*.xls)|*.xls|Все файлы (*.*)|*.*"
+  QIF_XLSX      		"Файлы Microsoft Excel 2007 (*.xlsx)|*.xlsx|Все файлы (*.*)|*.*"
+  QIF_DOCX      		"Файлы Microsoft Word 2007 (*.docx)|*.docx|Все файлы (*.*)|*.*"
+  QIF_ODS       		"Файлы Open Document Spreadsheet (*.ods)|*.ods|Все файлы (*.*)|*.*"
+  QIF_ODT       		"Файлы Open Document Text (*.odt)|*.odt|Все файлы (*.*)|*.*"
+  QIF_MDB                       "Файлы Microsoft Access 97-2003 (*.mdb)|*.mdb|Все файлы (*.*)|*.*" // since 3.9
+  QIF_ACCDB                     "Файлы Microsoft Access (*.accdb)|*.accdb|Все файлы (*.*)|*.*" // since 3.9
+  QIF_Access                    "Файлы Microsoft Access 97-2003 (*.mdb)|*.mdb|Файлы Microsoft Access (*.accdb)|*.accdb|Все файлы (*.*)|*.*" // since 3.9  
+  QIF_ALL                       "Все поддерживаемые файлы (*.txt; *.csv; *.dbf; *.xls)|*.txt;*.csv;*.dbf;*.xls"
+  QIF_TEMPLATE                  "Файлы шаблонов QuickImport (*.imp)|*.imp|Все файлы (*.*)|*.*"  // since 1.2
+  QIF_HTML                      "HTML файлы (*.html; *.htm)|*.html;*.htm|Все файлы (*.*)|*.*" // since 3.0
+
+  // Loading
+  QIL_Loading                   "Загрузка..."                        // since 2.0
+
+  // Defaults
+  QID_BooleanTrue               "True"
+  QID_BooleanFalse              "False"
+  QID_NullValue                 "Null"                              // since 1.8
+
+  // Wizard
+  QIW_importWizard              "Мастер импорта данных"
+  QIW_ImportFrom                "Импорт из"
+  QIW_XLS                       "MS Excel 97-2003"
+  QIW_XLSX                      "MS Excel" 
+  QIW_DOCX                      "MS Word"
+  QIW_ODS                       "ODS файл"
+  QIW_ODT                       "ODT файл"
+  QIW_Access                    "MS Access"                        // since 1.4  
+  QIW_Access97_2003             "MS Access 97-2003"                // since 3.9  
+  QIW_DBF                       "DBF"
+  QIW_XML                       "XML"                               // since 2.0
+  QIW_TXT                       "Текстовый файл"
+  QIW_CSV                       "CSV файл"
+  QIW_Comma                     "Разделитель"                             // since 2.0
+  QIW_Quote                     "Кавычка"                             // since 1.65
+  QIW_FileName                  "Файл-источник"
+  QIW_SkipInvisibleColumns      "Пропускать невидимые целевые столбцы"
+  QIW_NeedCancelCaption         "Вы уверены?"
+  QIW_NeedCancel                "Вы уверены, что хотите прервать процесс импорта?"
+  QIW_Question                  "Вопрос"                          // since 2.0
+  QIW_CancelWizard              "Завершить работу мастера?"              // since 2.0
+  QIW_TemplateFileName          "Файл шаблона"                    // since 2.36
+  QIW_HTML                      "HTML файл"                        // since 3.0
+  QIW_XMLDoc                    "XMLDoc"                           // since 3.0
+
+  QIW_Help                      "&Помощь"
+  QIW_Back                      "< &Назад"
+  QIW_Next                      "&Далее >"
+  QIW_Cancel                    "&Отмена"
+  QIW_Execute                   "&Выполнить"
+  QIW_Step                      "Шаг %d из %d"
+  QIW_TemplateOptions           " Параметры шаблонов "                // since 2.0
+  QIW_GoToLastPage              "Перейти на последнюю страницу после загрузки шаблона"  // since 2.0
+  QIW_AutoSaveTemplate          "Автоматически сохранять шаблон при закрытии мастера"  // since 2.0
+  QIW_LoadTemplate              "Загрузить шаблон..."        // since 1.2
+  QIW_SaveTemplate              "Сохранить шаблон..."          // since 1.2
+
+  QIW_CommitOptions             "Параметры подтверждения"                    // since 1.7
+  QIW_Commit                    "Подтверждение транзакции"
+  QIW_CommitAfterDone           "По окончании импорта"
+  QIW_CommitRecCount            "После каждых"
+  QIW_Records                   "записей"
+  QIW_RecordCount               "Количество импортируемых записей"
+  QIW_ImportAllRecords          "Все записи"
+  QIW_ImportRecCount            "Только первые"
+  QIW_CloseAfterImport          "Закрыть окно мастера после импорта"         // since 1.8
+
+  QIW_ImportAdvanced            "Дополнительно"                          // since 1.7
+  QIW_AddType                   "Новая позиция"                          // since 1.6
+  QIW_AddType_Append            "Последняя"                            // since 1.6
+  QIW_AddType_Insert            "Текущая"                            // since 1.6
+
+  QIWIM_Caption                 " Режим импорта "                     // since 1.7
+  QIWIM_Insert_All              "Вставить все"                        // since 1.7
+  QIWIM_Insert_New              "Вставить новые"                        // since 1.7
+  QIWIM_Update                  "Обновить"                            // since 1.7
+  QIWIM_Update_or_Insert        "Обновить и вставить"                  // since 1.7
+  QIWIM_Delete                  "Удалить"                            // since 1.7
+  QIWIM_Delete_or_Insert        "Удалить и вставить"                  // since 1.7
+
+  QIW_AvailableColumns          "Все колонки"                 // since 1.7
+  QIW_SelectedColumns           "Ключевые колонки"                       // since 1.7
+
+  QIW_ErrorLog                  "Журнал ошибок"
+  QIW_EnableErrorLog            "Разрешить журналирование"
+  QIW_ErrorLogFileName          "Файл журнала ошибок"               // since 1.8
+  QIW_RewriteErrorLogFile       "Перезаписывать файл журнала ошибок, если он уже сущуствует"  // since 1.8
+  QIW_ShowErrorLog              "Показать журнал после импорта"
+  QIW_ErrorLogStarted           "%s - Запущен процесс импорта"       // since 1.8
+  QIW_ErrorLogFinished          "%s - Процесс импорта завершен"      // since 1.8
+  QIW_SomeErrorsFound           "Найдено ошибок: %d"                 // since 1.8
+  QIW_NoErrorsFound             "Ошибок не найдено"                    // since 1.8
+
+  QIW_BaseFormats               "Основные форматы"
+  QIW_DateTimeFormats           "Форматы даты и времени"             // since 1.65
+  QIW_Separators                "Разделители"                        // since 1.65
+  QIW_DecimalSeparator          "Десятичный"
+  QIW_ThousandSeparator         "Разрядов"
+  QIW_ShortDateFormat           "Краткая дата"
+  QIW_LongDateFormat            "Полная дата"
+  QIW_DateSeparator             "Даты"                              // since 1.65
+  QIW_ShortTimeFormat           "Краткое время"
+  QIW_LongTimeFormat            "Полное время"
+  QIW_TimeSeparator             "Времени"                              // since 1.65
+
+  QIW_BooleanTrue               "Логическая ""ИСТИНА"""
+  QIW_BooleanFalse              "Логическая ""ЛОЖЬ"""
+  QIW_NullValue                 "Значения NULL"                       // since 2.0
+
+  QIWDF_Caption                 "Форматы данных"
+  QIWDF_Fields                  "Поля"
+  QIWDF_Tuning                  "Настройка"                            // since 1.6
+  QIWDF_Replacements            "Замены"                      // since 1.6
+  QIWDF_TextToFind              "Заменить"                      // since 2.0
+  QIWDF_ReplaceWith             "На"                      // since 2.0
+  QIWDF_IgnoreCase              "Игнор. рег."                       // since 2.0
+  QIWDF_IgnoreCase_Yes          "Да"                               // since 2.0
+  QIWDF_IgnoreCase_No           "Нет"                                // since 2.0
+  QIWDF_AddReplacement          "Добавить замену"                   // since 2.0
+  QIWDF_EditReplacement         "Редактировать замену"                  // since 2.0
+  QIWDF_DelReplacement          "Удалить замену"                   // since 2.0
+  QIWDF_GeneratorValue          "Генератор"
+  QIWDF_GeneratorStep           "Шаг"
+  QIWDF_ConstantValue           "Константа"
+  QIWDF_NullValue               "NULL"
+  QIWDF_DefaultValue            "По умолчанию"
+  QIWDF_LeftQuote               "Левая кавычка"
+  QIWDF_RightQuote              "Правая кавычка"
+  QIWDF_QuoteAction             "Действие"
+  QIWDF_QuoteNone               "Как есть"
+  QIWDF_QuoteAdd                "Добавить"
+  QIWDF_QuoteRemove             "Удалить"
+  QIWDF_CharCase                "Регистр символов"
+  QIWDF_CharCaseNone            "Как есть"
+  QIWDF_CharCaseUpper           "ВЕРХНИЙ"
+  QIWDF_CharCaseLower           "нижний"
+  QIWDF_CharCaseUpperFirst      "Первое слово с большой буквы"
+  QIWDF_CharCaseUpperWord       "Все Слова С Большой Буквы"
+  QIWDF_CharSet                 "Набор символов"
+  QIWDF_CharSetNone             "Как есть"
+  QIWDF_CharSetAnsi             "ANSI"
+  QIWDF_CharSetOem              "OEM"
+
+  QIWDF_RE_Title                "Замена"                       // since 2.0
+  QIWDF_RE_TextToFind           "Найти"                      // since 2.0
+  QIWDF_RE_ReplaceWith          "Заменить на"                      // since 2.0
+  QIWDF_RE_IgnoreCase           "Без учета регистра"                       // since 2.0
+
+  QIW_TXT_Fields                "Поля"
+  QIW_TXT_Fields_Pos            "П"                                 // since 2.0
+  QIW_TXT_Fields_Size           "Р"                                 // since 2.0
+  QIW_TXT_Clear                 "Очистить"
+  QIW_TXT_SkipLines             "Проп. строк"
+  QIW_TXT_Tip                   "Произведите двойной клик чтобы добавить или удалить разделители для колонок. Кликайте в промежутках между разделителями чтобы назначить колонки для импорта."  // since 2.0
+
+  QIW_CSV_Fields                "Поля"
+  QIW_CSV_ColNumber             "Номер колонки"                        // since 2.0
+  QIW_CSV_SkipLines             "Проп. строк"
+  QIW_CSV_AutoFill              "Заполнить автоматически"                         // since 1.2
+  QIW_CSV_Clear                 "Очистить"                             // since 1.2
+  QIW_CSV_GridCol               "Колонка_%d"                         // since 1.4
+  QIW_CSV_Tip                   "Выберите название поля из списка, затем кликните на колонке чтобы импортировать это поле."
+
+  QIW_DBF_Add                   "Добавить"
+  QIW_DBF_Remove                "Удалить"
+  QIW_DBF_AutoFill              "Автозап."                         
+  QIW_DBF_Clear                 "Очистить"                            
+  QIW_DBF_SkipDeleted           "Пропустить удаленные"             
+  QIW_DBF_Tip                   "Нажмите кнопку ""Добавить"" для установки соответствия между импортируемой колонкой и полем результирующей таблицы. Нажмите кнопку ""Удалить"" для удаления соответствия."
+
+  QIW_Xlsx_Fields             "Поля"
+  QIW_Xlsx_SkipRows           "Проп. строк"                       
+  QIW_Xlsx_AutoFill           "Автозаполнение по столбцам"
+  QIW_Xlsx_Clear              "Очистить"                            
+  QIW_Xlsx_GridCol            "Колонка_%d"
+  QIW_Xlsx_Tip                "Выберите название поля из списка, затем кликните на колонке чтобы импортировать это поле."
+
+  QIW_Docx_Fields             "Поля"
+  QIW_Docx_SkipRows           "Проп. строк"                       
+  QIW_Docx_AutoFill           "Автозаполнение по столбцам"
+  QIW_Docx_Clear              "Очистить"                            
+  QIW_Docx_GridCol            "Колонка_%d"
+  QIW_Docx_Tip                "Выберите название поля из списка, затем кликните на колонке чтобы импортировать это поле."
+
+  QIW_ODS_Fields             "Поля"
+  QIW_ODS_SkipRows           "Проп. строк"                       
+  QIW_ODS_AutoFill           "Автозаполнение по столбцам"
+  QIW_ODS_Clear              "Очистить"                            
+  QIW_ODS_GridCol            "Колонка_%d"
+  QIW_ODS_Tip                "Выберите название поля из списка, затем кликните на колонке чтобы импортировать это поле."
+
+  QIW_ODT_Fields             "Поля"
+  QIW_ODT_SkipRows           "Проп. строк"                       
+  QIW_ODT_AutoFill           "Автозаполнение по столбцам"
+  QIW_ODT_Clear              "Очистить"                            
+  QIW_ODT_GridCol            "Колонка_%d"
+  QIW_ODT_Tip                "Выберите название поля из списка, затем кликните на колонке чтобы импортировать это поле."
+
+  QIW_HTML_Fields             "Поля"
+  QIW_HTML_ColNumber          "№ Столбца"                       
+  QIW_HTML_TableNumber        "№ Таблицы"                     
+  QIW_HTML_SkipLines          "Проп. стр."
+  QIW_HTML_AutoFill           "Автозаполнение по столбцам"
+  QIW_HTML_Clear              "Очистить"                            
+  QIW_HTML_GridCol            "Колонка_%d"
+  QIW_HTML_Tip                "Выберите название поля из списка, затем кликните на колонке чтобы импортировать это поле."
+
+  QIW_XML_Add                   "Добавить"                             
+  QIW_XML_Remove                "Удалить"                            
+  QIW_XML_AutoFill              "Автозап."                         
+  QIW_XML_Clear                 "Очистить"                             
+  QIW_XML_Tip                   "Нажмите кнопку ""Добавить"" для установки соответствия между импортируемой колонкой и полем результирующей таблицы. Нажмите кнопку ""Удалить"" для удаления соответствия."  // since 2.0
+
+  QIW_XMLDoc_Fields           "Поля"
+  QIW_XMLDoc_ColNumber        "№ Столбца"
+  QIW_XMLDoc_SkipLines        "Проп. строк"
+  QIW_XMLDoc_AutoFill         "Автозаполнение"
+  QIW_XMLDoc_Clear            "Очистить"
+  QIW_XMLDoc_GridCol          "Колонка_%d"
+  QIW_XMLDoc_Tip              "Выберите название поля из списка, затем кликните на колонке чтобы импортировать это поле."
+  QIW_XMLDoc_XPath            "XPath"
+  QIW_XMLDoc_DataLocation     "Data location"
+
+  QIW_XLS_Fields                "Поля"
+  QIW_XLS_Ranges                "Диапазоны"                            // since 2.0
+  QIW_XLS_AddRange              "Добавить диапазон"                         // since 2.0
+  QIW_XLS_EditRange             "Редактировать диапазон"                        // since 2.0
+  QIW_XLS_DelRange              "Удалить диапазон"                         // since 2.0
+  QIW_XLS_MoveRangeUp           "Переметить вверх"                     // since 2.0
+  QIW_XLS_MoveRangeDown         "Переместить вниз"                   // since 2.0
+  QIW_XLS_SkipCols              "Проп. столбцов"                       // since 2.0
+  QIW_XLS_SkipRows              "Проп. строк"                       // since 2.0
+  QIW_XLS_AutoFillCols          "Автозаполнение по столбцам"                    // since 1.2
+  QIW_XLS_AutoFillRows          "Автозаполнение по строкам"                    // since 1.2
+  QIW_XLS_ClearFieldRanges      "Очистить диапазоны поля"                // since 2.0
+  QIW_XLS_ClearAllRanges        "Очистить все диапазоны"                  // since 2.0
+//  QIW_XLS_Tip                   "Используйте редактор диапазонов чтобы добавить или изменить диапазоны или кликайте по отдельным ячейкам с нажатыми клавишами Shift или Ctrl. Нажмите Enter чтобы принять изменения или Esc для отмены."
+  QIW_XLS_Tip                   "Используйте редактор диапазонов чтобы изменить диапазоны или кликайте по отдельным ячейкам с нажатыми клавишами Shift или Ctrl. Нажмите Enter чтобы принять изменения или Esc для отмены."
+
+  QIRE_Caption                  "Диапазон"                             // since 2.0
+  QIRE_RangeType                " Вид диапазона "                      // since 2.0
+  QIRE_RangeType_Col            "Столбец"                               // since 2.0
+  QIRE_RangeType_Row            "Строка"                               // since 2.0
+  QIRE_RangeType_Cell           "Ячейка"                              // since 2.0
+  QIRE_Start                    " Начало "                           // since 2.0
+  QIRE_Start_DataStarted        "С начала"                // since 2.0
+  QIRE_Start_Col                "Со столбца"                         // since 2.0
+  QIRE_Start_Row                "Со строки"                         // since 2.0
+  QIRE_Finish                   " Окончание "                          // since 2.0
+  QIRE_Finish_DataFinished      "До конца"               // since 2.0
+  QIRE_Finish_Col               "До столбца"                        // since 2.0
+  QIRE_Finish_Row               "До строки"                        // since 2.0
+  QIRE_Direction                " Направление "                       // since 2.0
+  QIRE_Direction_Down           "Вниз"                              // since 2.0
+  QIRE_Direction_Up             "Вверх"                                // since 2.0
+  QIRE_Direction_Right          "Вправо"                             // since 2.0
+  QIRE_Direction_Left           "Влево"                              // since 2.0
+  QIRE_Sheet                    " Страница "                           // since 2.0
+  QIRE_Sheet_Default            "По умолчанию"                     // since 2.0
+  QIRE_Sheet_Custom             "Определяется пользователем"                      // since 2.0
+  QIRE_Sheet_Custom_Number      "Номер страницы"                      // since 2.0
+  QIRE_Sheet_Custom_Name        "Имя страницы"                        // since 2.0
+
+  QIW_Access_Table              "Я хочу импортировать данные из таблицы"  // since 1.4
+  QIW_Access_SQL                "Я сам напишу SQL выражение для импорта"  // since 1.4
+  QIW_Access_SQL_Load           "Загрузить запрос из файла"              // since 1.4
+  QIW_Access_SQL_Save           "Сохранить запрос в файл"                // since 1.4
+  QIW_Access_Add                "Добавить"                               // since 1.4
+  QIW_Access_Remove             "Удалить"                            // since 1.4
+  QIW_Access_AutoFill           "Автозап."                         // since 1.4
+  QIW_Access_Clear              "Очистить"                             // since 1.4
+  QIW_Access_CustomQuery        "SQL запрос"
+  QIW_Access_Tip                "Нажмите кнопку ""Добавить"" для установки соответствия между импортируемой колонкой и полем результирующей таблицы. Нажмите кнопку ""Удалить"" для удаления соответствия."  // since 1.4
+
+  QIW_Access_Password                "Пароль"                          // since 2.31
+
+  QIW_ImportErrorFormat         "%s - Стр. %d: %s"                 // since 2.35
+
+  QIPD_State                  "Состояние"
+  QIPD_Processed              "В процессе"
+  QIPD_Inserted               "Добавлено"
+  QIPD_Updated                "Изменено"
+  QIPD_Deleted                "Удалено"
+  QIPD_Errors                 "Ошибки"
+  QIPD_Committed              "Сохранено"
+  QIPD_Time                   "Время"
+  QIPD_Cancel                 "Отмена"
+  QIPD_Import_finished        "Импорт закончен"
+  QIPD_OK                     "OK"
+  QIPD_Importing              "Импорт..."        
+  QIPD_Preparing              "Подготовка"        
+  QIPD_Aborted                "Прервано"          
+  QIPD_Finished               "Завершено"         
+  QIPD_Paused                 "Пауза"
+
+  QIRE_Cancel                 "Отмена"
+
+  QIW_ODT_UseFirstRowAsHeader "Первая строка как заголовок"
+
+  QIW_TXT_Encoding            "Кодировка"
+
+  QIW_XMLDoc_BuildTreeView    "Созд. TreeView"
+  QIW_XMLDoc_GetXPath         "Взять XPath"
+
+	QIW_DontWorkUserDefined     "Wizard не будет корректно работать если свойство ImportDestination равно значению qidUserDefined"
+
+END

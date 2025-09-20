@@ -1,0 +1,7 @@
+This demo illustrates how to complete an interactive form in a PDF document. The pane to the right of the PDF Viewer control allows you to:
+
+- Preview and edit field data
+- Populate blank form fields ("Submit")
+- Clear form fields ("Reset")
+
+You can click the File | Save As... item in the main application menu to save the completed form as a separate PDF document.

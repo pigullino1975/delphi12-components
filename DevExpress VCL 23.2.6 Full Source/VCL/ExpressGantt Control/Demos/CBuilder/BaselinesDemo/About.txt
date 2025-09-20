@@ -1,0 +1,12 @@
+This demo shows how to compare your current project schedule with the baseline. Go to the Options pane and select the last saved baseline from the combo box to compare current and planned projects.
+
+
+Follow the steps below to create a baseline:
+
+
+1. Go to the Options -> Change Baseline.
+2. Select a baseline (for instance, Baseline 1) from the combo box.
+3. Click Set Baseline. If you want to track changes in a separate task, click the Selected Task checkbox and then click Set Baseline.
+
+
+To clear baseline data, click the Clear Baseline button.

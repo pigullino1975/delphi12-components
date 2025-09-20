@@ -1,0 +1,1734 @@
+object dxSpreadSheetCellStyleEditDialogForm: TdxSpreadSheetCellStyleEditDialogForm
+  Left = 0
+  Top = 0
+  AutoSize = True
+  BorderStyle = bsDialog
+  ClientHeight = 480
+  ClientWidth = 525
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poOwnerFormCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lcMain: TdxLayoutControl
+    Left = 0
+    Top = 0
+    Width = 525
+    Height = 480
+    TabOrder = 0
+    AutoSize = True
+    LayoutLookAndFeel = dxLayoutCxLookAndFeel1
+    HighlightRoot = False
+    object pbTextPreview: TPaintBox
+      Left = 10000
+      Top = 10000
+      Width = 182
+      Height = 54
+      Visible = False
+      OnPaint = pbTextPreviewPaint
+    end
+    object pbFillPreview: TPaintBox
+      Left = 10000
+      Top = 10000
+      Width = 459
+      Height = 59
+      Visible = False
+      OnPaint = pbFillPreviewPaint
+    end
+    object pbBordersPreview: TPaintBox
+      Left = 10000
+      Top = 10000
+      Width = 192
+      Height = 128
+      Visible = False
+      OnMouseDown = pbBordersPreviewMouseDown
+      OnPaint = pbBordersPreviewPaint
+    end
+    object btnOK: TcxButton
+      Left = 349
+      Top = 414
+      Width = 80
+      Height = 25
+      Caption = 'OK'
+      Default = True
+      ModalResult = 1
+      TabOrder = 45
+    end
+    object btnCancel: TcxButton
+      Left = 435
+      Top = 414
+      Width = 80
+      Height = 25
+      Cancel = True
+      Caption = 'Cancel'
+      ModalResult = 2
+      TabOrder = 46
+    end
+    object lbCategory: TcxListBox
+      Left = 21
+      Top = 62
+      Width = 148
+      Height = 256
+      ItemHeight = 13
+      Style.TransparentBorder = False
+      TabOrder = 0
+      OnClick = lbCategoryClick
+    end
+    object lbCategoryDescription: TcxLabel
+      Left = 21
+      Top = 324
+      AutoSize = False
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      Properties.WordWrap = True
+      Transparent = True
+      Height = 73
+      Width = 483
+    end
+    object ccbTextAlignHorz: TcxComboBox
+      Left = 10000
+      Top = 10000
+      Properties.DropDownListStyle = lsFixedList
+      Properties.OnChange = ccbTextAlignHorzPropertiesChange
+      Style.HotTrack = False
+      TabOrder = 8
+      Visible = False
+      Width = 162
+    end
+    object seTextAlignHorzIndent: TcxSpinEdit
+      Left = 10000
+      Top = 10000
+      Properties.AssignedValues.MinValue = True
+      Properties.MaxValue = 250.000000000000000000
+      Style.HotTrack = False
+      TabOrder = 9
+      Visible = False
+      Width = 82
+    end
+    object ccbTextAlignVert: TcxComboBox
+      Left = 10000
+      Top = 10000
+      Properties.DropDownListStyle = lsFixedList
+      Style.HotTrack = False
+      TabOrder = 10
+      Visible = False
+      Width = 162
+    end
+    object cbWrapText: TcxCheckBox
+      Left = 10000
+      Top = 10000
+      Caption = '&Wrap text'
+      Properties.OnChange = cbWrapTextPropertiesChange
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      TabOrder = 11
+      Transparent = True
+      Visible = False
+    end
+    object cbShrinkToFit: TcxCheckBox
+      Left = 10000
+      Top = 10000
+      Caption = 'Shrin&k to fit'
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      TabOrder = 12
+      Transparent = True
+      Visible = False
+    end
+    object cbMergeCells: TcxCheckBox
+      Left = 10000
+      Top = 10000
+      Caption = '&Merge cells'
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      TabOrder = 13
+      Transparent = True
+      Visible = False
+    end
+    object teFontName: TcxTextEdit
+      Left = 10000
+      Top = 10000
+      Properties.OnChange = teFontNamePropertiesChange
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      TabOrder = 14
+      Text = 'teFontName'
+      Visible = False
+      OnKeyDown = teFontNameKeyDown
+      Width = 271
+    end
+    object lbFontNames: TcxListBox
+      Left = 10000
+      Top = 10000
+      Width = 271
+      Height = 82
+      ItemHeight = 13
+      Style.TransparentBorder = False
+      TabOrder = 15
+      Visible = False
+      OnClick = lbFontNamesClick
+    end
+    object teFontStyle: TcxTextEdit
+      Left = 10000
+      Top = 10000
+      Properties.OnChange = teFontStylePropertiesChange
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      TabOrder = 16
+      Text = 'teFontName'
+      Visible = False
+      OnKeyDown = teFontStyleKeyDown
+      Width = 100
+    end
+    object lbFontStyles: TcxListBox
+      Left = 10000
+      Top = 10000
+      Width = 100
+      Height = 82
+      ItemHeight = 13
+      Style.TransparentBorder = False
+      TabOrder = 17
+      Visible = False
+      OnClick = lbFontStylesClick
+    end
+    object teFontSize: TcxMaskEdit
+      Left = 10000
+      Top = 10000
+      Properties.MaskKind = emkRegExpr
+      Properties.EditMask = '\d+'
+      Properties.OnChange = teFontSizePropertiesChange
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      TabOrder = 18
+      Visible = False
+      OnKeyDown = teFontSizeKeyDown
+      Width = 100
+    end
+    object lbFontSizes: TcxListBox
+      Left = 10000
+      Top = 10000
+      Width = 100
+      Height = 82
+      ItemHeight = 13
+      Style.TransparentBorder = False
+      TabOrder = 19
+      Visible = False
+      OnClick = lbFontSizesClick
+    end
+    object cbFontUnderline: TcxComboBox
+      Left = 10000
+      Top = 10000
+      Properties.DropDownListStyle = lsEditFixedList
+      Properties.OnChange = cbFontChanged
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      TabOrder = 20
+      Visible = False
+      Width = 271
+    end
+    object cbFontColor: TcxColorComboBox
+      Left = 10000
+      Top = 10000
+      Properties.AllowSelectColor = True
+      Properties.ColorDialogShowFull = True
+      Properties.ColorDialogType = cxcdtAdvanced
+      Properties.CustomColors = <>
+      Properties.DefaultColorStyle = cxdcClear
+      Properties.DropDownSizeable = True
+      Properties.MaxMRUColors = 0
+      Properties.NamingConvention = cxncNone
+      Properties.OnChange = cbFontChanged
+      Properties.OnNamingConvention = cbColorComboBoxNamingConvention
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      TabOrder = 21
+      Visible = False
+      Width = 206
+    end
+    object btnFontReset: TcxButton
+      Left = 10000
+      Top = 10000
+      Width = 80
+      Height = 25
+      Caption = 'Reset'
+      TabOrder = 22
+      Visible = False
+      OnClick = btnFontResetClick
+    end
+    object cbFontStrikethrough: TcxCheckBox
+      Left = 10000
+      Top = 10000
+      Caption = 'Strikethrough'
+      Properties.OnChange = cbFontChanged
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      TabOrder = 23
+      Transparent = True
+      Visible = False
+    end
+    object lbFontWarning: TcxLabel
+      Left = 10000
+      Top = 10000
+      AutoSize = False
+      Style.HotTrack = False
+      Properties.WordWrap = True
+      Transparent = True
+      Visible = False
+      Height = 42
+      Width = 483
+    end
+    object btnFillNoColor: TcxButton
+      Left = 10000
+      Top = 10000
+      Width = 184
+      Height = 25
+      Caption = 'No Color'
+      SpeedButtonOptions.GroupIndex = 1
+      SpeedButtonOptions.AllowAllUp = True
+      TabOrder = 37
+      Visible = False
+      OnClick = btnFillNoColorClick
+    end
+    object cgFill: TdxColorGallery
+      Left = 10000
+      Top = 10000
+      Width = 184
+      Height = 148
+      Visible = False
+      TabOrder = 38
+      OnItemClick = cgFillItemClick
+    end
+    object btnFillMoreColors: TcxButton
+      Left = 10000
+      Top = 10000
+      Width = 184
+      Height = 25
+      Caption = '&More Colors...'
+      TabOrder = 39
+      Visible = False
+      OnClick = btnFillMoreColorsClick
+    end
+    object ccbPatternColor: TcxColorComboBox
+      Left = 10000
+      Top = 10000
+      Properties.AllowSelectColor = True
+      Properties.ColorDialogShowFull = True
+      Properties.ColorDialogType = cxcdtAdvanced
+      Properties.CustomColors = <>
+      Properties.DefaultColorStyle = cxdcClear
+      Properties.DropDownSizeable = True
+      Properties.MaxMRUColors = 0
+      Properties.NamingConvention = cxncNone
+      Properties.OnChange = cbFillChanged
+      Properties.OnNamingConvention = cbColorComboBoxNamingConvention
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      TabOrder = 40
+      Visible = False
+      Width = 206
+    end
+    object icbPatternStyle: TcxImageComboBox
+      Left = 10000
+      Top = 10000
+      Properties.Images = ilFillPatterns
+      Properties.Items = <>
+      Properties.OnChange = cbFillChanged
+      Style.HotTrack = False
+      TabOrder = 41
+      Visible = False
+      Width = 206
+    end
+    object lbLineStyles: TcxListBox
+      Left = 10000
+      Top = 10000
+      Width = 160
+      Height = 175
+      Columns = 2
+      ItemHeight = 13
+      ListStyle = lbOwnerDrawFixed
+      TabOrder = 25
+      Visible = False
+      OnDrawItem = lbLineStylesDrawItem
+    end
+    object ccbBorderLineColor: TcxColorComboBox
+      Left = 10000
+      Top = 10000
+      ColorValue = 536870912
+      Properties.AllowSelectColor = True
+      Properties.ColorDialogShowFull = True
+      Properties.ColorDialogType = cxcdtAdvanced
+      Properties.CustomColors = <>
+      Properties.DefaultColorStyle = cxdcClear
+      Properties.DropDownSizeable = True
+      Properties.MaxMRUColors = 0
+      Properties.NamingConvention = cxncNone
+      Properties.OnChange = ccbBorderLineColorPropertiesChange
+      Properties.OnNamingConvention = cbColorComboBoxNamingConvention
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      TabOrder = 26
+      Visible = False
+      Width = 160
+    end
+    object lbBordersHint: TcxLabel
+      Left = 10000
+      Top = 10000
+      AutoSize = False
+      Caption = 'lbBordersHint'
+      Style.HotTrack = False
+      Properties.WordWrap = True
+      Transparent = True
+      Visible = False
+      Height = 45
+      Width = 483
+    end
+    object btnBordersNone: TcxButton
+      Left = 10000
+      Top = 10000
+      Width = 42
+      Height = 42
+      OptionsImage.Glyph.SourceDPI = 96
+      OptionsImage.Glyph.Data = {
+        3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+        462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D224E
+        6F5F626F726465722220786D6C6E733D22687474703A2F2F7777772E77332E6F
+        72672F323030302F7376672220786D6C6E733A786C696E6B3D22687474703A2F
+        2F7777772E77332E6F72672F313939392F786C696E6B2220783D223070782220
+        793D22307078222076696577426F783D2230203020333220333222207374796C
+        653D22656E61626C652D6261636B67726F756E643A6E65772030203020333220
+        33323B2220786D6C3A73706163653D227072657365727665223E262331333B26
+        2331303B3C7374796C6520747970653D22746578742F6373732220786D6C3A73
+        706163653D227072657365727665223E2E426C61636B7B66696C6C3A23373237
+        3237323B7D262331333B262331303B2623393B2E7374307B6F7061636974793A
+        302E353B7D3C2F7374796C653E0D0A3C6720636C6173733D22737430223E0D0A
+        09093C7061746820636C6173733D22426C61636B2220643D224D322C32683276
+        32483256327A204D362C3468325632483656347A204D31302C3468325632682D
+        3256347A204D31342C3468325632682D3256347A204D31382C3468325632682D
+        3256347A204D32322C3468325632682D3256347A204D32362C32763268325632
+        20202623393B2623393B4832367A204D32362C3868325636682D3256387A204D
+        32362C31326832762D32682D325631327A204D32362C31366832762D32682D32
+        5631367A204D32362C32306832762D32682D325632307A204D32362C32346832
+        762D32682D325632347A204D32362C32386832762D32682D325632387A204D32
+        322C3238683220202623393B2623393B762D32682D325632387A204D31382C32
+        386832762D32682D325632387A204D31342C32386832762D32682D325632387A
+        204D31302C32386832762D32682D325632387A204D362C32386832762D324836
+        5632387A204D322C32386832762D3248325632387A204D322C32346832762D32
+        48325632347A204D322C3230683220202623393B2623393B762D324832563230
+        7A204D322C31366832762D3248325631367A204D322C31326832762D32483256
+        31327A204D322C3868325636483256387A204D31342C3868325636682D325638
+        7A204D31342C31326832762D32682D325631327A204D31342C31366832762D32
+        682D325631367A204D31342C32306832762D32682D3220202623393B2623393B
+        5632307A204D31342C32346832762D32682D325632347A204D31382C31366832
+        762D32682D325631367A204D32322C31366832762D32682D325631367A204D31
+        302C31366832762D32682D325631367A204D362C31366832762D324836563136
+        7A222F3E0D0A093C2F673E0D0A3C2F7376673E0D0A}
+      TabOrder = 27
+      Visible = False
+      OnClick = btnBordersNoneClick
+    end
+    object btnBordersInside: TcxButton
+      Left = 10000
+      Top = 10000
+      Width = 42
+      Height = 42
+      OptionsImage.Glyph.SourceDPI = 96
+      OptionsImage.Glyph.Data = {
+        3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+        462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D2242
+        6F7264657273496E736964652220786D6C6E733D22687474703A2F2F7777772E
+        77332E6F72672F323030302F7376672220786D6C6E733A786C696E6B3D226874
+        74703A2F2F7777772E77332E6F72672F313939392F786C696E6B2220783D2230
+        70782220793D22307078222076696577426F783D223020302033322033322220
+        7374796C653D22656E61626C652D6261636B67726F756E643A6E657720302030
+        2033322033323B2220786D6C3A73706163653D227072657365727665223E2623
+        31333B262331303B3C7374796C6520747970653D22746578742F637373222078
+        6D6C3A73706163653D227072657365727665223E2E426C61636B7B66696C6C3A
+        233732373237323B7D262331333B262331303B2623393B2E7374307B6F706163
+        6974793A302E353B7D3C2F7374796C653E0D0A3C6720636C6173733D22737430
+        223E0D0A09093C7061746820636C6173733D22426C61636B2220643D224D322C
+        3268327632483256327A204D362C3468325632483656347A204D31302C346832
+        5632682D3256347A204D31382C3468325632682D3256347A204D32322C346832
+        5632682D3256347A204D32362C327632683256324832367A204D32362C386832
+        5636682D3220202623393B2623393B56387A204D32362C31326832762D32682D
+        325631327A204D32362C32306832762D32682D325632307A204D32362C323468
+        32762D32682D325632347A204D32362C32386832762D32682D325632387A204D
+        32322C32386832762D32682D325632387A204D31382C32386832762D32682D32
+        5632387A204D31302C3238683220202623393B2623393B762D32682D32563238
+        7A204D362C32386832762D3248365632387A204D322C32386832762D32483256
+        32387A204D322C32346832762D3248325632347A204D322C32306832762D3248
+        325632307A204D322C31326832762D3248325631327A204D322C386832563648
+        3256387A222F3E0D0A093C2F673E0D0A3C706F6C79676F6E20636C6173733D22
+        426C61636B2220706F696E74733D2232382C31342031362C31342031362C3220
+        31342C322031342C313420322C313420322C31362031342C31362031342C3238
+        2031362C32382031362C31362032382C313620222F3E0D0A3C2F7376673E0D0A}
+      TabOrder = 29
+      Visible = False
+      OnClick = btnBordersInsideClick
+    end
+    object btnBordersOutline: TcxButton
+      Left = 10000
+      Top = 10000
+      Width = 42
+      Height = 42
+      OptionsImage.Glyph.SourceDPI = 96
+      OptionsImage.Glyph.Data = {
+        3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+        462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D2254
+        6869636B5F426F785F426F726465722220786D6C6E733D22687474703A2F2F77
+        77772E77332E6F72672F323030302F7376672220786D6C6E733A786C696E6B3D
+        22687474703A2F2F7777772E77332E6F72672F313939392F786C696E6B222078
+        3D223070782220793D22307078222076696577426F783D223020302033322033
+        3222207374796C653D22656E61626C652D6261636B67726F756E643A6E657720
+        3020302033322033323B2220786D6C3A73706163653D22707265736572766522
+        3E262331333B262331303B3C7374796C6520747970653D22746578742F637373
+        2220786D6C3A73706163653D227072657365727665223E2E426C61636B7B6669
+        6C6C3A233732373237323B7D262331333B262331303B2623393B2E7374307B6F
+        7061636974793A302E353B7D3C2F7374796C653E0D0A3C6720636C6173733D22
+        737430223E0D0A09093C7061746820636C6173733D22426C61636B2220643D22
+        4D31342C3868325636682D3256387A204D31342C31326832762D32682D325631
+        327A204D31342C31366832762D32682D325631367A204D31342C32306832762D
+        32682D325632307A204D31342C32346832762D32682D325632347A204D31382C
+        31366832762D3220202623393B2623393B682D325631367A204D32322C313668
+        32762D32682D325631367A204D31302C31366832762D32682D325631367A204D
+        362C31366832762D3248365631367A222F3E0D0A093C2F673E0D0A3C70617468
+        20636C6173733D22426C61636B2220643D224D302C3076333068333056304830
+        7A204D32362C3236483456346832325632367A222F3E0D0A3C2F7376673E0D0A}
+      TabOrder = 28
+      Visible = False
+      OnClick = btnBordersOutlineClick
+    end
+    object btnBorderTop: TcxButton
+      Left = 10000
+      Top = 10000
+      Width = 24
+      Height = 24
+      OptionsImage.Glyph.SourceDPI = 192
+      OptionsImage.Glyph.Data = {
+        3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+        462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D2254
+        6F705F426F726465722220786D6C6E733D22687474703A2F2F7777772E77332E
+        6F72672F323030302F7376672220786D6C6E733A786C696E6B3D22687474703A
+        2F2F7777772E77332E6F72672F313939392F786C696E6B2220783D2230707822
+        20793D22307078222076696577426F783D223020302033322033322220737479
+        6C653D22656E61626C652D6261636B67726F756E643A6E657720302030203332
+        2033323B2220786D6C3A73706163653D227072657365727665223E262331333B
+        262331303B3C7374796C6520747970653D22746578742F6373732220786D6C3A
+        73706163653D227072657365727665223E2E426C61636B7B66696C6C3A233732
+        373237323B7D262331333B262331303B2623393B2E7374307B6F706163697479
+        3A302E353B7D3C2F7374796C653E0D0A3C6720636C6173733D22737430223E0D
+        0A09093C7061746820636C6173733D22426C61636B2220643D224D32362C3868
+        325636682D3256387A204D32362C31326832762D32682D325631327A204D3236
+        2C31366832762D32682D325631367A204D32362C32306832762D32682D325632
+        307A204D32362C32346832762D32682D325632347A204D32362C32386832762D
+        3220202623393B2623393B682D325632387A204D32322C32386832762D32682D
+        325632387A204D31382C32386832762D32682D325632387A204D31342C323868
+        32762D32682D325632387A204D31302C32386832762D32682D325632387A204D
+        362C32386832762D3248365632387A204D322C32386832762D3248325632387A
+        204D322C3234683220202623393B2623393B762D3248325632347A204D322C32
+        306832762D3248325632307A204D322C31366832762D3248325631367A204D32
+        2C31326832762D3248325631327A204D322C3868325636483256387A204D3134
+        2C3868325636682D3256387A204D31342C31326832762D32682D325631327A20
+        4D31342C31366832762D32682D3220202623393B2623393B5631367A204D3134
+        2C32306832762D32682D325632307A204D31342C32346832762D32682D325632
+        347A204D31382C31366832762D32682D325631367A204D32322C31366832762D
+        32682D325631367A204D31302C31366832762D32682D325631367A204D362C31
+        366832762D3248365631367A222F3E0D0A093C2F673E0D0A3C7265637420783D
+        22322220793D22322220636C6173733D22426C61636B222077696474683D2232
+        3622206865696768743D2232222F3E0D0A3C2F7376673E0D0A}
+      SpeedButtonOptions.GroupIndex = 7
+      SpeedButtonOptions.AllowAllUp = True
+      TabOrder = 30
+      Visible = False
+      OnClick = btnBorderClick
+    end
+    object btnBorderHorz: TcxButton
+      Left = 10000
+      Top = 10000
+      Width = 24
+      Height = 24
+      OptionsImage.Glyph.SourceDPI = 192
+      OptionsImage.Glyph.Data = {
+        3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+        462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D2242
+        6F72646572496E73696465486F72697A6F6E74616C2220786D6C6E733D226874
+        74703A2F2F7777772E77332E6F72672F323030302F7376672220786D6C6E733A
+        786C696E6B3D22687474703A2F2F7777772E77332E6F72672F313939392F786C
+        696E6B2220783D223070782220793D22307078222076696577426F783D223020
+        3020333220333222207374796C653D22656E61626C652D6261636B67726F756E
+        643A6E6577203020302033322033323B2220786D6C3A73706163653D22707265
+        7365727665223E262331333B262331303B3C7374796C6520747970653D227465
+        78742F6373732220786D6C3A73706163653D227072657365727665223E2E426C
+        61636B7B66696C6C3A233732373237323B7D262331333B262331303B2623393B
+        2E7374307B6F7061636974793A302E353B7D3C2F7374796C653E0D0A3C672063
+        6C6173733D22737430223E0D0A09093C7061746820636C6173733D22426C6163
+        6B2220643D224D322C3268327632483256327A204D362C346832563248365634
+        7A204D31302C3468325632682D3256347A204D31342C3468325632682D325634
+        7A204D31382C3468325632682D3256347A204D32322C3468325632682D325634
+        7A204D32362C3276326832563220202623393B2623393B4832367A204D32362C
+        3868325636682D3256387A204D32362C31326832762D32682D325631327A204D
+        32362C32306832762D32682D325632307A204D32362C32346832762D32682D32
+        5632347A204D32362C32386832762D32682D325632387A204D32322C32386832
+        762D32682D325632387A204D31382C3238683220202623393B2623393B762D32
+        682D325632387A204D31342C32386832762D32682D325632387A204D31302C32
+        386832762D32682D325632387A204D362C32386832762D3248365632387A204D
+        322C32386832762D3248325632387A204D322C32346832762D3248325632347A
+        204D322C32306832762D3248325632307A204D322C3132683220202623393B26
+        23393B762D3248325631327A204D322C3868325636483256387A204D31342C38
+        68325636682D3256387A204D31342C31326832762D32682D325631327A204D31
+        342C32306832762D32682D325632307A204D31342C32346832762D32682D3256
+        32347A222F3E0D0A093C2F673E0D0A3C706F6C79676F6E20636C6173733D2242
+        6C61636B2220706F696E74733D2231342C313420322C313420322C3136203134
+        2C31362031362C31362032382C31362032382C31342031362C313420222F3E0D
+        0A3C2F7376673E0D0A}
+      SpeedButtonOptions.GroupIndex = 6
+      SpeedButtonOptions.AllowAllUp = True
+      TabOrder = 31
+      Visible = False
+      OnClick = btnBorderClick
+    end
+    object btnBorderBottom: TcxButton
+      Left = 10000
+      Top = 10000
+      Width = 24
+      Height = 24
+      OptionsImage.Glyph.SourceDPI = 192
+      OptionsImage.Glyph.Data = {
+        3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+        462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D2254
+        6869636B5F426F74746F6D5F426F726465722220786D6C6E733D22687474703A
+        2F2F7777772E77332E6F72672F323030302F7376672220786D6C6E733A786C69
+        6E6B3D22687474703A2F2F7777772E77332E6F72672F313939392F786C696E6B
+        2220783D223070782220793D22307078222076696577426F783D223020302033
+        3220333222207374796C653D22656E61626C652D6261636B67726F756E643A6E
+        6577203020302033322033323B2220786D6C3A73706163653D22707265736572
+        7665223E262331333B262331303B3C7374796C6520747970653D22746578742F
+        6373732220786D6C3A73706163653D227072657365727665223E2E426C61636B
+        7B66696C6C3A233732373237323B7D262331333B262331303B2623393B2E7374
+        307B6F7061636974793A302E353B7D3C2F7374796C653E0D0A3C726563742078
+        3D22322220793D2232362220636C6173733D22426C61636B222077696474683D
+        22323622206865696768743D2234222F3E0D0A3C6720636C6173733D22737430
+        223E0D0A09093C7061746820636C6173733D22426C61636B2220643D224D3234
+        2C34682D325632683256347A204D32342C3134682D32763268325631347A204D
+        32302C32682D327632683256327A204D31362C3130682D32763268325631307A
+        204D31362C32682D327632683256327A204D32302C3134682D32763268325631
+        347A20202623393B2623393B204D31362C36682D327632683256367A204D3238
+        2C36682D327632683256367A204D32382C3130682D32763268325631307A204D
+        32382C3232682D32763268325632327A204D32382C32682D327632683256327A
+        204D32382C3138682D32763268325631387A204D32382C3134682D3276326832
+        5631347A204D342C3620202623393B2623393B48327632683256367A204D3136
+        2C3134682D32763268325631347A204D342C3248327632683256327A204D342C
+        31344832763268325631347A204D342C31384832763268325631387A204D342C
+        32324832763268325632327A204D382C31344836763268325631347A204D342C
+        31304832763268325631307A20202623393B2623393B204D31362C3232682D32
+        763268325632327A204D31362C3138682D32763268325631387A204D382C3248
+        367632683256327A204D31322C32682D327632683256327A204D31322C313468
+        2D32763268325631347A222F3E0D0A093C2F673E0D0A3C2F7376673E0D0A}
+      SpeedButtonOptions.GroupIndex = 5
+      SpeedButtonOptions.AllowAllUp = True
+      TabOrder = 32
+      Visible = False
+      OnClick = btnBorderClick
+    end
+    object btnBorderLeft: TcxButton
+      Left = 10000
+      Top = 10000
+      Width = 24
+      Height = 24
+      OptionsImage.Glyph.SourceDPI = 192
+      OptionsImage.Glyph.Data = {
+        3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+        462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D224C
+        6566745F426F726465722220786D6C6E733D22687474703A2F2F7777772E7733
+        2E6F72672F323030302F7376672220786D6C6E733A786C696E6B3D2268747470
+        3A2F2F7777772E77332E6F72672F313939392F786C696E6B2220783D22307078
+        2220793D22307078222076696577426F783D2230203020333220333222207374
+        796C653D22656E61626C652D6261636B67726F756E643A6E6577203020302033
+        322033323B2220786D6C3A73706163653D227072657365727665223E26233133
+        3B262331303B3C7374796C6520747970653D22746578742F6373732220786D6C
+        3A73706163653D227072657365727665223E2E426C61636B7B66696C6C3A2337
+        32373237323B7D262331333B262331303B2623393B2E7374307B6F7061636974
+        793A302E353B7D3C2F7374796C653E0D0A3C6720636C6173733D22737430223E
+        0D0A09093C7061746820636C6173733D22426C61636B2220643D224D362C3468
+        325632483656347A204D31302C3468325632682D3256347A204D31342C346832
+        5632682D3256347A204D31382C3468325632682D3256347A204D32322C346832
+        5632682D3256347A204D32362C327632683256324832367A204D32362C386832
+        563620202623393B2623393B682D3256387A204D32362C31326832762D32682D
+        325631327A204D32362C31366832762D32682D325631367A204D32362C323068
+        32762D32682D325632307A204D32362C32346832762D32682D325632347A204D
+        32362C32386832762D32682D325632387A204D32322C32386832762D32682D32
+        5632387A20202623393B2623393B204D31382C32386832762D32682D32563238
+        7A204D31342C32386832762D32682D325632387A204D31302C32386832762D32
+        682D325632387A204D362C32386832762D3248365632387A204D31342C386832
+        5636682D3256387A204D31342C31326832762D32682D325631327A204D31342C
+        31366832762D32682D3220202623393B2623393B5631367A204D31342C323068
+        32762D32682D325632307A204D31342C32346832762D32682D325632347A204D
+        31382C31366832762D32682D325631367A204D32322C31366832762D32682D32
+        5631367A204D31302C31366832762D32682D325631367A204D362C3136683276
+        2D3248365631367A222F3E0D0A093C2F673E0D0A3C7265637420783D22322220
+        793D22322220636C6173733D22426C61636B222077696474683D223222206865
+        696768743D223236222F3E0D0A3C2F7376673E0D0A}
+      SpeedButtonOptions.GroupIndex = 4
+      SpeedButtonOptions.AllowAllUp = True
+      TabOrder = 33
+      Visible = False
+      OnClick = btnBorderClick
+    end
+    object btnBorderVert: TcxButton
+      Left = 10000
+      Top = 10000
+      Width = 24
+      Height = 24
+      OptionsImage.Glyph.SourceDPI = 192
+      OptionsImage.Glyph.Data = {
+        3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+        462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D2242
+        6F72646572496E73696465566572746963616C2220786D6C6E733D2268747470
+        3A2F2F7777772E77332E6F72672F323030302F7376672220786D6C6E733A786C
+        696E6B3D22687474703A2F2F7777772E77332E6F72672F313939392F786C696E
+        6B2220783D223070782220793D22307078222076696577426F783D2230203020
+        333220333222207374796C653D22656E61626C652D6261636B67726F756E643A
+        6E6577203020302033322033323B2220786D6C3A73706163653D227072657365
+        727665223E262331333B262331303B3C7374796C6520747970653D2274657874
+        2F6373732220786D6C3A73706163653D227072657365727665223E2E426C6163
+        6B7B66696C6C3A233732373237323B7D262331333B262331303B2623393B2E73
+        74307B6F7061636974793A302E353B7D3C2F7374796C653E0D0A3C6720636C61
+        73733D22737430223E0D0A09093C7061746820636C6173733D22426C61636B22
+        20643D224D322C3268327632483256327A204D362C3468325632483656347A20
+        4D31302C3468325632682D3256347A204D31382C3468325632682D3256347A20
+        4D32322C3468325632682D3256347A204D32362C327632683256324832367A20
+        4D32362C3868325636682D3220202623393B2623393B56387A204D32362C3132
+        6832762D32682D325631327A204D32362C31366832762D32682D325631367A20
+        4D32362C32306832762D32682D325632307A204D32362C32346832762D32682D
+        325632347A204D32362C32386832762D32682D325632387A204D32322C323868
+        32762D32682D325632387A204D31382C3238683220202623393B2623393B762D
+        32682D325632387A204D31302C32386832762D32682D325632387A204D362C32
+        386832762D3248365632387A204D322C32386832762D3248325632387A204D32
+        2C32346832762D3248325632347A204D322C32306832762D3248325632307A20
+        4D322C31366832762D3248325631367A204D322C31326832762D322020262339
+        3B2623393B48325631327A204D322C3868325636483256387A204D31382C3136
+        6832762D32682D325631367A204D32322C31366832762D32682D325631367A20
+        4D31302C31366832762D32682D325631367A204D362C31366832762D32483656
+        31367A222F3E0D0A093C2F673E0D0A3C706F6C79676F6E20636C6173733D2242
+        6C61636B2220706F696E74733D2231362C31362031362C31342031362C313020
+        31362C322031342C322031342C31302031342C31342031342C31362031342C32
+        382031362C323820222F3E0D0A3C2F7376673E0D0A}
+      SpeedButtonOptions.GroupIndex = 3
+      SpeedButtonOptions.AllowAllUp = True
+      TabOrder = 34
+      Visible = False
+      OnClick = btnBorderClick
+    end
+    object btnBorderRight: TcxButton
+      Left = 10000
+      Top = 10000
+      Width = 24
+      Height = 24
+      OptionsImage.Glyph.SourceDPI = 192
+      OptionsImage.Glyph.Data = {
+        3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D225554
+        462D38223F3E0D0A3C7376672076657273696F6E3D22312E31222069643D2252
+        696768745F426F726465722220786D6C6E733D22687474703A2F2F7777772E77
+        332E6F72672F323030302F7376672220786D6C6E733A786C696E6B3D22687474
+        703A2F2F7777772E77332E6F72672F313939392F786C696E6B2220783D223070
+        782220793D22307078222076696577426F783D22302030203332203332222073
+        74796C653D22656E61626C652D6261636B67726F756E643A6E65772030203020
+        33322033323B2220786D6C3A73706163653D227072657365727665223E262331
+        333B262331303B3C7374796C6520747970653D22746578742F6373732220786D
+        6C3A73706163653D227072657365727665223E2E426C61636B7B66696C6C3A23
+        3732373237323B7D262331333B262331303B2623393B2E7374307B6F70616369
+        74793A302E353B7D3C2F7374796C653E0D0A3C6720636C6173733D2273743022
+        3E0D0A09093C7061746820636C6173733D22426C61636B2220643D224D322C32
+        68327632483256327A204D362C3468325632483656347A204D31302C34683256
+        32682D3256347A204D31342C3468325632682D3256347A204D31382C34683256
+        32682D3256347A204D32322C3468325632682D3256347A204D32322C32386832
+        762D3220202623393B2623393B682D325632387A204D31382C32386832762D32
+        682D325632387A204D31342C32386832762D32682D325632387A204D31302C32
+        386832762D32682D325632387A204D362C32386832762D3248365632387A204D
+        322C32386832762D3248325632387A204D322C32346832762D3248325632347A
+        204D322C32306832762D3220202623393B2623393B48325632307A204D322C31
+        366832762D3248325631367A204D322C31326832762D3248325631327A204D32
+        2C3868325636483256387A204D31342C3868325636682D3256387A204D31342C
+        31326832762D32682D325631327A204D31342C31366832762D32682D32563136
+        7A204D31342C32306832762D32682D3256323020202623393B2623393B7A204D
+        31342C32346832762D32682D325632347A204D31382C31366832762D32682D32
+        5631367A204D32322C31366832762D32682D325631367A204D31302C31366832
+        762D32682D325631367A204D362C31366832762D3248365631367A222F3E0D0A
+        093C2F673E0D0A3C7265637420783D2232362220793D22322220636C6173733D
+        22426C61636B222077696474683D223222206865696768743D223236222F3E0D
+        0A3C2F7376673E0D0A}
+      SpeedButtonOptions.GroupIndex = 2
+      SpeedButtonOptions.AllowAllUp = True
+      TabOrder = 35
+      Visible = False
+      OnClick = btnBorderClick
+    end
+    object cbLocked: TcxCheckBox
+      Left = 10000
+      Top = 10000
+      Caption = '&Locked'
+      Style.TransparentBorder = False
+      TabOrder = 42
+      Transparent = True
+      Visible = False
+    end
+    object cbHidden: TcxCheckBox
+      Left = 10000
+      Top = 10000
+      Caption = 'H&idden'
+      Style.TransparentBorder = False
+      TabOrder = 43
+      Transparent = True
+      Visible = False
+    end
+    object lbProtectionNotes: TcxLabel
+      Left = 10000
+      Top = 10000
+      AutoSize = False
+      Caption = 
+        'Locking cells or hiding formulas has no effect until you protect' +
+        ' the worksheet.'
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      Properties.WordWrap = True
+      Transparent = True
+      Visible = False
+      Height = 39
+      Width = 483
+    end
+    object seDecimalPlaces: TcxSpinEdit
+      Left = 253
+      Top = 128
+      Properties.AssignedValues.MinValue = True
+      Properties.ImmediatePost = True
+      Properties.MaxValue = 30.000000000000000000
+      Properties.OnEditValueChanged = NumberFormatChanged
+      Style.HotTrack = False
+      TabOrder = 3
+      Value = 2
+      Width = 60
+    end
+    object cbUseThousandSeparator: TcxCheckBox
+      Left = 175
+      Top = 155
+      Caption = '&Use 1000 Separator (,)'
+      Properties.OnEditValueChanged = NumberFormatChanged
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      TabOrder = 4
+      Transparent = True
+    end
+    object lbNumberFormatTemplates: TcxListBox
+      Left = 175
+      Top = 221
+      Width = 329
+      Height = 97
+      ItemHeight = 13
+      Style.TransparentBorder = False
+      TabOrder = 6
+      OnClick = lbNumberFormatTemplatesClick
+    end
+    object lbSample: TcxLabel
+      Left = 187
+      Top = 78
+      Caption = 'lbSample'
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      Transparent = True
+    end
+    object teCustomFormatCode: TcxTextEdit
+      Left = 175
+      Top = 196
+      Properties.OnChange = NumberFormatChanged
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      TabOrder = 5
+      Width = 329
+    end
+    object lbGeneralNotes: TcxLabel
+      Left = 175
+      Top = 109
+      Caption = 'lbSample'
+      Style.HotTrack = False
+      Style.TransparentBorder = False
+      Properties.WordWrap = True
+      Transparent = True
+      Width = 329
+    end
+    object lcMainGroup_Root: TdxLayoutGroup
+      AlignHorz = ahClient
+      AlignVert = avTop
+      CaptionOptions.Visible = False
+      Hidden = True
+      ShowBorder = False
+      Index = -1
+    end
+    object lcMainItem1: TdxLayoutItem
+      Parent = lcMainGroup14
+      AlignHorz = ahClient
+      CaptionOptions.Text = 'cxButton1'
+      CaptionOptions.Visible = False
+      CaptionOptions.Layout = clTop
+      Control = btnOK
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 80
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lcMainItem2: TdxLayoutItem
+      Parent = lcMainGroup14
+      CaptionOptions.Visible = False
+      Control = btnCancel
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 80
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcMainGroup14: TdxLayoutGroup
+      Parent = lcMainGroup_Root
+      AlignHorz = ahRight
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      LayoutDirection = ldHorizontal
+      ShowBorder = False
+      Index = 1
+    end
+    object lcMainContentGroup: TdxLayoutGroup
+      Parent = lcMainGroup_Root
+      AlignVert = avClient
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      LayoutDirection = ldTabbed
+      ShowBorder = False
+      TabbedOptions.ShowFrame = True
+      Index = 0
+    end
+    object lcgNumber: TdxLayoutGroup
+      Parent = lcMainContentGroup
+      CaptionOptions.Text = 'Number'
+      Index = 0
+    end
+    object lcMainGroup2: TdxLayoutGroup
+      Parent = lcgNumber
+      AlignHorz = ahClient
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      LayoutDirection = ldHorizontal
+      ShowBorder = False
+      Index = 0
+    end
+    object lciCategory: TdxLayoutItem
+      Parent = lcMainGroup2
+      AlignHorz = ahLeft
+      AlignVert = avClient
+      CaptionOptions.Text = '&Category:'
+      CaptionOptions.Layout = clTop
+      Control = lbCategory
+      ControlOptions.OriginalHeight = 256
+      ControlOptions.OriginalWidth = 148
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lcMainGroup1: TdxLayoutGroup
+      Parent = lcMainGroup2
+      AlignHorz = ahClient
+      AlignVert = avClient
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      ShowBorder = False
+      Index = 1
+    end
+    object lcMainSpaceItem1: TdxLayoutEmptySpaceItem
+      Parent = lcMainGroup1
+      SizeOptions.Height = 10
+      SizeOptions.Width = 10
+      CaptionOptions.Text = 'Empty Space Item'
+      Index = 0
+    end
+    object lcgNumberSample: TdxLayoutGroup
+      Parent = lcMainGroup1
+      AlignHorz = ahClient
+      AlignVert = avTop
+      CaptionOptions.Text = 'Sample'
+      Index = 1
+    end
+    object lcMainItem3: TdxLayoutItem
+      Parent = lcgNumber
+      AlignVert = avClient
+      CaptionOptions.Visible = False
+      Control = lbCategoryDescription
+      ControlOptions.OriginalHeight = 57
+      ControlOptions.OriginalWidth = 483
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcgTextAlignment: TdxLayoutGroup
+      Parent = lcMainContentGroup
+      CaptionOptions.Text = 'Alignment'
+      ItemIndex = 3
+      Index = 1
+    end
+    object lcMainGroup3: TdxLayoutGroup
+      Parent = lcgTextAlignment
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      Offsets.Left = 10
+      ShowBorder = False
+      Index = 1
+    end
+    object lcMainGroup4: TdxLayoutAutoCreatedGroup
+      Parent = lcMainGroup3
+      LayoutDirection = ldHorizontal
+      Index = 0
+    end
+    object lciTextAlignHorz: TdxLayoutItem
+      Parent = lcMainGroup4
+      AlignHorz = ahLeft
+      CaptionOptions.Text = '&Horizontal:'
+      CaptionOptions.Layout = clTop
+      Control = ccbTextAlignHorz
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 162
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lciTextAlignHorzIndent: TdxLayoutItem
+      Parent = lcMainGroup4
+      CaptionOptions.Text = '&Indent:'
+      CaptionOptions.Layout = clTop
+      Control = seTextAlignHorzIndent
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 82
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lciTextAlignVert: TdxLayoutItem
+      Parent = lcMainGroup3
+      AlignHorz = ahLeft
+      CaptionOptions.Text = '&Vertical:'
+      CaptionOptions.Layout = clTop
+      Control = ccbTextAlignVert
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 162
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcMainGroup8: TdxLayoutGroup
+      Parent = lcgTextAlignment
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      Offsets.Left = 10
+      ShowBorder = False
+      Index = 3
+    end
+    object lcMainItem9: TdxLayoutItem
+      Parent = lcMainGroup8
+      CaptionOptions.Text = 'cxCheckBox1'
+      CaptionOptions.Visible = False
+      Control = cbWrapText
+      ControlOptions.OriginalHeight = 17
+      ControlOptions.OriginalWidth = 121
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lciShrinkToFit: TdxLayoutItem
+      Parent = lcMainGroup8
+      CaptionOptions.Visible = False
+      Control = cbShrinkToFit
+      ControlOptions.OriginalHeight = 17
+      ControlOptions.OriginalWidth = 121
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lciMergeCells: TdxLayoutItem
+      Parent = lcMainGroup8
+      CaptionOptions.Visible = False
+      Control = cbMergeCells
+      ControlOptions.OriginalHeight = 17
+      ControlOptions.OriginalWidth = 121
+      ControlOptions.ShowBorder = False
+      Index = 2
+    end
+    object lcgFont: TdxLayoutGroup
+      Parent = lcMainContentGroup
+      CaptionOptions.Text = 'Font'
+      ItemIndex = 3
+      Index = 2
+    end
+    object lcMainGroup5: TdxLayoutAutoCreatedGroup
+      Parent = lcgFont
+      LayoutDirection = ldHorizontal
+      Index = 0
+    end
+    object lcMainGroup9: TdxLayoutAutoCreatedGroup
+      Parent = lcMainGroup5
+      AlignHorz = ahClient
+      Index = 0
+    end
+    object lciFont: TdxLayoutItem
+      Parent = lcMainGroup9
+      CaptionOptions.Text = '&Font:'
+      CaptionOptions.Layout = clTop
+      Control = teFontName
+      ControlOptions.OriginalHeight = 19
+      ControlOptions.OriginalWidth = 271
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lcMainItem6: TdxLayoutItem
+      Parent = lcMainGroup9
+      Control = lbFontNames
+      ControlOptions.OriginalHeight = 82
+      ControlOptions.OriginalWidth = 271
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcMainGroup13: TdxLayoutAutoCreatedGroup
+      Parent = lcMainGroup5
+      Index = 1
+    end
+    object lcMainGroup12: TdxLayoutGroup
+      Parent = lcMainGroup13
+      AlignVert = avClient
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      ShowBorder = False
+      Index = 0
+    end
+    object lciFontStyle: TdxLayoutItem
+      Parent = lcMainGroup12
+      AlignHorz = ahLeft
+      AlignVert = avTop
+      CaptionOptions.Text = 'F&ont Style:'
+      CaptionOptions.Layout = clTop
+      Control = teFontStyle
+      ControlOptions.OriginalHeight = 19
+      ControlOptions.OriginalWidth = 100
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lcMainItem13: TdxLayoutItem
+      Parent = lcMainGroup13
+      Control = lbFontStyles
+      ControlOptions.OriginalHeight = 82
+      ControlOptions.OriginalWidth = 100
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcMainGroup10: TdxLayoutAutoCreatedGroup
+      Parent = lcMainGroup5
+      Index = 2
+    end
+    object lciFontSize: TdxLayoutItem
+      Parent = lcMainGroup10
+      CaptionOptions.Text = '&Size:'
+      CaptionOptions.Layout = clTop
+      Control = teFontSize
+      ControlOptions.OriginalHeight = 19
+      ControlOptions.OriginalWidth = 100
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lcMainItem12: TdxLayoutItem
+      Parent = lcMainGroup10
+      Control = lbFontSizes
+      ControlOptions.OriginalHeight = 82
+      ControlOptions.OriginalWidth = 100
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcMainGroup11: TdxLayoutAutoCreatedGroup
+      Parent = lcgFont
+      LayoutDirection = ldHorizontal
+      Index = 1
+    end
+    object lciFontUnderline: TdxLayoutItem
+      Parent = lcMainGroup11
+      AlignHorz = ahClient
+      CaptionOptions.Text = '&Underline:'
+      CaptionOptions.Layout = clTop
+      Control = cbFontUnderline
+      ControlOptions.OriginalHeight = 19
+      ControlOptions.OriginalWidth = 271
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lciFontColor: TdxLayoutItem
+      Parent = lcMainGroup11
+      AlignHorz = ahRight
+      CaptionOptions.Text = '&Color:'
+      CaptionOptions.Layout = clTop
+      Control = cbFontColor
+      ControlOptions.OriginalHeight = 19
+      ControlOptions.OriginalWidth = 206
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lciReset: TdxLayoutItem
+      Parent = lcgFont
+      AlignHorz = ahRight
+      CaptionOptions.Text = 'cxButton1'
+      CaptionOptions.Visible = False
+      CaptionOptions.Layout = clTop
+      Control = btnFontReset
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 80
+      ControlOptions.ShowBorder = False
+      Index = 2
+    end
+    object lcMainGroup15: TdxLayoutAutoCreatedGroup
+      Parent = lcgFont
+      LayoutDirection = ldHorizontal
+      Index = 3
+    end
+    object lcgFontEffects: TdxLayoutGroup
+      Parent = lcMainGroup15
+      AlignHorz = ahClient
+      CaptionOptions.Text = 'Effects'
+      Index = 0
+    end
+    object lcMainItem14: TdxLayoutItem
+      Parent = lcgFontEffects
+      CaptionOptions.Text = 'cxCheckBox1'
+      CaptionOptions.Visible = False
+      Control = cbFontStrikethrough
+      ControlOptions.OriginalHeight = 17
+      ControlOptions.OriginalWidth = 121
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lcgFontPreview: TdxLayoutGroup
+      Parent = lcMainGroup15
+      AlignHorz = ahRight
+      CaptionOptions.Text = 'Preview'
+      Index = 1
+    end
+    object lcMainItem5: TdxLayoutItem
+      Parent = lcgFontPreview
+      Control = pbTextPreview
+      ControlOptions.AutoColor = True
+      ControlOptions.OriginalHeight = 54
+      ControlOptions.OriginalWidth = 182
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lcMainSpaceItem2: TdxLayoutEmptySpaceItem
+      Parent = lcgFont
+      SizeOptions.Height = 10
+      SizeOptions.Width = 10
+      CaptionOptions.Text = 'Empty Space Item'
+      Index = 4
+    end
+    object lcMainItem7: TdxLayoutItem
+      Parent = lcgFont
+      AlignHorz = ahClient
+      AlignVert = avClient
+      CaptionOptions.Visible = False
+      CaptionOptions.Layout = clTop
+      Control = lbFontWarning
+      ControlOptions.OriginalHeight = 42
+      ControlOptions.OriginalWidth = 483
+      ControlOptions.ShowBorder = False
+      Index = 5
+    end
+    object lcgBorders: TdxLayoutGroup
+      Parent = lcMainContentGroup
+      CaptionOptions.Text = 'Border'
+      Index = 3
+    end
+    object lcgFill: TdxLayoutGroup
+      Parent = lcMainContentGroup
+      CaptionOptions.Text = 'Fill'
+      Index = 4
+    end
+    object lcMainGroup18: TdxLayoutAutoCreatedGroup
+      Parent = lcgFill
+      LayoutDirection = ldHorizontal
+      Index = 0
+    end
+    object lcMainGroup17: TdxLayoutGroup
+      Parent = lcMainGroup18
+      AlignHorz = ahLeft
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      ShowBorder = False
+      Index = 0
+    end
+    object lcMainGroup16: TdxLayoutGroup
+      Parent = lcMainGroup17
+      AlignHorz = ahLeft
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      ShowBorder = False
+      Index = 0
+    end
+    object lciFillBackgroundColor: TdxLayoutLabeledItem
+      Parent = lcMainGroup16
+      CaptionOptions.Text = 'Background &Color:'
+      Index = 0
+    end
+    object lcMainItem17: TdxLayoutItem
+      Parent = lcMainGroup16
+      CaptionOptions.Text = 'cxButton1'
+      CaptionOptions.Visible = False
+      Control = btnFillNoColor
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 184
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcMainItem16: TdxLayoutItem
+      Parent = lcMainGroup16
+      Control = cgFill
+      ControlOptions.OriginalHeight = 148
+      ControlOptions.OriginalWidth = 184
+      ControlOptions.ShowBorder = False
+      Index = 2
+    end
+    object lcMainItem18: TdxLayoutItem
+      Parent = lcMainGroup16
+      CaptionOptions.Text = 'cxButton2'
+      CaptionOptions.Visible = False
+      Control = btnFillMoreColors
+      ControlOptions.OriginalHeight = 25
+      ControlOptions.OriginalWidth = 184
+      ControlOptions.ShowBorder = False
+      Index = 3
+    end
+    object lcMainGroup6: TdxLayoutGroup
+      Parent = lcMainGroup18
+      AlignHorz = ahRight
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      ShowBorder = False
+      Index = 1
+    end
+    object lciFillPatternColor: TdxLayoutItem
+      Parent = lcMainGroup6
+      CaptionOptions.Text = 'P&attern Color:'
+      CaptionOptions.Layout = clTop
+      Control = ccbPatternColor
+      ControlOptions.OriginalHeight = 19
+      ControlOptions.OriginalWidth = 206
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lciFillPatternStyle: TdxLayoutItem
+      Parent = lcMainGroup6
+      CaptionOptions.Text = '&Pattern Style:'
+      CaptionOptions.Layout = clTop
+      Control = icbPatternStyle
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 121
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcgFillSample: TdxLayoutGroup
+      Parent = lcgFill
+      AlignVert = avBottom
+      CaptionOptions.Text = 'Sample'
+      Index = 1
+    end
+    object lcMainItem15: TdxLayoutItem
+      Parent = lcgFillSample
+      Control = pbFillPreview
+      ControlOptions.AutoColor = True
+      ControlOptions.OriginalHeight = 59
+      ControlOptions.OriginalWidth = 442
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lcMainGroup19: TdxLayoutGroup
+      Parent = lcgBorders
+      AlignVert = avTop
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      ShowBorder = False
+      Index = 1
+    end
+    object lcMainGroup20: TdxLayoutGroup
+      Parent = lcgBorders
+      AlignHorz = ahClient
+      AlignVert = avTop
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      ItemIndex = 1
+      LayoutDirection = ldHorizontal
+      ShowBorder = False
+      Index = 0
+    end
+    object lcgLine: TdxLayoutGroup
+      Parent = lcMainGroup20
+      AlignHorz = ahLeft
+      AlignVert = avClient
+      CaptionOptions.Text = 'Line'
+      Index = 0
+    end
+    object lciLineStyles: TdxLayoutItem
+      Parent = lcgLine
+      AlignVert = avClient
+      CaptionOptions.Text = '&Style:'
+      CaptionOptions.Layout = clTop
+      Control = lbLineStyles
+      ControlOptions.OriginalHeight = 137
+      ControlOptions.OriginalWidth = 160
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lciLineColor: TdxLayoutItem
+      Parent = lcgLine
+      AlignVert = avBottom
+      CaptionOptions.Text = '&Color:'
+      CaptionOptions.Layout = clTop
+      Control = ccbBorderLineColor
+      ControlOptions.OriginalHeight = 19
+      ControlOptions.OriginalWidth = 136
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcMainGroup21: TdxLayoutGroup
+      Parent = lcMainGroup26
+      AlignHorz = ahClient
+      AlignVert = avClient
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      ShowBorder = False
+      Index = 0
+    end
+    object lcMainItem23: TdxLayoutItem
+      Parent = lcMainGroup19
+      CaptionOptions.Text = 'cxLabel3'
+      CaptionOptions.Visible = False
+      CaptionOptions.Layout = clTop
+      Control = lbBordersHint
+      ControlOptions.OriginalHeight = 45
+      ControlOptions.OriginalWidth = 483
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcMainSpaceItem3: TdxLayoutEmptySpaceItem
+      Parent = lcMainGroup19
+      SizeOptions.Height = 6
+      SizeOptions.Width = 10
+      Index = 0
+    end
+    object lcMainItem19: TdxLayoutItem
+      Parent = lcMainGroup25
+      AlignHorz = ahClient
+      CaptionOptions.Text = 'cxButton1'
+      CaptionOptions.Visible = False
+      CaptionOptions.Layout = clTop
+      Control = btnBordersNone
+      ControlOptions.OriginalHeight = 42
+      ControlOptions.OriginalWidth = 42
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lcMainItem20: TdxLayoutItem
+      Parent = lcMainGroup23
+      CaptionOptions.Text = 'cxButton2'
+      CaptionOptions.Visible = False
+      CaptionOptions.Layout = clBottom
+      Control = btnBordersInside
+      ControlOptions.OriginalHeight = 42
+      ControlOptions.OriginalWidth = 42
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lcMainGroup22: TdxLayoutAutoCreatedGroup
+      Parent = lcMainGroup21
+      AlignHorz = ahCenter
+      LayoutDirection = ldHorizontal
+      Index = 1
+    end
+    object lcMainItem24: TdxLayoutItem
+      Parent = lcMainGroup24
+      CaptionOptions.Text = 'cxButton3'
+      CaptionOptions.Visible = False
+      Control = btnBordersOutline
+      ControlOptions.OriginalHeight = 42
+      ControlOptions.OriginalWidth = 42
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lciBorderInside: TdxLayoutLabeledItem
+      Parent = lcMainGroup23
+      AlignHorz = ahCenter
+      CaptionOptions.Text = 'Inside'
+      Index = 1
+    end
+    object lcMainGroup23: TdxLayoutAutoCreatedGroup
+      Parent = lcMainGroup22
+      Index = 2
+    end
+    object lciBorderOutline: TdxLayoutLabeledItem
+      Parent = lcMainGroup24
+      AlignHorz = ahCenter
+      CaptionOptions.Text = 'Outline'
+      Index = 1
+    end
+    object lcMainGroup24: TdxLayoutAutoCreatedGroup
+      Parent = lcMainGroup22
+      Index = 1
+    end
+    object lciBorderNone: TdxLayoutLabeledItem
+      Parent = lcMainGroup25
+      AlignHorz = ahCenter
+      CaptionOptions.Text = 'None'
+      Index = 1
+    end
+    object lcMainGroup25: TdxLayoutAutoCreatedGroup
+      Parent = lcMainGroup22
+      AlignHorz = ahClient
+      Index = 0
+    end
+    object lcMainGroup26: TdxLayoutAutoCreatedGroup
+      Parent = lcMainGroup20
+      AlignHorz = ahClient
+      Index = 1
+    end
+    object lcMainGroup30: TdxLayoutGroup
+      Parent = lcMainGroup26
+      AlignHorz = ahCenter
+      CaptionOptions.Text = 'New Group'
+      ShowBorder = False
+      Index = 1
+    end
+    object lcMainGroup27: TdxLayoutGroup
+      Parent = lcMainGroup30
+      CaptionOptions.Text = 'New Group'
+      LayoutDirection = ldHorizontal
+      ShowBorder = False
+      Index = 0
+    end
+    object lcMainItem26: TdxLayoutItem
+      Parent = lcMainGroup28
+      CaptionOptions.Text = 'cxButton1'
+      CaptionOptions.Visible = False
+      Control = btnBorderTop
+      ControlOptions.OriginalHeight = 24
+      ControlOptions.OriginalWidth = 24
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lcMainItem28: TdxLayoutItem
+      Parent = lcMainGroup28
+      AlignVert = avCenter
+      CaptionOptions.Text = 'cxButton3'
+      CaptionOptions.Visible = False
+      Control = btnBorderHorz
+      ControlOptions.OriginalHeight = 24
+      ControlOptions.OriginalWidth = 24
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcMainItem27: TdxLayoutItem
+      Parent = lcMainGroup28
+      AlignVert = avBottom
+      CaptionOptions.Text = 'cxButton2'
+      CaptionOptions.Visible = False
+      Control = btnBorderBottom
+      ControlOptions.OriginalHeight = 24
+      ControlOptions.OriginalWidth = 24
+      ControlOptions.ShowBorder = False
+      Index = 2
+    end
+    object lcMainGroup28: TdxLayoutAutoCreatedGroup
+      Parent = lcMainGroup27
+      Index = 0
+    end
+    object lcMainItem25: TdxLayoutItem
+      Parent = lcMainGroup27
+      AlignHorz = ahClient
+      Control = pbBordersPreview
+      ControlOptions.AutoColor = True
+      ControlOptions.OriginalHeight = 128
+      ControlOptions.OriginalWidth = 192
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcMainGroup29: TdxLayoutGroup
+      Parent = lcMainGroup30
+      CaptionOptions.Text = 'New Group'
+      CaptionOptions.Visible = False
+      Offsets.Left = 30
+      ItemIndex = 2
+      LayoutDirection = ldHorizontal
+      ShowBorder = False
+      Index = 1
+    end
+    object lcMainItem30: TdxLayoutItem
+      Parent = lcMainGroup29
+      CaptionOptions.Text = 'cxButton5'
+      CaptionOptions.Visible = False
+      Control = btnBorderLeft
+      ControlOptions.OriginalHeight = 24
+      ControlOptions.OriginalWidth = 24
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lcMainItem31: TdxLayoutItem
+      Parent = lcMainGroup29
+      AlignHorz = ahCenter
+      CaptionOptions.Text = 'cxButton6'
+      CaptionOptions.Visible = False
+      Control = btnBorderVert
+      ControlOptions.OriginalHeight = 24
+      ControlOptions.OriginalWidth = 24
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcMainItem29: TdxLayoutItem
+      Parent = lcMainGroup29
+      AlignHorz = ahRight
+      CaptionOptions.Text = 'cxButton4'
+      CaptionOptions.Visible = False
+      Control = btnBorderRight
+      ControlOptions.OriginalHeight = 24
+      ControlOptions.OriginalWidth = 24
+      ControlOptions.ShowBorder = False
+      Index = 2
+    end
+    object lcgProtection: TdxLayoutGroup
+      Parent = lcMainContentGroup
+      CaptionOptions.Text = 'Protection'
+      Index = 5
+    end
+    object lcMainItem32: TdxLayoutItem
+      Parent = lcgProtection
+      CaptionOptions.Text = 'cxCheckBox1'
+      CaptionOptions.Visible = False
+      Control = cbLocked
+      ControlOptions.OriginalHeight = 17
+      ControlOptions.OriginalWidth = 121
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lcMainItem33: TdxLayoutItem
+      Parent = lcgProtection
+      CaptionOptions.Text = 'cxCheckBox2'
+      CaptionOptions.Visible = False
+      Control = cbHidden
+      ControlOptions.OriginalHeight = 17
+      ControlOptions.OriginalWidth = 121
+      ControlOptions.ShowBorder = False
+      Index = 1
+    end
+    object lcMainItem34: TdxLayoutItem
+      Parent = lcgProtection
+      CaptionOptions.Text = 'cxLabel1'
+      CaptionOptions.Visible = False
+      Control = lbProtectionNotes
+      ControlOptions.OriginalHeight = 39
+      ControlOptions.OriginalWidth = 60
+      ControlOptions.ShowBorder = False
+      Index = 2
+    end
+    object lciDecimalPlaces: TdxLayoutItem
+      Parent = lcMainGroup1
+      AlignHorz = ahLeft
+      Visible = False
+      CaptionOptions.Text = '&Decimal places:'
+      Control = seDecimalPlaces
+      ControlOptions.OriginalHeight = 21
+      ControlOptions.OriginalWidth = 60
+      ControlOptions.ShowBorder = False
+      Index = 3
+    end
+    object lciUseThousandSeparator: TdxLayoutItem
+      Parent = lcMainGroup1
+      Visible = False
+      CaptionOptions.Visible = False
+      Control = cbUseThousandSeparator
+      ControlOptions.OriginalHeight = 17
+      ControlOptions.OriginalWidth = 121
+      ControlOptions.ShowBorder = False
+      Index = 4
+    end
+    object lciNumberFormatTemplates: TdxLayoutItem
+      Parent = lcMainGroup1
+      AlignVert = avClient
+      Visible = False
+      CaptionOptions.Text = 'Type:'
+      CaptionOptions.Visible = False
+      CaptionOptions.Layout = clTop
+      Control = lbNumberFormatTemplates
+      ControlOptions.OriginalHeight = 97
+      ControlOptions.OriginalWidth = 329
+      ControlOptions.ShowBorder = False
+      Index = 6
+    end
+    object lciSample: TdxLayoutItem
+      Parent = lcgNumberSample
+      Visible = False
+      CaptionOptions.Visible = False
+      Control = lbSample
+      ControlOptions.OriginalHeight = 13
+      ControlOptions.OriginalWidth = 305
+      ControlOptions.ShowBorder = False
+      Index = 0
+    end
+    object lciCustomFormatCode: TdxLayoutItem
+      Parent = lcMainGroup1
+      Visible = False
+      CaptionOptions.Text = '&Type:'
+      CaptionOptions.Layout = clTop
+      Control = teCustomFormatCode
+      ControlOptions.OriginalHeight = 19
+      ControlOptions.OriginalWidth = 329
+      ControlOptions.ShowBorder = False
+      Index = 5
+    end
+    object lciGeneralNotes: TdxLayoutItem
+      Parent = lcMainGroup1
+      Visible = False
+      CaptionOptions.Text = 'cxLabel1'
+      CaptionOptions.Visible = False
+      Control = lbGeneralNotes
+      ControlOptions.OriginalHeight = 13
+      ControlOptions.OriginalWidth = 42
+      ControlOptions.ShowBorder = False
+      Index = 2
+    end
+    object lsiTextAlignment: TdxLayoutSeparatorItem
+      Parent = lcgTextAlignment
+      CaptionOptions.Text = 'Description'
+      CaptionOptions.Visible = True
+      Index = 0
+    end
+    object lsiTextControl: TdxLayoutSeparatorItem
+      Parent = lcgTextAlignment
+      CaptionOptions.Text = 'Text control'
+      CaptionOptions.Visible = True
+      Index = 2
+    end
+    object lsiPresets: TdxLayoutSeparatorItem
+      Parent = lcMainGroup21
+      CaptionOptions.Text = 'Presets'
+      CaptionOptions.Visible = True
+      Index = 0
+    end
+    object lsiBorder: TdxLayoutSeparatorItem
+      Parent = lcMainGroup21
+      CaptionOptions.Text = 'Border'
+      CaptionOptions.Visible = True
+      Index = 2
+    end
+  end
+  object dxLayoutLookAndFeelList1: TdxLayoutLookAndFeelList
+    Left = 488
+    Top = 8
+    object dxLayoutCxLookAndFeel1: TdxLayoutCxLookAndFeel
+      PixelsPerInch = 96
+    end
+  end
+  object ilFillPatterns: TcxImageList
+    SourceDPI = 96
+    FormatVersion = 1
+    DesignInfo = 524714
+  end
+end

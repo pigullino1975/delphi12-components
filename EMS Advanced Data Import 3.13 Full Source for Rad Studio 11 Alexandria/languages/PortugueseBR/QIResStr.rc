@@ -1,0 +1,366 @@
+// PortugueseBR - by Samuel N Junior - NatSam Consultoria Ltda - 2012.09.04
+
+#include "QImport3StrIDs.pas"
+
+STRINGTABLE
+BEGIN
+  // Errors
+  QIE_NoDataSet             "Não foi definido o Dataset" //"DataSet is not defined"
+  QIE_NoDBGrid              "Não foi definido o DBGrid"//"DBGrid is not defined" // since 1.7
+  QIE_NoListView            "Não foi definido o ListView"//ListView is not defined" // since 1.7
+  QIE_NoStringGrid          "Não foi definido o StringGrid"//StrinGrid is not defined" // since 1.7
+  QIE_NoSource              "Não foi definido a origem dos dados"//"Source DataSet is not defined" // since 1.5
+  QIE_NoFileName            "Não foi especificado o nome do arquivo"//"File name is not specified"
+  QIE_NoTableName           "Table name is not specified" // since 3.9
+  QIE_FileNotExists         "Não existe o arquivo %s" //"File %s does not exist"
+  QIE_MappingEmpty          "Mapeamento está vazio" //"Map is empty"
+  QIE_CanceledByUser        "Importação cancelada pelo usuário"//"Import canceled by user"
+  QIE_MapMissing            "Faltou definir o mapeamento"//"Missing definition of map"
+  QIE_FieldNotFound         "A coluna %s definida no mapeamento não foi localizada no destino de importação"//"Column %s is defined in the MAP is not found in the import destination"
+  QIE_SourceFieldNotFound   "Não foi localizado o campo %s na origem dos dados" //"Field %s not found in the source DataSet" // since 1.5
+  QIE_DataSetClosed         "Não é possível executar esta operação com o destino de importação fechado" //"Cannot perform this operation on a closed Import Destination"
+  QIE_AllowedImportsEmpty   "A propriedade 'AllowedImports' não pode conter um conjunto vazio"//"Property AllowedImports can not contain empty set"
+  QIE_KeyColumnsNotDefined  "Não foram definidas as colunas das chaves" // "Key columns are not defined" // since 1.7
+  QIE_KeyColumnNotFound     "A coluna chave %s não foi localizada no destino da importação" //"Key column %s is not found in the import destination" // since 1.7
+  QIE_XMLFieldListEmpty     "A lista dos campos XML está vazia" //"XML field list is empty" // since 2.0
+  QIE_NeedDefineTextToFind  "Você precisa especificar o texto que deve ser pesquisado" //"Text to find must be defined" // since 2.0
+  QIE_UnknownImportSource   "Origem da importação desconhecido"  //"Unknown import source" // since 2.2
+  QIE_WrongFileType         "Tipo de arquivo incorreto, deve ser ""%s"""  //"Wrong file type, must be ""%s""" // since 2.2
+  QIE_UnknownFieldType      "Tipo de campo desconhecido"  //"Unknown field type" // since 2.35
+  QIE_WrongDateFormat       "Formato de data incorreto ""%s""" //"Wrong date format ""%s""" // since 2.35
+  QIE_ListIndexOutOfBounds  "Índice da lista fora dos limites (%d)" //"List index out of bounds (%d)" // since 3.00
+  QIE_GridCaptionPos        "GridCaptionRow não pode ser maior que GridStartRow"
+  QIE_XlsxMapError          "Valor mapeamento %s inválido"
+  QIE_IsNotBoolean          "The value ""%s"" is not a boolean value"
+  QIE_ColumnIndexError      "Grid column index out of bounds (%d)"
+  QIE_RowIndexError         "Grid row index out of bounds (%d)"
+  QIE_MaxColumnsError       "Columns count out of bounds (%d)"
+
+  QIE_CSVParseError         "CSV parse error:"
+  QIE_CSVLineNumberError    "Line: %d"
+  QIE_CSVColumnNumberError  "Column: %d"
+  QIE_CSVWrongNumberOfColumns   "Wrong number of columns"
+  QIE_CSVWrongColumnValueFormat "Wrong format of column value"
+  QIE_CSVInvalidCharacter       "Invalid character (HexCode = %.8x). Input file is invalid."
+
+  QIE_CSVOperationNotAllowedInActiveState "Operation is not allowed in Active state."
+  QIE_CSVOperationNotAllowedInInactiveState "Operation is not allowed in Inactive state."
+  QIE_CSVGettingNextLine "Getting next line."
+  QIE_CSVModifyingInputParameter "Modifying %s input parameter."  
+  QIE_CSVGettingProperty "Getting %s property."
+  QIE_CSVSettingProperty "Setting %s property."
+
+  // Filters
+  QIF_TXT        "Arquivos Texto (*.txt)|*.txt|Todos os arquivos (*.*)|*.*"// "Text files (*.txt)|*.txt|All files (*.*)|*.*"
+  QIF_ASCII      "Arquivos ASCII (*.txt; *.csv)|*.txt;*.csv|Todos os arquivos (*.*)|*.*"//"ASCII files (*.txt; *.csv)|*.txt;*.csv|All files (*.*)|*.*"
+  QIF_CSV        "Arquivos CSV (*.csv)|*.csv|Todos os arquivos (*.*)|*.*" //"CSV files (*.csv)|*.csv|All files (*.*)|*.*"
+  QIF_DBF        "Arquivos DBF (*.dbf)|*.dbf|Todos os arquivos (*.*)|*.*" //"DBF files (*.dbf)|*.dbf|All files (*.*)|*.*"
+  QIF_XML        "Arquivos XML (*.xml)|*.xml|Todos os arquivos (*.*)|*.*" //"XML files (*.xml)|*.xml|All files (*.*)|*.*"  // since 2.0
+  QIF_XLS        "Arquivos Microsoft Excel (*.xls)|*.xls|Todos os arquivos (*.*)|*.*"//"Microsoft Excel files (*.xls)|*.xls|All files (*.*)|*.*"
+  QIF_XLSX       "Arquivos Microsoft Excel 2007 (*.xlsx)|*.xlsx|Todos os arquivos (*.*)|*.*" //"Microsoft Excel 2007 files (*.xlsx)|*.xlsx|All files (*.*)|*.*"
+  QIF_DOCX       "Arquivos Microsoft Word 2007 (*.docx)|*.docx|Todos os arquivos (*.*)|*.*" //"Microsoft Word 2007 files (*.docx)|*.docx|All files (*.*)|*.*"
+  QIF_ODS        "Arquivos de Planilhas Open Document (*.ods)|*.ods|Todos os arquivos (*.*)|*.*" //"Open Document Spreadsheet files (*.ods)|*.ods|All files (*.*)|*.*"
+  QIF_ODT        "Arquivos Textos Open Document (*.odt)|*.odt|Todos os arquivos (*.*)|*.*" //"Open Document Text files (*.odt)|*.odt|All files (*.*)|*.*"
+  QIF_MDB        "Arquivos Microsoft Access 97-2003 (*.mdb)|*.mdb|Todos os arquivos (*.*)|*.*" // since 3.9
+  QIF_ACCDB      "Arquivos Microsoft Access (*.accdb)|*.accdb|Todos os arquivos (*.*)|*.*" // since 3.9
+  QIF_Access     "Arquivos Microsoft Access 97-2003 (*.mdb)|*.mdb|Arquivos Microsoft Access (*.accdb)|*.accdb|Todos os arquivos (*.*)|*.*" // since 3.9  
+  QIF_ALL        "Todos os arquivos suportados (*.txt; *.csv; *.dbf; *.xls)|*.txt;*.csv;*.dbf;*.xls" //"All allowed files (*.txt; *.csv; *.dbf; *.xls)|*.txt;*.csv;*.dbf;*.xls"
+  QIF_TEMPLATE   "Definições de importação (*.imp)| *.imp|Todos os arquivos (*.*)|*.*" //>>>>> QuickImport Tmplate files (*.imp)| *.imp|All files (*.*)|*.*"  // since 1.2
+  QIF_HTML       "Arquivos HTML (*.html; *.htm)|*.html;*.htm|Todos os arquivos (*.*)|*.*" // "HTML files (*.html; *.htm)|*.html;*.htm|All files (*.*)|*.*" // since 3.0
+
+  // Loading
+  QIL_Loading                 "Carregando..." //"Loading..."                       // since 2.0
+
+  // Defaults
+  QID_BooleanTrue             "True"
+  QID_BooleanFalse            "False"
+  QID_NullValue               "Null"                             // since 1.8
+
+  // Wizard
+  QIW_importWizard            "Assistente de importação de dados" //"Import data wizard"
+  QIW_ImportFrom              "Importar de"  //"Import from"
+  QIW_XLS                     "MS Excel 97-2003"
+  QIW_XLSX                    "MS Excel" 
+  QIW_DOCX                    "MS Word"
+  QIW_ODS                     "Arquivo ODS" //"ODS file"
+  QIW_ODT                     "Arquivo ODT" //"ODT file"
+  QIW_Access                  "MS Access"                        // since 1.4  
+  QIW_Access97_2003           "MS Access 97-2003"                // since 3.9  
+  QIW_DBF                     "DBF"
+  QIW_XML                     "XML"                              // since 2.0
+  QIW_TXT                     "Arquivo Texto" //"Text file"
+  QIW_CSV                     "Arquivo CSV"  //"CSV file"
+  QIW_Comma                   "Vírgula"   //"Comma"                            // since 2.0
+  QIW_Quote                   "Aspas"    //"Quote"                            // since 1.65
+  QIW_FileName                "Nome do arquivo origem"  //"Source file name"
+  QIW_SkipInvisibleColumns    "Skip Invisible Target Columns"
+  QIW_NeedCancelCaption       "Tem certeza..."  //"Are you sure..."
+  QIW_NeedCancel              "Tem certeza que deseja abortar a importação?"  //"Are you sure you want to abort import?"
+  QIW_Question                "Pergunta"  //"Question"                         // since 2.0
+  QIW_CancelWizard            "Você deseja finalizar?"   //"Do you want to quit?"             // since 2.0
+  QIW_TemplateFileName        "Nome do arquivo modelo"   //"Template file name"               // since 2.36
+  QIW_HTML                    "Arquivo HTML"  //"HTML file"                        // since 3.0
+  QIW_XMLDoc                  "Outros documentos XML"                           // since 3.0
+
+  QIW_Help                    "Ajuda"  //"&Help"
+  QIW_Back                    "< &Voltar" //"< &Back"
+  QIW_Next                    "&Avançar >"  //"&Next >"
+  QIW_Cancel                  "&Cancelar"  //"&Cancel"
+  QIW_Execute                 "&Executar"  //"&Execute"
+  QIW_Step                    "Passo %d de %d" //"Step %d of %d"
+  QIW_TemplateOptions         " Definições de importação "  //" Template Options "               // since 2.0
+  QIW_GoToLastPage            "Ir para a última página após carregar as definições"  // "Go to the last page after loading template" // since 2.0
+  QIW_AutoSaveTemplate        "Salvar automaticamente as definições quando encerrar este assistente" //"Save template automatically when wizard closes" // since 2.0
+  QIW_LoadTemplate            "Carregar definições de..."  //"Load template from file..."       // since 1.2
+  QIW_SaveTemplate            "Salvar definições para..." //"Save template to file..."         // since 1.2
+
+  QIW_CommitOptions           "Opções de Gravação"  //"Commit Options"                   // since 1.7
+  QIW_Commit                  "Gravar"  //"Commit"
+  QIW_CommitAfterDone         "Gravar ao finalizar"  //"Commit when done"
+  QIW_CommitRecCount          "Gravar a cada"  //"Commit after each"
+  QIW_Records                 "registro(s)"  //"record(s)"
+  QIW_RecordCount             "Contagem registros"  //"Record count"
+  QIW_ImportAllRecords        "Importar todos os registros"  //"Import all records"
+  QIW_ImportRecCount          "Importar os primeiros"  //"Import only first"
+  QIW_CloseAfterImport        "Fechar o assistente após a importação"  //"Close wizard after import"        // since 1.8
+  QIW_AutoTrimValue           "Limpar espaços"
+  QIW_ImportEmptyRows         "Importar linhas vazias"
+
+  QIW_ImportAdvanced          "Avançado"  //"Advanced"                         // since 1.7
+  QIW_AddType                 "Tipo inserção"   //"Add Type"                         // since 1.6
+  QIW_AddType_Append          "Anexar"  //"Append"                           // since 1.6
+  QIW_AddType_Insert          "Inserir" //"Insert"                           // since 1.6
+
+  QIWIM_Caption               " Modo importação " //" Import Mode "                    // since 1.7
+  QIWIM_Insert_All            "Inserir todos" //"Insert All"                       // since 1.7
+  QIWIM_Insert_New            "Inserir novos"  //"Insert New"                       // since 1.7
+  QIWIM_Update                "Atualizar"   //"Update"                           // since 1.7
+  QIWIM_Update_or_Insert      "Atualizar ou Inserir"  //"Update or Insert"                 // since 1.7
+  QIWIM_Delete                "Deletar"  //"Delete"                           // since 1.7
+  QIWIM_Delete_or_Insert      "Deletar ou Inserir"  //"Delete or Insert"                 // since 1.7
+
+  QIW_AvailableColumns        "Colunas Disponíveis"  //"Available Columns"                // since 1.7
+  QIW_SelectedColumns         "Colunas Chaves"  //"Key Columns"                      // since 1.7
+
+  QIW_ErrorLog                "Registro de erros"  //"Error log"
+  QIW_EnableErrorLog          "Ativar registro de erros"  //"Enable error log"  //"Enable error log"
+  QIW_ErrorLogFileName        "Nome do arquivo de erros" //"Error Log File Name"              // since 1.8
+  QIW_RewriteErrorLogFile     "Reescrever arquivo de erros se ele existir"  //"Rewrite error log file if it exists" // since 1.8
+  QIW_ShowErrorLog            "Exibir arquivo de erros após importação"  //"Show error log after import"
+  QIW_ErrorLogStarted         "%s - Processo de importação iniciado" // "%s - Import process started"      // since 1.8
+  QIW_ErrorLogFinished        "%s - Processo de importação finalizado"  //"%s - Import process finished"     // since 1.8
+  QIW_SomeErrorsFound         "%d erro(s) encontrados"  //"%d error(s) found"                // since 1.8
+  QIW_NoErrorsFound           "Não ocorreram erros"  //"No error found"                   // since 1.8
+
+  QIW_BaseFormats             "Formatação Básica"  //"Base formats"
+  QIW_DateTimeFormats         "Formatação Data e Hora" //"Date and Time formats"            // since 1.65
+  QIW_Separators              "Separadores" //"Separators"                       // since 1.65
+  QIW_DecimalSeparator        "Decimais" //"Decimal"
+  QIW_ThousandSeparator       "Milhares"  //"Thousand"
+  QIW_ShortDateFormat         "Data curta"  //"Short date"
+  QIW_LongDateFormat          "Data longa"  //"Long date"
+  QIW_DateSeparator           "Data" //"Date"                            // since 1.65
+  QIW_ShortTimeFormat         "Hora curta" //"Short time"
+  QIW_LongTimeFormat          "Hora longa" //"Long time"
+  QIW_TimeSeparator           "Hora"  //"Time"                             // since 1.65
+
+  QIW_BooleanTrue             "Lógico verdadeiro"  //"Boolean true"
+  QIW_BooleanFalse            "Lógico falso"  //"Boolean false"
+  QIW_NullValue               "Valores nulos"  //"Null Values"                      // since 2.0
+
+  QIWDF_Caption               "Formato dos dados"   //"Data formats"
+  QIWDF_Fields                "Campos"  //"Fields"
+  QIWDF_Tuning                "Ajustes"  //"Tuning"                           // since 1.6
+  QIWDF_Replacements          "Substituições"  //"Replacements"                     // since 1.6
+  QIWDF_TextToFind            "Pesquisar texto"  //"Text to find"                     // since 2.0
+  QIWDF_ReplaceWith           "Substituir por"   //"Replace with"                     // since 2.0
+  QIWDF_IgnoreCase            "Ignorar caixa de texto"  //"Ignore case"                      // since 2.0
+  QIWDF_IgnoreCase_Yes        "Sim"  //"Yes"                              // since 2.0
+  QIWDF_IgnoreCase_No         "Não"  //"No"                               // since 2.0
+  QIWDF_AddReplacement        "Adicionar substituição"  //"Add Replacement"                  // since 2.0
+  QIWDF_EditReplacement       "Editar substituição"  //"Edit Replacement"                 // since 2.0
+  QIWDF_DelReplacement        "Deletar substituição"  //"Del Replacement"                  // since 2.0
+  QIWDF_GeneratorValue        "Valor Inicial Gerador" // "Generator value"
+  QIWDF_GeneratorStep         "Passo do Gerador" //"Generator step"
+  QIWDF_ConstantValue         "Valor Constante"  //"Constant value"
+  QIWDF_NullValue             "Valor nulo" //"Null value"
+  QIWDF_DefaultValue          "Valor padrão"  //"Default value"
+  QIWDF_LeftQuote             "Aspas esquerda" //"Left quote"
+  QIWDF_RightQuote            "Aspas direita"  //"Right quote"
+  QIWDF_QuoteAction           "Ação para aspas"  //"Quote action"
+  QIWDF_QuoteNone             "Nenhuma" //"None"
+  QIWDF_QuoteAdd              "Adicionar"  //"Add"
+  QIWDF_QuoteRemove           "Remover"  //"Remove"
+  QIWDF_CharCase              "Caixa de texto" //"Char case"
+  QIWDF_CharCaseNone          "Não modificar"  //"As Is"
+  QIWDF_CharCaseUpper         "Maiúsculas"  //"Upper"
+  QIWDF_CharCaseLower         "Minúsculas"  //"Lower"
+  QIWDF_CharCaseUpperFirst    "Primeira maiúscula" //"Upper first"
+  QIWDF_CharCaseUpperWord     "Primeira palavra maiúscula" //  "Upper first word"
+  QIWDF_CharSet               "Set de Caracteres"  //"Char set"
+  QIWDF_CharSetNone           "Não modificar" //"As Is"
+  QIWDF_CharSetAnsi           "Ansi"
+  QIWDF_CharSetOem            "Oem"
+
+  QIWDF_RE_Title              "Substituição"  //"Replacement"                      // since 2.0
+  QIWDF_RE_TextToFind         "Pesquisar texto"  //"Text to find"                     // since 2.0
+  QIWDF_RE_ReplaceWith        "Substituir por"  //"Replace with"                     // since 2.0
+  QIWDF_RE_IgnoreCase         "Ignorar caixa de texto"  //"Ignore case"                      // since 2.0
+
+  QIW_TXT_Fields              "Campos"  //"Fields"
+  QIW_TXT_Fields_Pos          "P"                                // since 2.0
+  QIW_TXT_Fields_Size         "T" //"S"                                // since 2.0
+  QIW_TXT_Clear               "Limpar" //"Clear"
+  QIW_TXT_SkipLines           "Pular lin.(s)"  //"Skip line(s)"
+  QIW_TXT_Tip                 "Dê um duplo clique para adicionar ou remover separadores das colunas. Clique na área entre os separadores para definir a coluna que deve ser importada."  //"Double click to add or remove column separators. Click at the area between separators to define the imported column." // since 2.0
+
+  QIW_CSV_Fields              "Campos" //"Fields"
+  QIW_CSV_ColNumber           "Número coluna"  //"Col Number"                       // since 2.0
+  QIW_CSV_SkipLines           "Pular linha(s)"  //"Skip line(s)"
+  QIW_CSV_AutoFill            "Automático"  //"Auto fill"                        // since 1.2
+  QIW_CSV_Clear               "Limpar" //"Clear"                            // since 1.2
+  QIW_CSV_GridCol             "Coluna_%d"  //"Column_%d"                        // since 1.4
+  QIW_CSV_Tip                 "Selecione o nome do campo na lista e depois clique na coluna para importá-lo na coluna desejada."  //"Select field name from the list box, then click at the column to import this field to."
+
+  QIW_DBF_Add                 "Adicionar" //"Add"
+  QIW_DBF_Remove              "Remover"  //"Remove"
+  QIW_DBF_AutoFill            "Automático"  //"Auto fill"                        // since 1.2
+  QIW_DBF_Clear               "Limpar" //"Clear"                            // since 1.2
+  QIW_DBF_SkipDeleted         "Ignore registros deletados"  //"Skip Deleted Rows"                // since 1.7
+  QIW_DBF_Tip                 "Clique no botão ""Adicionar"" para definir o relacionamento entre a coluna e o campo ou clique no botão ""Remover"" para excluí-la." //"Click the ""Add"" button to set the accordance between the imported column and the table field or click the ""Remove"" button to remove one."
+
+  QIW_Xlsx_Fields             "Campos"  //"Fields"
+  QIW_Xlsx_SkipRows           "Pular linha(s)"  //"Skip row(s)"                       
+  QIW_Xlsx_AutoFill           "Preenchimento automático"     //"Auto fill"                        
+  QIW_Xlsx_Clear              "Limpar"  //"Clear"                            
+  QIW_Xlsx_GridCol            "Coluna_%d" //"Column_%d"                       
+  QIW_Xlsx_Tip                "Selecione o campo na lista e depois clique em cima da coluna para a qual deseja importá-lo." //"Select field name from the list box, then click at the column to import this field to."
+
+  QIW_Docx_Fields             "Campos"  //"Fields"
+  QIW_Docx_SkipRows           "Pular linha(s)"  //"Skip row(s)"                       
+  QIW_Docx_AutoFill           "Preenchimento automático"  //"Auto fill"
+  QIW_Docx_Clear              "Limpar"  //"Clear"
+  QIW_Docx_GridCol            "Coluna_%d" //"Column_%d"
+  QIW_Docx_Tip                "Selecione o campo na lista e depois clique em cima da coluna para a qual deseja importá-lo." //"Select field name from the list box, then click at the column to import this field to."
+
+  QIW_ODS_Fields             "Campos"  //"Fields"
+  QIW_ODS_SkipRows           "Pular linha(s)"  //"Skip row(s)"                       
+  QIW_ODS_AutoFill           "Preenchimento automático"  //"Auto fill"                        
+  QIW_ODS_Clear              "Limpar"  //"Clear"                            
+  QIW_ODS_GridCol            "Coluna_%d" //"Column_%d"                        
+  QIW_ODS_Tip                "Selecione o campo na lista e depois clique em cima da coluna para a qual deseja importá-lo." //"Select field name from the list box, then click at the column to import this field to."
+
+  QIW_ODT_Fields             "Campos"  //"Fields"
+  QIW_ODT_SkipRows           "Pular linha(s)"  //"Skip row(s)"                       
+  QIW_ODT_AutoFill           "Preenchimento automático"  //"Auto fill"                        
+  QIW_ODT_Clear              "Limpar"  //"Clear"                            
+  QIW_ODT_GridCol            "Coluna_%d" //"Column_%d"                        
+  QIW_ODT_Tip                "Selecione o campo na lista e depois clique em cima da coluna para a qual deseja importá-lo." //"Select field name from the list box, then click at the column to import this field to."
+
+  QIW_HTML_Fields             "Campos"  //"Fields"
+  QIW_HTML_ColNumber          "Nº Coluna"                       
+  QIW_HTML_TableNumber        "Tabela número"                     
+  QIW_HTML_SkipLines          "Pular lin.(s)"  //"Skip line(s)"
+  QIW_HTML_AutoFill           "Preenchimento automático"  //"Auto fill"                        
+  QIW_HTML_Clear              "Limpar"  //"Clear"                            
+  QIW_HTML_GridCol            "Coluna_%d" //"Column_%d"                        
+  QIW_HTML_Tip                "Selecione o campo na lista e depois clique em cima da coluna para a qual deseja importá-lo." //"Select field name from the list box, then click at the column to import this field to."
+
+  QIW_XML_Add                 "Adicionar" //"Add"                            // since 2.0
+  QIW_XML_Remove              "Remover"  //"Remove"                          // since 2.0
+  QIW_XML_AutoFill            "Automático"  // "Auto fill"                   // since 2.0
+  QIW_XML_Clear               "Limpar"  //"Clear"                            // since 2.0  
+  QIW_XML_Tip                 "Clique no botão ""Adicionar"" para definir o relacionamento entre a coluna e o campo ou clique no botão ""Remover"" para excluí-la." //"Click the ""Add"" button to set the accordance between the imported column and the table field or click the ""Remove"" button to remove one." // since 2.0
+
+  QIW_XMLDoc_Fields           "Campos"  //"Fields";
+  QIW_XMLDoc_ColNumber        "Coluna Número";
+  QIW_XMLDoc_SkipLines        "Pular linha(s)"  //"Skip line(s)";
+  QIW_XMLDoc_AutoFill         "Preenchimento automático"  // "Auto fill";
+  QIW_XMLDoc_Clear            "Limpar"  //"Clear";
+  QIW_XMLDoc_GridCol          "Coluna_%d" //"Column_%d";
+  QIW_XMLDoc_Tip              "Selecione o campo na lista e depois clique em cima da coluna para a qual deseja importá-lo." //"Select field name from the list box, then click at the column to import this field to.";
+  QIW_XMLDoc_XPath            "Caminho" //"XPath"
+  QIW_XMLDoc_DataLocation     "Local dados" //"Data location"
+
+  QIW_XLS_Fields              "Campos"  //"Fields"
+  QIW_XLS_Ranges              "Limites" //"Ranges"                           // since 2.0
+  QIW_XLS_AddRange            "Adicionar Limite"  //"Add Range"                        // since 2.0
+  QIW_XLS_EditRange           "Editar Limite" //"Edit Range"                       // since 2.0
+  QIW_XLS_DelRange            "Deletar Limite" //"Del Range"                        // since 2.0
+  QIW_XLS_MoveRangeUp         "Mover limite para cima" //"Move Range Up"                    // since 2.0
+  QIW_XLS_MoveRangeDown       "Mover limite para baixo"  //"Move Range Down"                  // since 2.0
+  QIW_XLS_SkipCols            "Pular coluna(s)"  //"Skip col(s)"                      // since 2.0
+  QIW_XLS_SkipRows            "Pular linha(s)"  //"Skip row(s)"                      // since 2.0
+  QIW_XLS_AutoFillCols        "Preencher colunas automaticamente" //"Auto fill cols"                   // since 1.2
+  QIW_XLS_AutoFillRows        "Preencher linhas automaticamente"  //"Auto fill rows"                   // since 1.2
+  QIW_XLS_ClearFieldRanges    "Limpar limite do campo"  //"Clear field ranges"               // since 2.0
+  QIW_XLS_ClearAllRanges      "Limpar todos os limites"  //"Clear all ranges"                 // since 2.0
+  QIW_XLS_Tip                 "Use o Editor de Limite para adicionar/remover linhas ou então clique em uma célula pressionando Shift ou Ctrl. Tecle Enter para aplicar a seleção ou Esc para cancelar." //"Use the Range Editor to add/edit ranges or click individual cells with Shift or Ctrl pressed. Press Enter to apply selection or Escape to cancel."
+
+  QIRE_Caption                "Limite"  //"Range"                            // since 2.0
+  QIRE_RangeType              " Tipo Limite "  //" Range Type "                     // since 2.0
+  QIRE_RangeType_Col          "Coluna"  //"Col"                              // since 2.0
+  QIRE_RangeType_Row          "Linha"  //"Row"                              // since 2.0
+  QIRE_RangeType_Cell         "Célula"  //"Cell"                             // since 2.0
+  QIRE_Start                  " Iniciar "  //" Start "                          // since 2.0
+  QIRE_Start_DataStarted      "Quando iniciar dados"  //"Where data started"               // since 2.0
+  QIRE_Start_Col              "Na Coluna"  //"Start Col"                        // since 2.0
+  QIRE_Start_Row              "Na Linha"  //"Start Row"                        // since 2.0
+  QIRE_Finish                 " Finalizar "  //" Finish "                         // since 2.0
+  QIRE_Finish_DataFinished    "Ao finalizar dados"  //"Where data finished"              // since 2.0
+  QIRE_Finish_Col             "Na Coluna" //"Finish Col"                       // since 2.0
+  QIRE_Finish_Row             "Na Linha"  //"Finish Row"                       // since 2.0
+  QIRE_Direction              " Direção "  //" Direction "                      // since 2.0
+  QIRE_Direction_Down         "Abaixo"  //"Down"                             // since 2.0
+  QIRE_Direction_Up           "Acima"  //"Up"                               // since 2.0
+  QIRE_Direction_Right        "Direita" //"Right"                            // since 2.0
+  QIRE_Direction_Left         "Esquerda" // "Left"                             // since 2.0
+  QIRE_Sheet                  " Folha "  //" Sheet "                          // since 2.0
+  QIRE_Sheet_Default          "Folha Padrão"  //"Default Sheet"                    // since 2.0
+  QIRE_Sheet_Custom           "Selecionar Folha"  //"Custom Sheet"                     // since 2.0
+  QIRE_Sheet_Custom_Number    "Número Folha"  //"Sheet Number"                     // since 2.0
+  QIRE_Sheet_Custom_Name      "Nome Folha"  //"Sheet Name"                       // since 2.0
+
+  QIW_Access_Table            "Desejo importar os dados de uma tabela"   //"I would like to import data from a table" // since 1.4
+  QIW_Access_SQL              "Desejo importar os dados de uma pesquisa SQL"  //"I would like to import data from an SQL query" // since 1.4
+  QIW_Access_SQL_Load         "Carregar a pesquisa de um arquivo"  //"Load query from file"             // since 1.4
+  QIW_Access_SQL_Save         "Salvar a pesquisa em um arquivo"  //"Save query to file"               // since 1.4
+  QIW_Access_Add              "Adicionar"  //"Add"                              // since 1.4
+  QIW_Access_Remove           "Remover"  //"Remove"                           // since 1.4
+  QIW_Access_AutoFill         "Automático"  //"Auto fill"                        // since 1.4
+  QIW_Access_Clear            "Limpar"  //"Clear"                            // since 1.4
+  QIW_Access_CustomQuery      "Customizar pesquisa"  //"Custom query"
+  QIW_Access_Tip              "Clique no botão ""Adicionar"" para definir o relacionamento entre a coluna e o campo ou clique no botão ""Remover"" para excluí-la." //"Click the ""Add"" button to set the accordance between the imported column and the table field or click the ""Remove"" button to remove one." // since 1.4
+
+  QIW_Access_Password         "Senha" // "Password"                          // since 2.31
+
+  QIW_ImportErrorFormat       "%s - Linha %d: %s"  //"%s - Line %d: %s"                 // since 2.35
+
+  QIPD_State                  "Situação"
+  QIPD_Processed              "Processados"
+  QIPD_Inserted               "Inseridos"
+  QIPD_Updated                "Atualizados"
+  QIPD_Deleted                "Deletados"
+  QIPD_Errors                 "Erros"
+  QIPD_Committed              "Registrados"
+  QIPD_Time                   "Tempo"
+  QIPD_Cancel                 "Cancelar"
+  QIPD_Import_finished        "Importação concluída"
+  QIPD_OK                     "OK"
+  QIPD_Importing              "Importando..."        
+  QIPD_Preparing              "Preparando"        
+  QIPD_Aborted                "Abortado"          
+  QIPD_Finished               "Concluído"         
+  QIPD_Paused                 "Pausada"
+
+  QIRE_Cancel                 "Cancelar"
+
+  QIW_ODT_UseFirstRowAsHeader "Use primeira linha como cabeçalho"
+
+  QIW_TXT_Encoding            "Codificação"
+
+  QIW_XMLDoc_BuildTreeView    "Gerar TreeView"
+  QIW_XMLDoc_GetXPath         "Obter XPath"
+
+  QIW_DontWorkUserDefined     "O assistente não funcionará corretamente se o parâmetro ImportDestination for igual ao qidUserDefined" 
+END

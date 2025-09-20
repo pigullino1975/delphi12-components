@@ -1,0 +1,8 @@
+This demo illustrates how to add and configure a digital signature for a PDF document. You can use the certificate inculded in the demo or load an X.509 certificate. The pane to the right of the PDF Viewer control allows you to:
+ 
+- "View..." the current certificate or "Load..." a different certificate.
+- Specify the signing reason, location, and contact information for the digital signature.
+- Preview the digital signature's appearance. You can right-click the image box and then click "Load..." or "Assign From Camera..." to change the appearance.
+- Change the position of the digital signature with the "Position" combo box.
+- "Apply" the changes and preview the digital signature on the document page.
+- "Sign and Save..." as a new PDF file.

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+	.Green{fill:#039C23;}
+	.Black{fill:#727272;}
+	.White{fill:#FFFFFF;}
+</style>
+  <rect x="1" y="1" class="Black" width="14" height="14" rx="1"/>
+  <circle style="fill: Green; stroke: White;" stroke-width="2" cx="8" cy="8" r="4"/>
+</svg>

@@ -1,0 +1,18 @@
+               Argentina Buenos Aires South America 2,777,815.00  32,300,003.00
+                 Bolivia       La Paz South America 1,098,575.00   7,300,000.00
+                  Brazil     Brasilia South America 8,511,196.00 150,400,000.00
+                  Canada       Ottawa North America 9,976,147.00  26,500,000.00
+                   Chile     Santiago South America   756,943.00  13,200,000.00
+                Colombia       Bagota South America 1,138,907.00  33,000,000.00
+                    Cuba       Havana North America   114,524.00  10,600,000.00
+                 Ecuador        Quito South America   455,502.00  10,600,000.00
+             El Salvador San Salvador North America    20,865.00   5,300,000.00
+                  Guyana   Georgetown South America   214,969.00     800,000.00
+                 Jamaica     Kingston North America    11,424.00   2,500,000.00
+                  Mexico  Mexico City North America 1,967,180.00  88,600,000.00
+               Nicaragua      Managua North America   139,000.00   3,900,000.00
+                Paraguay     Asuncion South America   406,576.00   4,660,000.00
+                    Peru         Lima South America 1,285,215.00  21,600,000.00
+United States of America   Washington North America 9,363,130.00 249,200,000.00
+                 Uruguay   Montevideo South America   176,140.00   3,002,000.00
+               Venezuela      Caracas South America   912,047.00  19,700,000.00

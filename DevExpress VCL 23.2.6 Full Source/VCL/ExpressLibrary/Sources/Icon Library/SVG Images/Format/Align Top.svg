@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="AlignTop" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" >
+<style type="text/css">
+	.Black{fill:#727272;stroke:#727272}
+</style>
+  <polygon class="Black" points="16.038 6.005 11.031 12.009 15.036 12.009 15.036 18.014 17.039 18.014 17.039 12.009 21.044 12.009" />
+  <line Class="Black" x1="3" y1="4.5" x2="29" y2="4.5" style="stroke-width: 2px;"></line>
+</svg>

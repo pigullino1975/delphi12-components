@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="_x35__Quarters" x="0px" y="0px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+	.Black{fill:#727272;}
+	.st0{opacity:0.5;}
+</style>
+  <g class="st0">
+    <circle class="Black" cx="8" cy="8" r="7"/>
+  </g>
+  <path class="Black" d="M 14.973 8.143 C 14.973 7.876 14.998 7.437 14.998 7.169 C 14.998 3.7 12.301 1.028 8.827 1.028 C 8.56 1.028 8.236 0.975 7.967 1.063 L 7.935 8.143 L 14.973 8.143 Z" style=""/>
+</svg>

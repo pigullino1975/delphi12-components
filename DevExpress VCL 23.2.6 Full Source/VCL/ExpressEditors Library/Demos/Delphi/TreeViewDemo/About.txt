@@ -1,0 +1,7 @@
+In this demo, you can:
+
+- Adjust the tree settings and populate each TreeView control with nodes (the Add button).
+- Change the expanded state of nodes (the Full Expand and Full Collapse buttons).
+- Remove all nodes from a TreeView control (the Clear button).
+- Browse log entries for details on performed operations.
+- Apply different paint styles to a form (the Look&Feel menu item).

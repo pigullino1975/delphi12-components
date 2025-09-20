@@ -1,0 +1,102 @@
+object frmTrialDesignTimeHelperDialog: TfrmTrialDesignTimeHelperDialog
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'DevExpress VCL Controls Trial Version'
+  ClientHeight = 154
+  ClientWidth = 560
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnlBottom: TPanel
+    AlignWithMargins = True
+    Left = 10
+    Top = 108
+    Width = 540
+    Height = 36
+    Margins.Left = 10
+    Margins.Top = 6
+    Margins.Right = 10
+    Margins.Bottom = 10
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 0
+    object Bevel1: TBevel
+      Left = 0
+      Top = 0
+      Width = 540
+      Height = 4
+      Align = alTop
+      Shape = bsTopLine
+    end
+    object btnOk: TButton
+      Left = 223
+      Top = 11
+      Width = 96
+      Height = 25
+      Anchors = [akTop]
+      Caption = '&OK'
+      Default = True
+      ModalResult = 1
+      TabOrder = 0
+    end
+  end
+  object pnlTop: TPanel
+    AlignWithMargins = True
+    Left = 10
+    Top = 10
+    Width = 540
+    Height = 56
+    Margins.Left = 10
+    Margins.Top = 10
+    Margins.Right = 10
+    Margins.Bottom = 10
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 1
+    object imWarning: TImage
+      AlignWithMargins = True
+      Left = 0
+      Top = 8
+      Width = 40
+      Height = 40
+      Margins.Left = 0
+      Margins.Top = 8
+      Margins.Right = 0
+      Margins.Bottom = 8
+      Align = alLeft
+      Center = True
+    end
+    object lbDetails: TLabel
+      AlignWithMargins = True
+      Left = 48
+      Top = 3
+      Width = 489
+      Height = 50
+      Margins.Left = 8
+      Align = alClient
+      AutoSize = False
+      Transparent = True
+      Layout = tlCenter
+      WordWrap = True
+    end
+  end
+  object cbCheckbox: TCheckBox
+    AlignWithMargins = True
+    Left = 10
+    Top = 82
+    Width = 540
+    Height = 17
+    Margins.Left = 10
+    Margins.Right = 10
+    Align = alBottom
+    Caption = 'cbCheckbox'
+    TabOrder = 2
+  end
+end
