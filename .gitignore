@@ -33,7 +33,6 @@ __recovery/
 *.dll
 *.map
 *.tds
-*.res
 *.pdb
 *.ilk
 *.lib
@@ -42,6 +41,10 @@ __recovery/
 *.o
 *.so
 *.dylib
+
+# Exclude compiled resource files but keep original .res files
+# (commented out to include .res files needed for components like DxAutoInstaller)
+# *.res
 
 # IDE files
 *.cfg
