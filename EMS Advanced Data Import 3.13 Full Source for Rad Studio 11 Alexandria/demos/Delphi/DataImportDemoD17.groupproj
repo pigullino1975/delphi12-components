@@ -1,0 +1,28 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4E3C4C0D-EAAC-4585-B114-E58ACF00195A}</ProjectGuid>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CustomDestinationD17">
+        <MSBuild Projects="CustomDestination\CustomDestinationD17.dproj"/>
+    </Target>
+    <Target Name="ImpDlgDemoD17">
+        <MSBuild Projects="DialogDemo\ImpDlgDemoD17.dproj"/>
+    </Target>
+    <Target Name="ImpDlgDemoADOD17">
+        <MSBuild Projects="DialogDemo_ADO\ImpDlgDemoADOD17.dproj"/>
+    </Target>
+    <Target Name="ImpDlgDemoIBXD17">
+        <MSBuild Projects="DialogDemo_IBX\ImpDlgDemoIBXD17.dproj"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CustomDestinationD17;ImpDlgDemoD17;ImpDlgDemoADOD17;ImpDlgDemoIBXD17"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

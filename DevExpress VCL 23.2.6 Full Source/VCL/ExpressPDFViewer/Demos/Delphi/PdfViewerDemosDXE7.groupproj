@@ -1,0 +1,29 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	  <ProjectGuid>{624986FA-A7F7-4F65-944F-B4291D80BD68}</ProjectGuid>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality.12</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="PDFViewerDemoDXE7">
+    <MSBuild Projects="Viewer\PDFViewerDemoDXE7.dproj" Targets="" />
+  </Target>
+  <Target Name="PageMergingDXE7">
+    <MSBuild Projects="PageMerging\PageMergingDXE7.dproj" Targets="" />
+  </Target>
+  <Target Name="DigitalSignatureDXE7">
+    <MSBuild Projects="DigitalSignature\DigitalSignatureDXE7.dproj" Targets="" />
+  </Target>
+  <Target Name="FileAttachmentDXE7">
+    <MSBuild Projects="FileAttachment\FileAttachmentDXE7.dproj" Targets="" />
+  </Target>
+  <Target Name="FillFormDXE7">
+    <MSBuild Projects="FillForm\FillFormDXE7.dproj" Targets="" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="PDFViewerDemoDXE7;PageMergingDXE7;DigitalSignatureDXE7;FileAttachmentDXE7;FillFormDXE7" />
+  </Target>
+</Project>

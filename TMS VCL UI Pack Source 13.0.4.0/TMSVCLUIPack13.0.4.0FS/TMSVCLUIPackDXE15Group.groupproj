@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{204C13D2-0B57-4A8A-B95A-439B013C651C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TMSVCLUIPackPkgDXE15.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSVCLUIPackPkgExDXE15.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSVCLUIPackPkgDEDXE15.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSVCLUIPackPkgWizDXE15.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TMSVCLUIPackPkgXlsDXE15.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TMSVCLUIPackPkgDXE15">
+        <MSBuild Projects="TMSVCLUIPackPkgDXE15.dproj"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgDXE15:Clean">
+        <MSBuild Projects="TMSVCLUIPackPkgDXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgDXE15:Make">
+        <MSBuild Projects="TMSVCLUIPackPkgDXE15.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgExDXE15">
+        <MSBuild Projects="TMSVCLUIPackPkgExDXE15.dproj"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgExDXE15:Clean">
+        <MSBuild Projects="TMSVCLUIPackPkgExDXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgExDXE15:Make">
+        <MSBuild Projects="TMSVCLUIPackPkgExDXE15.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgDEDXE15">
+        <MSBuild Projects="TMSVCLUIPackPkgDEDXE15.dproj"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgDEDXE15:Clean">
+        <MSBuild Projects="TMSVCLUIPackPkgDEDXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgDEDXE15:Make">
+        <MSBuild Projects="TMSVCLUIPackPkgDEDXE15.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgWizDXE15">
+        <MSBuild Projects="TMSVCLUIPackPkgWizDXE15.dproj"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgWizDXE15:Clean">
+        <MSBuild Projects="TMSVCLUIPackPkgWizDXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgWizDXE15:Make">
+        <MSBuild Projects="TMSVCLUIPackPkgWizDXE15.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgXlsDXE15">
+        <MSBuild Projects="TMSVCLUIPackPkgXlsDXE15.dproj"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgXlsDXE15:Clean">
+        <MSBuild Projects="TMSVCLUIPackPkgXlsDXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSVCLUIPackPkgXlsDXE15:Make">
+        <MSBuild Projects="TMSVCLUIPackPkgXlsDXE15.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TMSVCLUIPackPkgDXE15;TMSVCLUIPackPkgExDXE15;TMSVCLUIPackPkgDEDXE15;TMSVCLUIPackPkgWizDXE15;TMSVCLUIPackPkgXlsDXE15"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TMSVCLUIPackPkgDXE15:Clean;TMSVCLUIPackPkgExDXE15:Clean;TMSVCLUIPackPkgDEDXE15:Clean;TMSVCLUIPackPkgWizDXE15:Clean;TMSVCLUIPackPkgXlsDXE15:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TMSVCLUIPackPkgDXE15:Make;TMSVCLUIPackPkgExDXE15:Make;TMSVCLUIPackPkgDEDXE15:Make;TMSVCLUIPackPkgWizDXE15:Make;TMSVCLUIPackPkgXlsDXE15:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

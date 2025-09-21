@@ -1,0 +1,22 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{6A00A7F3-06DA-477E-A561-83D27581519F}</ProjectGuid>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CustomDestinationC26">
+        <MSBuild Projects="CustomDestination\CustomDestinationC26.cbproj" Targets=""/>
+    </Target>
+    <Target Name="ImpDlgDemoC26">
+        <MSBuild Projects="DialogDemo\ImpDlgDemoC26.cbproj" Targets=""/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CustomDestinationC26;ImpDlgDemoC26"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

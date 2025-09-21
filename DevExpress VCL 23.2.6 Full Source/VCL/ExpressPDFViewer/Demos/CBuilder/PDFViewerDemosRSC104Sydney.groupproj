@@ -1,0 +1,29 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	  <ProjectGuid>{624986FA-A7F7-4F65-944F-B4291D80BD68}</ProjectGuid>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality.12</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="PDFViewerDemoRSC104Sydney">
+    <MSBuild Projects="Viewer\PDFViewerDemoRSC104Sydney.cbproj" Targets="" />
+  </Target>
+  <Target Name="PageMergingRSC104Sydney">
+    <MSBuild Projects="PageMerging\PageMergingRSC104Sydney.cbproj" Targets="" />
+  </Target>
+  <Target Name="DigitalSignatureRSC104Sydney">
+    <MSBuild Projects="DigitalSignature\DigitalSignatureRSC104Sydney.cbproj" Targets="" />
+  </Target>
+  <Target Name="FileAttachmentRSC104Sydney">
+    <MSBuild Projects="FileAttachment\FileAttachmentRSC104Sydney.cbproj" Targets="" />
+  </Target>
+  <Target Name="FillFormRSC104Sydney">
+    <MSBuild Projects="FillForm\FillFormRSC104Sydney.cbproj" Targets="" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="PDFViewerDemoRSC104Sydney;PageMergingRSC104Sydney;DigitalSignatureRSC104Sydney;FileAttachmentRSC104Sydney;FillFormRSC104Sydney" />
+  </Target>
+</Project>

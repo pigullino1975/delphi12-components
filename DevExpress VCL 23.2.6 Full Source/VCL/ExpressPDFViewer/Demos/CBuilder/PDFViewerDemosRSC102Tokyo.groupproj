@@ -1,0 +1,29 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	  <ProjectGuid>{624986FA-A7F7-4F65-944F-B4291D80BD68}</ProjectGuid>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality.12</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="PDFViewerDemoRSC102Tokyo">
+    <MSBuild Projects="Viewer\PDFViewerDemoRSC102Tokyo.cbproj" Targets="" />
+  </Target>
+  <Target Name="PageMergingRSC102Tokyo">
+    <MSBuild Projects="PageMerging\PageMergingRSC102Tokyo.cbproj" Targets="" />
+  </Target>
+  <Target Name="DigitalSignatureRSC102Tokyo">
+    <MSBuild Projects="DigitalSignature\DigitalSignatureRSC102Tokyo.cbproj" Targets="" />
+  </Target>
+  <Target Name="FileAttachmentRSC102Tokyo">
+    <MSBuild Projects="FileAttachment\FileAttachmentRSC102Tokyo.cbproj" Targets="" />
+  </Target>
+  <Target Name="FillFormRSC102Tokyo">
+    <MSBuild Projects="FillForm\FillFormRSC102Tokyo.cbproj" Targets="" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="PDFViewerDemoRSC102Tokyo;PageMergingRSC102Tokyo;DigitalSignatureRSC102Tokyo;FileAttachmentRSC102Tokyo;FillFormRSC102Tokyo" />
+  </Target>
+</Project>
