@@ -52,7 +52,7 @@ __recovery/
 *.bdsproj
 *.cbproj
 *.dpr.cfg
-*.groupproj
+# *.groupproj  # Commented out to include group project files needed for batch compilation
 *.stat
 
 # Backup files
